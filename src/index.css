@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Google Fonts are loaded in index.html ── */
+
+:root {
+  --black: #0b0b0b;
+  --gold: #FFD700;
+  --gold-dim: rgba(255, 215, 0, 0.15);
+  --gold-glow: rgba(255, 215, 0, 0.35);
+  --white: #f5f0e8;
+}
+
+/* ── Reset & Base ─────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Raleway', sans-serif;
+  overflow-x: hidden;
+  /* cursor: none is only applied on pointer-fine devices below */
+}
+
+/* ── Custom Cursor — desktop only ────────────────── */
+#cursor, #cursor-ring { display: none; }
+
+@media (hover: hover) and (pointer: fine) {
+  #cursor {
+    display: block;
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--gold);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, opacity 0.3s;
+    mix-blend-mode: difference;
+  }
+
+  #cursor-ring {
+    display: block;
+    position: fixed;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s, border-color 0.5s;
+  }
+
+  body { cursor: none; }
+}
+
+/* On touch devices restore the default cursor */
+@media (hover: none), (pointer: coarse) {
+  body, * { cursor: auto !important; }
+  .card-wrap { cursor: pointer !important; }
+}
+
+/* ── Film Grain Texture Overlay ───────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9997;
+  opacity: 0.5;
+}
+
+/* ── Typography Utilities ─────────────────────────── */
+.font-serif   { font-family: 'Cormorant Garamond', serif; }
+.font-sans    { font-family: 'Raleway', sans-serif; }
+
+/* ── Breathing Animation ──────────────────────────── */
+@keyframes breathe {
+  0%, 100% { transform: scale(1);    opacity: 0.6; }
+  50%       { transform: scale(1.04); opacity: 1; }
+}
+
+@keyframes breatheSlow {
+  0%, 100% { transform: scale(1);    opacity: 0.5; }
+  50%       { transform: scale(1.03); opacity: 0.85; }
+}
+
+/* ── Rotating Sacred Geometry ─────────────────────── */
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.rotate-slow { animation: rotateSlow 30s linear infinite; }
+.rotate-med  { animation: rotateSlow 20s linear infinite reverse; }
+.rotate-fast { animation: rotateSlow 12s linear infinite; }
+
+/* ── Scroll Fade-in ───────────────────────────────── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Gallery Card ─────────────────────────────────── */
+/* Hover/animation logic fully handled by Framer Motion in InteractiveCard.jsx */
+/* Touch fallback — geometry partially visible when no hover support */
+@media (hover: none) {
+  .card-overlay { opacity: 0.55 !important; }
+}
+
+/* ── Responsive Gallery Grid ──────────────────────── */
+.gallery-grid {
+  display: grid;
+  gap: 2px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 2px; }
+}
+
+@media (max-width: 400px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 1px; }
+}
+
+/* ── Scrollbar ────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 215, 0, 0.3);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 215, 0, 0.6); }
+
+/* ── Selection ────────────────────────────────────── */
+::selection {
+  background: rgba(255, 215, 0, 0.2);
+  color: var(--white);
+}
+
+/* ── Touch device: restore cursor & card tap states ──────────── */
+@media (hover: none) and (pointer: coarse) {
+  body { cursor: auto; }
+
+  /* Cards: always show footer info on touch */
+  .card-footer { opacity: 1 !important; transform: translateY(0) !important; }
+
+  /* Tap highlight suppression */
+  * { -webkit-tap-highlight-color: transparent; }
+}
+
+/* ── Safe area insets (iPhone notch / home bar) ──────────────── */
+nav {
+  padding-top: max(env(safe-area-inset-top), 0px);
+}
+
+footer {
+  padding-bottom: max(env(safe-area-inset-bottom), 0px);
+}
+
+/* ── Modal scroll lock helper ────────────────────────────────── */
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+/* ── Prevent text size inflation on iOS ──────────────────────── */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* ── Tablet: gallery section padding ────────────────────────── */
+@media (max-width: 1024px) and (min-width: 641px) {
+  .gallery-grid { gap: 2px; }
+}
+
+/* ── Mobile: tighter section spacing ────────────────────────── */
+@media (max-width: 640px) {
+  section { scroll-margin-top: 60px; }
+}

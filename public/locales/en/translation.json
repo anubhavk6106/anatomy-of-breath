@@ -1,0 +1,119 @@
+{
+  "nav": {
+    "portal": "Home",
+    "matrix": "Matrix",
+    "pillars": "Pillars",
+    "medicina": "Medicine of the Voice",
+    "medicinaVoz": "Medicine of the Voice",
+    "soma": "Soma",
+    "experiences": "Experiences",
+    "experiencesDesc": "Upcoming workshops, ceremonies, and gatherings",
+    "vault": "Vault",
+    "inquire": "Contact"
+  },
+  "portal": {
+    "tagline": "Where science dissolves into sacred",
+    "enter": "Enter",
+    "scroll": "Scroll"
+  },
+  "matrix": {
+    "hero": {
+      "eyebrow": "anatomiadelaliento.com",
+      "title1": "Anatomy of",
+      "title2": "Breath",
+      "tagline": "Where science dissolves into sacred",
+      "scroll": "Scroll to explore"
+    },
+    "philosophy": {
+      "label": "Philosophy",
+      "quote": "\"Every inhale is a universe\nexpanding. Every exhale,\na cosmos remembering itself.\"",
+      "body1": "The human body breathes approximately 20,000 times each day — a rhythm so ancient it predates consciousness itself. When we place the anatomical atlas beside the sacred geometric canon, something astonishing emerges: the branching of bronchi mirrors the fractal precision of the Sierpinski triangle.",
+      "body2": "Anatomy of Breath is a meditative inquiry into this convergence — a visual philosophy that honors both the scientific and the numinous, recognizing that the two have always been speaking the same language.",
+      "mantra": "— Breathe. Witness. Remember."
+    },
+    "gallery": {
+      "label": "Collection",
+      "title": "The Living",
+      "titleItalic": "Architecture",
+      "subtitle": "Hover to reveal sacred geometry within",
+      "searchPlaceholder": "Search — lungs, heart, spine…",
+      "results": "result",
+      "resultsPlural": "results",
+      "noResults": "No illustrations found for",
+      "noResultsSub": "Try: lungs, heart, spine, diaphragm…",
+      "clickToExplore": "Click to explore",
+      "tapToExplore": "Tap to explore"
+    },
+    "cards": {
+      "lungField":      { "title": "The Lung Field",    "subtitle": "Pulmonary Expansion" },
+      "bronchialTree":  { "title": "Bronchial Tree",    "subtitle": "Sacred Branching" },
+      "diaphragm":      { "title": "Diaphragm",         "subtitle": "The First Mover" },
+      "alveolarBloom":  { "title": "Alveolar Bloom",    "subtitle": "The Flower Within" },
+      "neuralBreath":   { "title": "Neural Breath",     "subtitle": "The Nervous Rhythm" },
+      "theSilence":     { "title": "The Silence",       "subtitle": "Between Inhale & Exhale" },
+      "sacredHeart":    { "title": "The Sacred Heart",  "subtitle": "Pulse of Existence" },
+      "spinalColumn":   { "title": "Spinal Column",     "subtitle": "The Axis of Being" },
+      "ribCage":        { "title": "Rib Cage",          "subtitle": "The Temple of Breath" },
+      "cranialVault":   { "title": "Cranial Vault",     "subtitle": "The Seat of Consciousness" },
+      "vascularRivers": { "title": "Vascular Rivers",   "subtitle": "The Flow of Life" },
+      "innerEye":       { "title": "The Inner Eye",     "subtitle": "Window of the Soul" }
+    },
+    "timeline": {
+      "label": "The Journey",
+      "title": "From Inhale to",
+      "titleItalic": "Cellular Fire",
+      "subtitle": "Scroll to follow the breath",
+      "ending": "— And then, the exhale begins."
+    },
+    "immersive": {
+      "label": "The Living Mandala",
+      "title": "Within Every",
+      "titleItalic": "Breath",
+      "subtitle": "a universe unfolds",
+      "technique": "4 · 7 · 8 · Dr. Andrew Weil's pranayama technique"
+    }
+  },
+  "vault": {
+    "comingSoon": "Coming Soon",
+    "description": "The Vault will open its doors soon. Leave your email to be the first to know.",
+    "emailPlaceholder": "your@email.com",
+    "notify": "Notify me"
+  },
+  "soma": {
+    "hero": {
+      "title": "Soma",
+      "subtitle": "Body therapies, breathwork and movement",
+      "body": "We explore the body as sacred territory — a living map of memory, emotion, and transformative potential."
+    },
+    "offerings": {
+      "breathwork": {
+        "title": "Breathwork",
+        "description": "Ancestral and contemporary techniques to release, energize, and transform through breath."
+      },
+      "movement": {
+        "title": "Conscious Movement",
+        "description": "Somatic practices that integrate body, mind, and spirit in dynamic flow."
+      },
+      "alignment": {
+        "title": "Structural Alignment",
+        "description": "Manual and postural therapies to restore the body's natural balance."
+      }
+    }
+  },
+  "common": {
+    "comingSoon": "Coming Soon",
+    "sampleContent": "Showing sample content",
+    "noEvents": "No upcoming events",
+    "noUpcomingEvents": "No upcoming events at this time",
+    "noPosts": "Content coming soon",
+    "noResults": "No posts found in this category",
+    "past": "Past",
+    "bookNow": "Reserve Your Spot",
+    "readMore": "Read more",
+    "loading": "Loading...",
+    "contentUnavailable": "Content unavailable",
+    "backToList": "Back to list",
+    "back": "Back",
+    "all": "All"
+  }
+}

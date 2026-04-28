@@ -1,0 +1,120 @@
+{
+  "nav": {
+    "portal": "Inicio",
+    "matrix": "Matrix",
+    "pillars": "Pilares",
+    "medicina": "Medicina de la Voz",
+    "medicinaVoz": "Medicina de la Voz",
+    "medicinaVozDesc": "Exploraciones en la voz como medicina",
+    "soma": "Soma",
+    "experiences": "Experiencias",
+    "experiencesDesc": "Talleres, ceremonias y encuentros próximos",
+    "vault": "Vault",
+    "inquire": "Contacto"
+  },
+  "portal": {
+    "tagline": "Donde la ciencia se disuelve en lo sagrado",
+    "enter": "Explorar",
+    "scroll": "Desplazar"
+  },
+  "matrix": {
+    "hero": {
+      "eyebrow": "anatomiadelaliento.com",
+      "title1": "Anatomía del",
+      "title2": "Aliento",
+      "tagline": "Donde la ciencia se disuelve en lo sagrado",
+      "scroll": "Desplázate para explorar"
+    },
+    "philosophy": {
+      "label": "Filosofía",
+      "quote": "\"Cada inhalación es un universo\nque se expande. Cada exhalación,\nun cosmos que se recuerda a sí mismo.\"",
+      "body1": "El cuerpo humano respira aproximadamente 20.000 veces al día — un ritmo tan antiguo que precede a la conciencia misma. Cuando colocamos el atlas anatómico junto al canon geométrico sagrado, emerge algo asombroso: la ramificación de los bronquios refleja la precisión fractal del triángulo de Sierpinski.",
+      "body2": "Anatomía del Aliento es una indagación meditativa sobre esta convergencia — una filosofía visual que honra tanto lo científico como lo numinoso, reconociendo que los dos siempre han hablado el mismo idioma.",
+      "mantra": "— Respira. Sé testigo. Recuerda."
+    },
+    "gallery": {
+      "label": "Colección",
+      "title": "La Arquitectura",
+      "titleItalic": "Viviente",
+      "subtitle": "Pasa el cursor para revelar la geometría sagrada",
+      "searchPlaceholder": "Buscar — pulmones, corazón, columna…",
+      "results": "resultado",
+      "resultsPlural": "resultados",
+      "noResults": "No se encontraron ilustraciones para",
+      "noResultsSub": "Intenta con: pulmones, corazón, columna, diafragma…",
+      "clickToExplore": "Clic para explorar",
+      "tapToExplore": "Toca para explorar"
+    },
+    "cards": {
+      "lungField":      { "title": "El Campo Pulmonar",    "subtitle": "Expansión Pulmonar" },
+      "bronchialTree":  { "title": "Árbol Bronquial",      "subtitle": "Ramificación Sagrada" },
+      "diaphragm":      { "title": "Diafragma",            "subtitle": "El Primer Motor" },
+      "alveolarBloom":  { "title": "Floración Alveolar",   "subtitle": "La Flor Interior" },
+      "neuralBreath":   { "title": "Aliento Neural",       "subtitle": "El Ritmo Nervioso" },
+      "theSilence":     { "title": "El Silencio",          "subtitle": "Entre Inhale y Exhale" },
+      "sacredHeart":    { "title": "El Corazón Sagrado",   "subtitle": "Pulso de la Existencia" },
+      "spinalColumn":   { "title": "Columna Vertebral",    "subtitle": "El Eje del Ser" },
+      "ribCage":        { "title": "Caja Torácica",        "subtitle": "El Templo del Aliento" },
+      "cranialVault":   { "title": "Bóveda Craneal",       "subtitle": "La Sede de la Conciencia" },
+      "vascularRivers": { "title": "Ríos Vasculares",      "subtitle": "El Flujo de la Vida" },
+      "innerEye":       { "title": "El Ojo Interior",      "subtitle": "Ventana del Alma" }
+    },
+    "timeline": {
+      "label": "El Viaje",
+      "title": "Del Inhale al",
+      "titleItalic": "Fuego Celular",
+      "subtitle": "Desplázate para seguir el aliento",
+      "ending": "— Y entonces, comienza la exhalación."
+    },
+    "immersive": {
+      "label": "El Mandala Viviente",
+      "title": "En Cada",
+      "titleItalic": "Aliento",
+      "subtitle": "un universo se despliega",
+      "technique": "4 · 7 · 8 · Técnica de pranayama del Dr. Andrew Weil"
+    }
+  },
+  "vault": {
+    "comingSoon": "Próximamente",
+    "description": "El Vault abrirá sus puertas pronto. Déjanos tu correo para ser el primero en saber.",
+    "emailPlaceholder": "tu@correo.com",
+    "notify": "Notifícame"
+  },
+  "soma": {
+    "hero": {
+      "title": "Soma",
+      "subtitle": "Terapias corporales, respiración y movimiento",
+      "body": "Exploramos el cuerpo como territorio sagrado — un mapa vivo de memoria, emoción y potencial transformador."
+    },
+    "offerings": {
+      "breathwork": {
+        "title": "Trabajo Respiratorio",
+        "description": "Técnicas ancestrales y contemporáneas para liberar, energizar y transformar a través del aliento."
+      },
+      "movement": {
+        "title": "Movimiento Consciente",
+        "description": "Prácticas somáticas que integran cuerpo, mente y espíritu en flujo dinámico."
+      },
+      "alignment": {
+        "title": "Alineación Estructural",
+        "description": "Terapias manuales y postural para restaurar el equilibrio natural del cuerpo."
+      }
+    }
+  },
+  "common": {
+    "comingSoon": "Próximamente",
+    "sampleContent": "Mostrando contenido de ejemplo",
+    "noEvents": "No hay eventos próximos",
+    "noUpcomingEvents": "No hay eventos próximos en este momento",
+    "noPosts": "Contenido próximamente",
+    "noResults": "No se encontraron publicaciones en esta categoría",
+    "past": "Pasado",
+    "bookNow": "Reservar tu lugar",
+    "readMore": "Leer más",
+    "loading": "Cargando...",
+    "contentUnavailable": "Contenido no disponible",
+    "backToList": "Volver a la lista",
+    "back": "Volver",
+    "all": "Todos"
+  }
+}

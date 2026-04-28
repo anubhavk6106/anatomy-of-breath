@@ -1,0 +1,120 @@
+{
+  "nav": {
+    "portal": "Início",
+    "matrix": "Matriz",
+    "pillars": "Pilares",
+    "medicina": "Medicina da Voz",
+    "medicinaVoz": "Medicina da Voz",
+    "medicinaVozDesc": "Explorações na voz como medicina",
+    "soma": "Soma",
+    "experiences": "Experiências",
+    "experiencesDesc": "Workshops, cerimônias e encontros futuros",
+    "vault": "Cofre",
+    "inquire": "Contato"
+  },
+  "portal": {
+    "tagline": "Onde a ciência se dissolve no sagrado",
+    "enter": "Explorar",
+    "scroll": "Rolar"
+  },
+  "matrix": {
+    "hero": {
+      "eyebrow": "anatomiadelaliento.com",
+      "title1": "Anatomia da",
+      "title2": "Respiração",
+      "tagline": "Onde a ciência se dissolve no sagrado",
+      "scroll": "Role para explorar"
+    },
+    "philosophy": {
+      "label": "Filosofia",
+      "quote": "\"Cada inspiração é um universo\nse expandindo. Cada expiração,\num cosmos se lembrando de si mesmo.\"",
+      "body1": "O corpo humano respira aproximadamente 20.000 vezes por dia — um ritmo tão antigo que precede a própria consciência. Quando colocamos o atlas anatômico ao lado do cânone geométrico sagrado, algo surpreendente emerge.",
+      "body2": "Anatomia da Respiração é uma investigação meditativa sobre essa convergência — uma filosofia visual que honra tanto o científico quanto o numinoso.",
+      "mantra": "— Respire. Testemunhe. Lembre-se."
+    },
+    "gallery": {
+      "label": "Coleção",
+      "title": "A Arquitetura",
+      "titleItalic": "Viva",
+      "subtitle": "Passe o mouse para revelar a geometria sagrada",
+      "searchPlaceholder": "Pesquisar — pulmões, coração, coluna…",
+      "results": "resultado",
+      "resultsPlural": "resultados",
+      "noResults": "Nenhuma ilustração encontrada para",
+      "noResultsSub": "Tente: pulmões, coração, coluna, diafragma…",
+      "clickToExplore": "Clique para explorar",
+      "tapToExplore": "Toque para explorar"
+    },
+    "cards": {
+      "lungField":      { "title": "O Campo Pulmonar",      "subtitle": "Expansão Pulmonar" },
+      "bronchialTree":  { "title": "Árvore Brônquica",      "subtitle": "Ramificação Sagrada" },
+      "diaphragm":      { "title": "Diafragma",             "subtitle": "O Primeiro Motor" },
+      "alveolarBloom":  { "title": "Florescimento Alveolar","subtitle": "A Flor Interior" },
+      "neuralBreath":   { "title": "Respiração Neural",     "subtitle": "O Ritmo Nervoso" },
+      "theSilence":     { "title": "O Silêncio",            "subtitle": "Entre Inspiração e Expiração" },
+      "sacredHeart":    { "title": "O Coração Sagrado",     "subtitle": "Pulso da Existência" },
+      "spinalColumn":   { "title": "Coluna Vertebral",      "subtitle": "O Eixo do Ser" },
+      "ribCage":        { "title": "Caixa Torácica",        "subtitle": "O Templo da Respiração" },
+      "cranialVault":   { "title": "Abóbada Craniana",      "subtitle": "A Sede da Consciência" },
+      "vascularRivers": { "title": "Rios Vasculares",       "subtitle": "O Fluxo da Vida" },
+      "innerEye":       { "title": "O Olho Interior",       "subtitle": "Janela da Alma" }
+    },
+    "timeline": {
+      "label": "A Jornada",
+      "title": "Da Inspiração ao",
+      "titleItalic": "Fogo Celular",
+      "subtitle": "Role para seguir a respiração",
+      "ending": "— E então, a expiração começa."
+    },
+    "immersive": {
+      "label": "O Mandala Vivo",
+      "title": "Em Cada",
+      "titleItalic": "Respiração",
+      "subtitle": "um universo se desdobra",
+      "technique": "4 · 7 · 8 · Técnica de pranayama do Dr. Andrew Weil"
+    }
+  },
+  "vault": {
+    "comingSoon": "Em breve",
+    "description": "O Cofre abrirá suas portas em breve. Deixe seu email para ser o primeiro a saber.",
+    "emailPlaceholder": "seu@email.com",
+    "notify": "Notifique-me"
+  },
+  "soma": {
+    "hero": {
+      "title": "Soma",
+      "subtitle": "Terapias corporais, respiração e movimento",
+      "body": "Exploramos o corpo como território sagrado — um mapa vivo de memória, emoção e potencial transformador."
+    },
+    "offerings": {
+      "breathwork": {
+        "title": "Trabalho Respiratório",
+        "description": "Técnicas ancestrais e contemporâneas para liberar, energizar e transformar através da respiração."
+      },
+      "movement": {
+        "title": "Movimento Consciente",
+        "description": "Práticas somáticas que integram corpo, mente e espírito em fluxo dinâmico."
+      },
+      "alignment": {
+        "title": "Alinhamento Estrutural",
+        "description": "Terapias manuais e posturais para restaurar o equilíbrio natural do corpo."
+      }
+    }
+  },
+  "common": {
+    "comingSoon": "Em breve",
+    "sampleContent": "Exibindo conteúdo de exemplo",
+    "noEvents": "Nenhum evento próximo",
+    "noUpcomingEvents": "Nenhum evento próximo no momento",
+    "noPosts": "Conteúdo em breve",
+    "noResults": "Nenhuma publicação encontrada nesta categoria",
+    "past": "Passado",
+    "bookNow": "Reserve seu lugar",
+    "readMore": "Leia mais",
+    "loading": "Carregando...",
+    "contentUnavailable": "Conteúdo indisponível",
+    "backToList": "Voltar à lista",
+    "back": "Voltar",
+    "all": "Todos"
+  }
+}
