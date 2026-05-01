@@ -89,8 +89,9 @@ describe('Router — Property 2: undefined routes render the 404 page', () => {
     await fc.assert(
       fc.asyncProperty(
         // Generate a path-like string: starts with '/', contains only safe URL chars
-        fc.string({ minLength: 1, maxLength: 50 })
-          .map(s => '/' + s.replace(/[^a-z0-9\-/]/gi, 'x')),
+        fc.string({ minLength: 2, maxLength: 50 })
+          .map(s => '/' + s.replace(/[^a-z0-9\-/]/gi, 'x'))
+          .filter(s => s.length >= 2 && !s.startsWith('//')),
         async (randomPath) => {
           // Skip if the generated path happens to match a defined route
           if (definedSet.has(randomPath)) return

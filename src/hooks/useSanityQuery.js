@@ -4,9 +4,7 @@ import { sanityClient, queryCache } from '../lib/sanityClient'
 /**
  * Hook for fetching data from Sanity CMS with in-memory caching.
  * Returns { data, loading, error }.
- * Cache TTL: 60 seconds. Uses module-level queryCache Map from sanityClient.
- * 
- * If Sanity is not configured, returns error state immediately.
+ * Cache TTL: 60 seconds.
  */
 export function useSanityQuery(query, params = {}) {
   const [state, setState] = useState({ data: null, loading: true, error: null })
@@ -14,10 +12,10 @@ export function useSanityQuery(query, params = {}) {
   useEffect(() => {
     // If Sanity client is not configured, return error immediately
     if (!sanityClient) {
-      setState({ 
-        data: null, 
-        loading: false, 
-        error: new Error('Sanity CMS is not configured. Add VITE_SANITY_PROJECT_ID to .env') 
+      setState({
+        data: null,
+        loading: false,
+        error: new Error('Sanity CMS is not configured. Add VITE_SANITY_PROJECT_ID to .env'),
       })
       return
     }
@@ -34,10 +32,18 @@ export function useSanityQuery(query, params = {}) {
 
     sanityClient.fetch(query, params)
       .then(data => {
+        if (import.meta.env.DEV) {
+          console.log('[Sanity] Query result:', { query: query.slice(0, 60), params, result: data })
+        }
         queryCache.set(cacheKey, { data, ts: Date.now() })
         setState({ data, loading: false, error: null })
       })
-      .catch(error => setState({ data: null, loading: false, error }))
+      .catch(error => {
+        if (import.meta.env.DEV) {
+          console.error('[Sanity] Query error:', error.message, { query: query.slice(0, 60), params })
+        }
+        setState({ data: null, loading: false, error })
+      })
   }, [query, JSON.stringify(params)])
 
   return state

@@ -200,30 +200,80 @@ function GlobalFooter() {
             {SITE.description}
           </p>
 
-          {/* Email */}
-          <a
-            href={`mailto:${SITE.email}`}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              fontFamily: 'Raleway, sans-serif',
-              fontWeight: 200,
-              fontSize: '10px',
-              letterSpacing: '0.12em',
-              color: 'rgba(255,215,0,0.45)',
-              textDecoration: 'none',
-              transition: 'color 0.3s',
-            }}
-            onMouseEnter={e => e.currentTarget.style.color = '#FFD700'}
-            onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,215,0,0.45)'}
-          >
-            <svg width="12" height="9" viewBox="0 0 12 9" fill="none">
-              <rect x="0.5" y="0.5" width="11" height="8" rx="0.5" stroke="currentColor" strokeWidth="0.8"/>
-              <path d="M1 1l5 4 5-4" stroke="currentColor" strokeWidth="0.8"/>
-            </svg>
-            {SITE.email}
-          </a>
+          {/* Contact links */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+            {/* Email */}
+            <a
+              href={`mailto:${SITE.email}`}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                fontFamily: 'Raleway, sans-serif',
+                fontWeight: 200,
+                fontSize: '10px',
+                letterSpacing: '0.12em',
+                color: 'rgba(255,215,0,0.45)',
+                textDecoration: 'none',
+                transition: 'color 0.3s',
+                paddingBottom: '0.85rem',
+              }}
+              onMouseEnter={e => e.currentTarget.style.color = '#FFD700'}
+              onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,215,0,0.45)'}
+            >
+              <svg width="12" height="9" viewBox="0 0 12 9" fill="none">
+                <rect x="0.5" y="0.5" width="11" height="8" rx="0.5" stroke="currentColor" strokeWidth="0.8"/>
+                <path d="M1 1l5 4 5-4" stroke="currentColor" strokeWidth="0.8"/>
+              </svg>
+              {SITE.email}
+            </a>
+
+            {/* Thin divider */}
+            <div style={{
+              width: '100%',
+              height: '1px',
+              background: 'linear-gradient(to right, rgba(255,215,0,0.12), transparent)',
+              marginBottom: '0.85rem',
+            }} />
+
+            {/* Instagram */}
+            <a
+              href={import.meta.env.VITE_SITE_INSTAGRAM}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontFamily: 'Raleway, sans-serif',
+                fontWeight: 200,
+                fontSize: '10px',
+                letterSpacing: '0.12em',
+                color: 'rgba(255,215,0,0.45)',
+                textDecoration: 'none',
+                transition: 'color 0.3s',
+              }}
+              onMouseEnter={e => e.currentTarget.style.color = '#FFD700'}
+              onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,215,0,0.45)'}
+            >
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+              </svg>
+
+              @anatomiadelaliento
+            </a>
+          </div>
         </div>
 
         {/* Navigation */}

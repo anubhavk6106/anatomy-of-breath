@@ -60,7 +60,7 @@ describe('ExperiencesPage — Property 14: Event list renders a card for every f
   it('renders empty state when no events are available', () => {
     mockUseSanityQuery.mockReturnValue({ data: null, loading: false, error: null })
     const { container } = render(<ExperiencesPage />, { wrapper: RouterWrapper })
-    expect(container.textContent).toContain('common.sampleContent')
+    expect(container.textContent).toContain('common.noUpcomingEvents')
   })
 })
 

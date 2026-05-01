@@ -21,7 +21,31 @@ import { motion } from 'framer-motion'
 const EASE = [0.25, 0.46, 0.45, 0.94]
 
 function PostCard({ post }) {
-  const { title, slug, coverImage, excerpt, category, publishedAt } = post
+  const { title, coverImage, excerpt, category, publishedAt } = post
+
+  // Extract slug string — handles all Sanity slug formats:
+  // 1. Plain string: "my-slug"
+  // 2. Sanity object: { current: "my-slug" }
+  // 3. Null/undefined: ""
+  // 4. Accidentally a full URL: strip to just the path
+  let slugStr = ''
+  if (post.slug) {
+    const raw = typeof post.slug === 'object' ? (post.slug.current || '') : String(post.slug)
+    // If someone put a full URL in the slug field, extract just the last path segment
+    try {
+      const url = new URL(raw)
+      // It's a valid URL — use the last non-empty path segment as slug
+      const parts = url.pathname.split('/').filter(Boolean)
+      slugStr = parts[parts.length - 1] || ''
+    } catch {
+      // Not a URL — use as-is (normal case)
+      slugStr = raw
+    }
+  }
+
+  if (import.meta.env.DEV) {
+    console.log('[PostCard]', post.title, '| slug:', JSON.stringify(post.slug), '→', slugStr)
+  }
 
   // Format date if present
   const formattedDate = publishedAt
@@ -32,8 +56,36 @@ function PostCard({ post }) {
       })
     : null
 
+  // Don't render a clickable link if there's no valid slug
+  if (!slugStr) {
+    return (
+      <motion.article
+        style={{
+          aspectRatio: '3 / 4',
+          background: '#0b0b0b',
+          border: '1px solid rgba(255,215,0,0.2)',
+          overflow: 'hidden',
+          position: 'relative',
+          display: 'flex',
+          flexDirection: 'column',
+          cursor: 'default',
+          opacity: 0.6,
+        }}
+      >
+        <div style={{ padding: '1.25rem', marginTop: 'auto' }}>
+          <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.2rem', fontWeight: 300, color: '#f5f0e8' }}>
+            {title}
+          </h3>
+          <p style={{ fontFamily: 'Raleway, sans-serif', fontWeight: 200, fontSize: '9px', letterSpacing: '0.3em', color: 'rgba(255,215,0,0.4)', textTransform: 'uppercase', marginTop: '0.5rem' }}>
+            No slug — add slug in Sanity Studio
+          </p>
+        </div>
+      </motion.article>
+    )
+  }
+
   return (
-    <Link to={`/pillars/medicina-de-la-voz/${slug}`} style={{ textDecoration: 'none' }}>
+    <Link to={`/pillars/medicina-de-la-voz/${slugStr}`} style={{ textDecoration: 'none' }}>
       <motion.article
         style={{
           aspectRatio: '3 / 4',

@@ -4,7 +4,7 @@ import { visionTool } from '@sanity/vision'
 import schemas from './schemas/index'
 
 // Read project ID from environment or use placeholder
-const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'your-project-id'
+const projectId = process.env.SANITY_STUDIO_PROJECT_ID || '5lae01q6'
 const dataset   = process.env.SANITY_STUDIO_DATASET    || 'production'
 
 export default defineConfig({

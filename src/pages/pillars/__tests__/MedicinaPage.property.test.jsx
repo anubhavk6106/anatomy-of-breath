@@ -59,7 +59,7 @@ describe('MedicinaPage — Property 11: Post list renders a card for every fetch
   it('renders empty state when no posts are available', () => {
     mockUseSanityQuery.mockReturnValue({ data: null, loading: false, error: null })
     const { container } = render(<MedicinaPage />, { wrapper: RouterWrapper })
-    expect(container.textContent).toContain('common.sampleContent')
+    expect(container.textContent).toContain('common.noPosts')
   })
 })
 

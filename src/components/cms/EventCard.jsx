@@ -29,7 +29,7 @@ function EventCard({ event }) {
 
   return (
     <Link
-      to={`/pillars/experiences/${slug}`}
+      to={`/pillars/experiences/${slug?.current || slug}`}
       style={{ textDecoration: 'none' }}
     >
       <motion.article

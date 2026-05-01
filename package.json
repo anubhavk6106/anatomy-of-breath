@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Anatomy of Breath — anatomiadelaliento.com",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@portabletext/react": "^6.0.3",
     "@sanity/client": "^7.22.0",
