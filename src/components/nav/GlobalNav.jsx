@@ -54,7 +54,6 @@ export default function GlobalNav() {
   const navLinks = [
     { to: '/',       label: t('nav.portal'),  match: isPortal },
     { to: '/matrix', label: t('nav.matrix'),  match: isMatrix },
-    { to: '/vault',  label: t('nav.vault'),   match: isVault },
   ]
 
   const mobileLinks = [
@@ -211,6 +210,39 @@ export default function GlobalNav() {
                   </motion.div>
                 )}
               </AnimatePresence>
+            </li>
+
+            {/* Vault — after Pillars */}
+            <li style={{ position: 'relative' }}>
+              <Link
+                to="/vault"
+                style={{
+                  fontFamily: 'Raleway, sans-serif',
+                  fontWeight: 200,
+                  fontSize: '10px',
+                  letterSpacing: '0.32em',
+                  color: isVault ? gold : dimText,
+                  textDecoration: 'none',
+                  textTransform: 'uppercase',
+                  padding: '0.5rem 1.3rem',
+                  display: 'block',
+                  transition: 'color 0.3s',
+                }}
+                onMouseEnter={e => { if (!isVault) e.currentTarget.style.color = 'rgba(245,240,232,0.85)' }}
+                onMouseLeave={e => { if (!isVault) e.currentTarget.style.color = dimText }}
+              >
+                {t('nav.vault')}
+                <motion.span
+                  style={{
+                    position: 'absolute',
+                    bottom: '-1px', left: '1.3rem', right: '1.3rem',
+                    height: '1px',
+                    background: `linear-gradient(to right, transparent, ${gold}, transparent)`,
+                  }}
+                  animate={{ opacity: isVault ? 1 : 0, scaleX: isVault ? 1 : 0 }}
+                  transition={{ duration: 0.3, ease: EASE }}
+                />
+              </Link>
             </li>
 
             {/* Contact CTA */}

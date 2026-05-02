@@ -1,21 +1,33 @@
 // HeroSection.jsx
-// Full-screen hero with cinematic video background, breathing concentric rings,
+// Full-screen hero with cinematic dual-layer video, breathing concentric rings,
 // and sacred geometry parallax.
 //
-// Title animation sequence (one-shot, ~5s total):
+// Video layer system:
+//   Layer 0a — BG video: object-cover, blurred + dimmed → fills every pixel
+//   Layer 0b — FG video: object-contain, sharp + brighter → full figure visible
+//
+// Title animation sequence (one-shot, ~5.5s total):
 //   0.0s  opacity 0   — hidden on mount
-//   0.8s  opacity 1   — fades in over ~1.4s (with slight upward drift + blur)
+//   0.8s  opacity 1   — fades in (upward drift + blur)
 //   2.5s  opacity 1   — holds at peak
-//   4.5s  opacity 0   — fades out over ~1s
-//   5.5s+             — video is the sole focus, no text overlay
+//   4.5s  opacity 0   — fades out
+//   5.5s+             — video is the sole focus
 
 import { useEffect, useRef } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import useIsMobile from '../hooks/useIsMobile'
 
-const EASE_IN  = [0.25, 0.46, 0.45, 0.94]
-const EASE_OUT = [0.55, 0.0,  0.45, 1.0]
+const EASE_IN = [0.25, 0.46, 0.45, 0.94]
+
+// ── Shared video props ───────────────────────────────────────
+// Both videos use identical playback attributes so they stay in sync.
+const VIDEO_ATTRS = {
+  autoPlay: true,
+  muted:    true,
+  loop:     true,
+  playsInline: true,
+}
 
 // ── Flower of Life SVG ───────────────────────────────────────
 function FlowerOfLife() {
@@ -69,19 +81,18 @@ function BreathRing({ size, mobileSize, opacity, delay, zIndex = 1 }) {
 
 // ── HeroSection ──────────────────────────────────────────────
 export default function HeroSection() {
-  const geomRef  = useRef(null)
-  const videoRef = useRef(null)
-  const { t }    = useTranslation()
-  const isMobile = useIsMobile()
+  const geomRef    = useRef(null)
+  const bgVideoRef = useRef(null)   // background — cover, blurred
+  const fgVideoRef = useRef(null)   // foreground — contain, sharp
+  const { t }      = useTranslation()
+  const isMobile   = useIsMobile()
   const prefersReducedMotion = useReducedMotion()
 
-  // Check for slow connection
   const isSlowConnection =
     typeof navigator !== 'undefined' &&
     navigator.connection?.effectiveType &&
     ['slow-2g', '2g'].includes(navigator.connection.effectiveType)
 
-  // Show video only when motion is allowed and connection is adequate
   const showVideo = !prefersReducedMotion && !isSlowConnection
 
   // Parallax on mouse move (desktop only)
@@ -97,196 +108,194 @@ export default function HeroSection() {
     return () => window.removeEventListener('mousemove', onMove)
   }, [])
 
-  // Ensure video plays on mobile (some browsers need a nudge)
+  // Nudge both videos to play on mobile (some browsers block autoplay)
   useEffect(() => {
-    if (videoRef.current && showVideo) {
-      videoRef.current.play().catch(() => {
-        // Autoplay blocked — video stays hidden, fallback gradient shows
-      })
-    }
+    if (!showVideo) return
+    bgVideoRef.current?.play().catch(() => {})
+    fgVideoRef.current?.play().catch(() => {})
   }, [showVideo])
 
   // ── Title animation keyframes ──────────────────────────────
-  // When prefersReducedMotion is true, skip the animation entirely and
-  // show a static, permanently visible title instead.
-  //
-  // Timeline (normal motion):
-  //   t=0.0s  opacity:0, y:16, filter:blur(8px)   — initial (hidden)
-  //   t=0.8s  opacity:1, y:0,  filter:blur(0px)   — fade in starts (delay 0.8s, duration 1.4s)
-  //   t=2.5s  opacity:1                            — hold (the keyframe array pauses here)
-  //   t=4.5s  opacity:0, y:-8, filter:blur(4px)   — fade out
-  //
-  // Framer Motion keyframe arrays map evenly across the total duration unless
-  // `times` is provided. We use `times` to control the exact hold window.
-  //
-  // Total duration: 5.5s  (delay 0.8s + animation 4.7s)
   const titleVariants = prefersReducedMotion
     ? {
-        // Reduced motion: static, always visible, no blur
         initial: { opacity: 1, y: 0, filter: 'blur(0px)' },
         animate: { opacity: 1, y: 0, filter: 'blur(0px)' },
       }
     : {
         initial: { opacity: 0, y: 16, filter: 'blur(8px)' },
         animate: {
-          // Keyframe arrays: [start, peak, hold, end]
           opacity: [0,   1,    1,    0  ],
           y:       [16,  0,    0,    -8 ],
-          filter:  [
-            'blur(8px)',
-            'blur(0px)',
-            'blur(0px)',
-            'blur(4px)',
-          ],
+          filter:  ['blur(8px)', 'blur(0px)', 'blur(0px)', 'blur(4px)'],
         },
       }
 
   const titleTransition = prefersReducedMotion
     ? { duration: 0 }
     : {
-        // Total animation duration after the delay
         duration: 4.7,
         delay: 0.8,
         ease: 'easeInOut',
-        // times maps each keyframe to a position in [0, 1]
-        // 0.0 → t=0.8s (start)
-        // 0.3 → t=2.2s (peak reached)
-        // 0.7 → t=4.1s (hold ends, fade-out begins)
-        // 1.0 → t=5.5s (fully gone)
         times: [0, 0.3, 0.7, 1],
       }
+
+  // ── Video sources helper ─────────────────────────────────
+  // Extracted so both video elements share identical source markup.
+  function VideoSources() {
+    return (
+      <>
+        {!isMobile && <source src="/videos/dissection.webm" type="video/webm" />}
+        <source src="/videos/dissection.mp4" type="video/mp4" />
+      </>
+    )
+  }
 
   return (
     <>
       {/* ── Hero: full-screen video section ─────────────────── */}
       <section
         id="hero"
+        className="relative overflow-hidden"
         style={{
           height: '100svh',
           minHeight: '600px',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          position: 'relative',
-          overflow: 'hidden',
           background: '#0b0b0b',
         }}
       >
-        {/* ── Layer 0: Background video ──────────────────────── */}
         {showVideo && (
-          <motion.video
-            ref={videoRef}
-            autoPlay
-            muted
-            loop
-            playsInline
-            initial={{ opacity: 0, scale: 1.12 }}
-            animate={{ opacity: 1, scale: 1.05 }}
-            transition={{ duration: 2.5, ease: EASE_IN }}
-            style={{
-              position: 'absolute',
-              inset: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              zIndex: 0,
-              filter: 'brightness(0.55) contrast(1.15) saturate(0.75) sepia(0.12)',
-              animation: 'heroVideoDrift 30s ease-in-out infinite alternate',
-            }}
-          >
-            {!isMobile && <source src="/videos/dissection.webm" type="video/webm" />}
-            <source src="/videos/dissection.mp4" type="video/mp4" />
-          </motion.video>
+          <>
+            {/* ── Layer 0a: BG video — cover, blurred ──────────
+                Fills every pixel of the viewport. Heavily blurred and
+                dimmed so it reads as an atmospheric backdrop, not the
+                primary content. The blur hides any letterbox edges.    */}
+            <video
+              ref={bgVideoRef}
+              {...VIDEO_ATTRS}
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full"
+              style={{
+                objectFit: 'cover',
+                objectPosition: 'center center',
+                zIndex: 0,
+                // Blur hides letterbox seams; heavy dim keeps it subordinate
+                filter: 'blur(18px) brightness(0.35) saturate(0.6)',
+                // Scale up slightly so the blur doesn't reveal edges
+                transform: 'scale(1.08)',
+              }}
+            >
+              <VideoSources />
+            </video>
+
+            {/* ── Layer 0b: FG video — contain, sharp ──────────
+                Sized to show the full figure (head to toe). Centered.
+                The blurred BG behind it fills any letterbox space so
+                there are no hard black bars.                           */}
+            <motion.video
+              ref={fgVideoRef}
+              {...VIDEO_ATTRS}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 2.5, ease: EASE_IN }}
+              className="absolute"
+              style={{
+                // Center the element
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                // Fill the viewport while preserving aspect ratio
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                objectPosition: 'center center',
+                zIndex: 1,
+                // Sharper and brighter than the BG — this is the hero content
+                filter: 'brightness(0.7) contrast(1.1) saturate(0.8) sepia(0.08)',
+                animation: 'heroVideoDrift 30s ease-in-out infinite alternate',
+              }}
+            >
+              <VideoSources />
+            </motion.video>
+          </>
         )}
 
-        {/* CSS keyframes for the slow drift animation */}
+        {/* Drift keyframe — translate only, no scale, so contain sizing is stable */}
         <style>{`
           @keyframes heroVideoDrift {
-            0%   { transform: scale(1.05) translate(0px, 0px); }
-            33%  { transform: scale(1.08) translate(-8px, -4px); }
-            66%  { transform: scale(1.06) translate(6px, -6px); }
-            100% { transform: scale(1.05) translate(-4px, 4px); }
+            0%   { transform: translate(-50%, -50%) translate(  0px,  0px); }
+            33%  { transform: translate(-50%, -50%) translate( -5px, -3px); }
+            66%  { transform: translate(-50%, -50%) translate(  4px, -4px); }
+            100% { transform: translate(-50%, -50%) translate( -3px,  3px); }
           }
         `}</style>
 
-        {/* ── Layer 1: Multi-layer cinematic overlay ─────────── */}
-        <div style={{
-          position: 'absolute', inset: 0,
-          zIndex: 1,
-          background: showVideo ? `
-            radial-gradient(ellipse 60% 50% at 50% 45%, rgba(212,175,55,0.04) 0%, transparent 65%),
-            linear-gradient(to bottom,
-              rgba(11,11,11,0.72) 0%,
-              rgba(11,11,11,0.20) 30%,
-              rgba(11,11,11,0.15) 55%,
-              rgba(11,11,11,0.50) 80%,
-              rgba(11,11,11,0.88) 100%
-            ),
-            linear-gradient(to right,
-              rgba(11,11,11,0.35) 0%,
-              transparent 20%,
-              transparent 80%,
-              rgba(11,11,11,0.35) 100%
-            )
-          ` : `
-            radial-gradient(ellipse 80% 80% at 50% 40%, rgba(212,175,55,0.04) 0%, transparent 70%),
-            radial-gradient(ellipse 50% 50% at 20% 80%, rgba(212,175,55,0.03) 0%, transparent 60%),
-            #0b0b0b
-          `,
-        }} />
+        {/* ── Layer 1: Cinematic overlay gradients ─────────── */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            zIndex: 2,
+            background: showVideo ? `
+              radial-gradient(ellipse 60% 50% at 50% 45%, rgba(212,175,55,0.04) 0%, transparent 65%),
+              linear-gradient(to bottom,
+                rgba(11,11,11,0.72) 0%,
+                rgba(11,11,11,0.18) 28%,
+                rgba(11,11,11,0.12) 55%,
+                rgba(11,11,11,0.48) 80%,
+                rgba(11,11,11,0.88) 100%
+              ),
+              linear-gradient(to right,
+                rgba(11,11,11,0.30) 0%,
+                transparent 18%,
+                transparent 82%,
+                rgba(11,11,11,0.30) 100%
+              )
+            ` : `
+              radial-gradient(ellipse 80% 80% at 50% 40%, rgba(212,175,55,0.04) 0%, transparent 70%),
+              #0b0b0b
+            `,
+          }}
+        />
 
         {/* ── Layer 2: Sacred geometry parallax ─────────────── */}
-        <div ref={geomRef} style={{
-          position: 'absolute', inset: 0,
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          opacity: showVideo ? 0.07 : 0.12,
-          pointerEvents: 'none',
-          transition: 'transform 0.1s linear',
-          zIndex: 2,
-          mixBlendMode: showVideo ? 'screen' : 'normal',
-        }}>
+        <div
+          ref={geomRef}
+          className="absolute inset-0 flex items-center justify-center pointer-events-none"
+          style={{
+            opacity: showVideo ? 0.07 : 0.12,
+            transition: 'transform 0.1s linear',
+            zIndex: 3,
+            mixBlendMode: showVideo ? 'screen' : 'normal',
+          }}
+        >
           <FlowerOfLife />
         </div>
 
         {/* ── Layer 3: Breathing rings ───────────────────────── */}
-        <BreathRing size="600px" mobileSize="92vw" opacity="0.06" delay={0}   zIndex={3} />
-        <BreathRing size="400px" mobileSize="65vw" opacity="0.10" delay={-2}  zIndex={3} />
-        <BreathRing size="200px" mobileSize="38vw" opacity="0.18" delay={-4}  zIndex={3} />
+        <BreathRing size="600px" mobileSize="92vw" opacity="0.06" delay={0}  zIndex={4} />
+        <BreathRing size="400px" mobileSize="65vw" opacity="0.10" delay={-2} zIndex={4} />
+        <BreathRing size="200px" mobileSize="38vw" opacity="0.18" delay={-4} zIndex={4} />
 
         {/* ── Layer 4: Cinematic title — fades in then out ───── */}
         <motion.div
-          // pointerEvents none after fade-out so the video is fully interactive
-          style={{
-            position: 'absolute',
-            inset: 0,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 4,
-            padding: '0 1.5rem',
-            pointerEvents: 'none',
-          }}
-          // Wrapper fades with the same keyframe sequence so the
-          // glow halo and the text disappear together
+          className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none"
+          style={{ zIndex: 5, padding: '0 1.5rem' }}
           variants={titleVariants}
           initial="initial"
           animate="animate"
           transition={titleTransition}
         >
-          {/* Cinematic glow halo behind the text */}
-          <div style={{
-            position: 'absolute',
-            width: 'clamp(280px, 60vw, 600px)',
-            height: 'clamp(120px, 20vw, 220px)',
-            background: 'radial-gradient(ellipse at center, rgba(212,175,55,0.08) 0%, transparent 70%)',
-            pointerEvents: 'none',
-            // Halo is always present in the DOM but invisible when wrapper opacity=0
-          }} />
+          {/* Glow halo */}
+          <div
+            className="absolute pointer-events-none"
+            style={{
+              width: 'clamp(280px, 60vw, 600px)',
+              height: 'clamp(120px, 20vw, 220px)',
+              background: 'radial-gradient(ellipse at center, rgba(212,175,55,0.08) 0%, transparent 70%)',
+            }}
+          />
 
           {/* Title */}
           <h1
+            className="relative text-center"
             style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 300,
@@ -294,34 +303,26 @@ export default function HeroSection() {
               lineHeight: 1.1,
               letterSpacing: '0.04em',
               color: 'rgba(245,240,232,0.82)',
-              // Cinematic text shadow — soft depth + subtle gold bloom
-              textShadow: [
-                '0 2px 32px rgba(0,0,0,0.7)',
-                '0 0 60px rgba(212,175,55,0.12)',
-              ].join(', '),
+              textShadow: '0 2px 32px rgba(0,0,0,0.7), 0 0 60px rgba(212,175,55,0.12)',
               margin: 0,
-              textAlign: 'center',
-              position: 'relative',
               zIndex: 1,
             }}
           >
             {t('matrix.hero.title1')}{' '}
             <em style={{
               fontStyle: 'italic',
-              // Premium gold gradient on the accent word
               background: 'linear-gradient(90deg, #EBD197, #D4AF37, #A67C00)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
               fontWeight: 300,
-              // Gold bloom — visible during the hold phase
               filter: 'drop-shadow(0 0 18px rgba(212,175,55,0.35))',
             }}>
               {t('matrix.hero.title2')}
             </em>
           </h1>
 
-          {/* Thin gold rule below the title — part of the cinematic moment */}
+          {/* Gold rule */}
           <div style={{
             width: 'clamp(40px, 8vw, 80px)',
             height: '1px',
@@ -332,23 +333,21 @@ export default function HeroSection() {
           }} />
         </motion.div>
 
-        {/* ── Layer 5: Scroll hint — fades in after title is gone ── */}
-        {/* Delayed so it only appears once the video is the sole focus */}
+        {/* ── Layer 5: Scroll hint — appears after title fades ── */}
         <motion.p
           initial={{ opacity: 0 }}
-          animate={{ opacity: prefersReducedMotion ? 0.45 : 1 }}
+          animate={{ opacity: 1 }}
           transition={{
             duration: 1.2,
-            // Start appearing as the title finishes fading out
             delay: prefersReducedMotion ? 1.0 : 5.8,
             ease: EASE_IN,
           }}
+          className="absolute pointer-events-none"
           style={{
-            position: 'absolute',
             bottom: 'clamp(2rem, 5vh, 3.5rem)',
             left: '50%',
             transform: 'translateX(-50%)',
-            zIndex: 4,
+            zIndex: 5,
             fontFamily: 'Raleway, sans-serif',
             fontWeight: 200,
             fontSize: '9px',
@@ -357,7 +356,6 @@ export default function HeroSection() {
             textTransform: 'uppercase',
             textShadow: '0 1px 8px rgba(0,0,0,0.5)',
             whiteSpace: 'nowrap',
-            pointerEvents: 'none',
           }}
         >
           {t('matrix.hero.scroll')}
@@ -371,31 +369,23 @@ export default function HeroSection() {
 }
 
 // ── TaglineSection ───────────────────────────────────────────
-// Sits immediately below the hero video. Centered, elegant, responsive.
 function TaglineSection({ tagline }) {
   return (
     <section
       aria-label="tagline"
+      className="relative overflow-hidden flex flex-col items-center justify-center"
       style={{
         background: '#0b0b0b',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
         padding: 'clamp(3.5rem, 8vw, 6rem) clamp(1.5rem, 6vw, 4rem)',
-        position: 'relative',
-        overflow: 'hidden',
       }}
     >
-      {/* Subtle radial glow behind the text */}
-      <div style={{
-        position: 'absolute',
-        inset: 0,
-        background: 'radial-gradient(ellipse 70% 80% at 50% 50%, rgba(212,175,55,0.03) 0%, transparent 70%)',
-        pointerEvents: 'none',
-      }} />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse 70% 80% at 50% 50%, rgba(212,175,55,0.03) 0%, transparent 70%)',
+        }}
+      />
 
-      {/* Top rule */}
       <motion.div
         initial={{ scaleX: 0, opacity: 0 }}
         whileInView={{ scaleX: 1, opacity: 1 }}
@@ -410,12 +400,12 @@ function TaglineSection({ tagline }) {
         }}
       />
 
-      {/* Tagline text */}
       <motion.p
         initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 1.2, delay: 0.15, ease: EASE_IN }}
+        className="relative text-center"
         style={{
           fontFamily: "'Cormorant Garamond', serif",
           fontWeight: 300,
@@ -424,17 +414,14 @@ function TaglineSection({ tagline }) {
           lineHeight: 1.5,
           letterSpacing: '0.02em',
           color: 'rgba(245,240,232,0.65)',
-          textAlign: 'center',
           maxWidth: 'clamp(280px, 70vw, 680px)',
           margin: 0,
-          position: 'relative',
           zIndex: 1,
         }}
       >
         {tagline}
       </motion.p>
 
-      {/* Bottom rule */}
       <motion.div
         initial={{ scaleX: 0, opacity: 0 }}
         whileInView={{ scaleX: 1, opacity: 1 }}

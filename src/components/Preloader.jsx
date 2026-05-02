@@ -8,6 +8,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { SITE } from '../config'
 
 const EASE     = [0.25, 0.46, 0.45, 0.94]
@@ -66,6 +67,7 @@ function Petal({ cx, cy, delay, show }) {
 export default function Preloader({ onComplete }) {
   const [phase, setPhase]       = useState(0) // 0=dot, 1=rings, 2=title, 3=tagline, 4=exit
   const [progress, setProgress] = useState(0)
+  const { t } = useTranslation()
 
   useEffect(() => {
     const timers = [
@@ -198,14 +200,14 @@ export default function Preloader({ onComplete }) {
               color: '#f5f0e8',
               letterSpacing: '-0.01em',
             }}>
-              Anatomy of<br />
+              {t('matrix.hero.title1')}<br />
               <em style={{
                 fontStyle: 'italic',
                 background: 'linear-gradient(90deg, #EBD197, #D4AF37, #A67C00)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
-              }}>Breath</em>
+              }}>{t('matrix.hero.title2')}</em>
             </h1>
           </motion.div>
 
@@ -222,7 +224,7 @@ export default function Preloader({ onComplete }) {
               color: 'rgba(245,240,232,0.35)', textTransform: 'uppercase',
               marginBottom: '1.5rem',
             }}>
-              Where science dissolves into sacred
+              {t('matrix.hero.tagline')}
             </p>
 
             {/* Progress bar */}
