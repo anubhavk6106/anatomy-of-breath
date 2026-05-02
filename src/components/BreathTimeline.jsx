@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next'
 const EASE = [0.25, 0.46, 0.45, 0.94]
 
 // ── Timeline stage data ───────────────────────────────────────
-const STAGES = [
+const ORIGINAL_STAGES = [
   {
     index: '01',
     phase: 'Inhale',
@@ -455,6 +455,22 @@ export default function BreathTimeline() {
   )
   const [headerRef, headerInView] = useInView(0.3)
   const { t } = useTranslation()
+  const STAGES = t('matrix.timeline.steps', {
+  returnObjects: true
+}).map((step, index) => ({
+  index: step.step,
+  phase: step.phase,
+  title: step.title,
+  subtitle: step.subtitle,
+  body: step.description,
+  metric: step.stat,
+  metricLabel: step.statLabel,
+
+  // keep your original design
+  side: ORIGINAL_STAGES[index].side,
+  svg: ORIGINAL_STAGES[index].svg,
+  geometryAccent: ORIGINAL_STAGES[index].geometryAccent
+}))
 
   useEffect(() => {
     const fn = () => setIsMobile(window.innerWidth < 768)

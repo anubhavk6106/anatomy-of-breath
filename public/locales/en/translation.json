@@ -18,7 +18,7 @@
   },
   "matrix": {
     "hero": {
-      "eyebrow": "anatomiadelaliento.com",
+      "eyebrow": "",
       "title1": "Anatomy of",
       "title2": "Breath",
       "tagline": "Where science dissolves into sacred",
@@ -58,13 +58,69 @@
       "vascularRivers": { "title": "Vascular Rivers",   "subtitle": "The Flow of Life" },
       "innerEye":       { "title": "The Inner Eye",     "subtitle": "Window of the Soul" }
     },
+
     "timeline": {
       "label": "The Journey",
       "title": "From Inhale to",
       "titleItalic": "Cellular Fire",
       "subtitle": "Scroll to follow the breath",
-      "ending": "— And then, the exhale begins."
+      "ending": "— And then, the exhale begins.",
+
+      "steps": [
+        {
+          "title": "The First Movement",
+          "subtitle": "Diaphragm Descends",
+          "description": "The diaphragm — a dome of muscle — contracts and flattens. Pressure inside the thorax drops below atmospheric. Air rushes in through the nose, warming and filtering as it travels the 11cm of the nasal passage.",
+          "stat": "0.5 L",
+          "statLabel": "tidal volume",
+          "step": "01",
+          "phase": "Descent"
+        },
+        {
+          "title": "The Tracheal River",
+          "subtitle": "Air Enters the Airways",
+          "description": "Warmed to 37°C and humidified to 100%, air descends the trachea — a 12cm tube reinforced by C-shaped cartilage rings.",
+          "stat": "12 cm",
+          "statLabel": "tracheal length",
+          "step": "02",
+          "phase": "Expansion"
+        },
+        {
+          "title": "The Lung Field Opens",
+          "subtitle": "Alveolar Inflation",
+          "description": "Air fans into 300 million alveoli — each a sphere 0.2mm across. The total surface area unfolds to 70m².",
+          "stat": "300M",
+          "statLabel": "alveoli",
+          "step": "03",
+          "phase": "Exchange"
+        },
+        {
+          "title": "The Sacred Transfer",
+          "subtitle": "Oxygen Crosses the Membrane",
+          "description": "Across a membrane just 0.5 microns thick, oxygen dissolves into the blood while carbon dioxide flows out.",
+          "stat": "0.5 μm",
+          "statLabel": "membrane thickness",
+          "step": "04"
+        },
+        {
+          "title": "The Vascular Journey",
+          "subtitle": "Oxygen Enters the Blood",
+          "description": "Haemoglobin binds oxygen and transports it through the bloodstream to the heart and body.",
+          "stat": "60,000 mi",
+          "statLabel": "vascular network",
+          "step": "05"
+        },
+        {
+          "title": "The Cellular Flame",
+          "subtitle": "Mitochondrial Respiration",
+          "description": "Inside each cell, oxygen is used to produce ATP — the energy that powers life.",
+          "stat": "37 T",
+          "statLabel": "cells receiving O₂",
+          "step": "06"
+        }
+      ]
     },
+
     "immersive": {
       "label": "The Living Mandala",
       "title": "Within Every",
@@ -73,12 +129,14 @@
       "technique": "4 · 7 · 8 · Dr. Andrew Weil's pranayama technique"
     }
   },
+
   "vault": {
     "comingSoon": "Coming Soon",
     "description": "The Vault will open its doors soon. Leave your email to be the first to know.",
     "emailPlaceholder": "your@email.com",
     "notify": "Notify me"
   },
+
   "soma": {
     "hero": {
       "title": "Soma",
@@ -100,6 +158,7 @@
       }
     }
   },
+
   "common": {
     "comingSoon": "Coming Soon",
     "sampleContent": "Showing sample content",

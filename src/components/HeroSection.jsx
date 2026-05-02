@@ -1,11 +1,11 @@
 // HeroSection.jsx
 // Full-screen hero with cinematic video background, breathing concentric rings,
-// sacred geometry parallax, and cinematic title typography. Fully responsive.
+// and sacred geometry parallax. Title is intentionally minimal — the video is
+// the hero. Tagline lives in the TaglineSection below the fold.
 
 import { useEffect, useRef } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import { SITE } from '../config'
 import useIsMobile from '../hooks/useIsMobile'
 
 // ── Flower of Life SVG ───────────────────────────────────────
@@ -62,7 +62,7 @@ function BreathRing({ size, mobileSize, opacity, delay, zIndex = 1 }) {
 export default function HeroSection() {
   const geomRef  = useRef(null)
   const videoRef = useRef(null)
-  const { t } = useTranslation()
+  const { t }    = useTranslation()
   const isMobile = useIsMobile()
   const prefersReducedMotion = useReducedMotion()
 
@@ -98,196 +98,261 @@ export default function HeroSection() {
   }, [showVideo])
 
   return (
-    <section style={{
-      height: '100svh',
-      minHeight: '600px',
-      display: 'flex', flexDirection: 'column',
-      alignItems: 'center', justifyContent: 'center',
-      position: 'relative', overflow: 'hidden',
-      padding: '0 1.5rem',
-      background: '#0b0b0b',
-    }}>
+    <>
+      {/* ── Hero: full-screen video section ─────────────────── */}
+      <section
+        id="hero"
+        style={{
+          height: '100svh',
+          minHeight: '600px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          position: 'relative',
+          overflow: 'hidden',
+          background: '#0b0b0b',
+        }}
+      >
+        {/* ── Layer 0: Background video ──────────────────────── */}
+        {showVideo && (
+          <motion.video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            initial={{ opacity: 0, scale: 1.12 }}
+            animate={{ opacity: 1, scale: 1.05 }}
+            transition={{ duration: 2.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+            style={{
+              position: 'absolute',
+              inset: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              zIndex: 0,
+              filter: 'brightness(0.55) contrast(1.15) saturate(0.75) sepia(0.12)',
+              animation: 'heroVideoDrift 30s ease-in-out infinite alternate',
+            }}
+          >
+            {!isMobile && <source src="/videos/dissection.webm" type="video/webm" />}
+            <source src="/videos/dissection.mp4" type="video/mp4" />
+          </motion.video>
+        )}
 
-      {/* ── Layer 0: Background video ─────────────────────── */}
-      {showVideo && (
-        <motion.video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          // Cinematic slow-zoom: starts slightly zoomed in, breathes outward
-          initial={{ opacity: 0, scale: 1.12 }}
-          animate={{ opacity: 1, scale: 1.05 }}
-          transition={{ duration: 2.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-          style={{
-            position: 'absolute',
-            inset: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            zIndex: 0,
-            // Color grading: desaturate slightly, boost contrast, warm tint
-            filter: 'brightness(0.55) contrast(1.15) saturate(0.75) sepia(0.12)',
-            // Continuous slow drift — gives the video a living, breathing feel
-            animation: 'heroVideoDrift 30s ease-in-out infinite alternate',
-          }}
-        >
-          {/* Desktop: WebM first (better compression), MP4 fallback */}
-          {!isMobile && <source src="/videos/dissection.webm" type="video/webm" />}
-          <source src="/videos/dissection.mp4" type="video/mp4" />
-        </motion.video>
-      )}
+        {/* CSS keyframes for the slow drift animation */}
+        <style>{`
+          @keyframes heroVideoDrift {
+            0%   { transform: scale(1.05) translate(0px, 0px); }
+            33%  { transform: scale(1.08) translate(-8px, -4px); }
+            66%  { transform: scale(1.06) translate(6px, -6px); }
+            100% { transform: scale(1.05) translate(-4px, 4px); }
+          }
+        `}</style>
 
-      {/* CSS keyframes for the slow drift animation */}
-      <style>{`
-        @keyframes heroVideoDrift {
-          0%   { transform: scale(1.05) translate(0px, 0px); }
-          33%  { transform: scale(1.08) translate(-8px, -4px); }
-          66%  { transform: scale(1.06) translate(6px, -6px); }
-          100% { transform: scale(1.05) translate(-4px, 4px); }
-        }
-      `}</style>
+        {/* ── Layer 1: Multi-layer cinematic overlay ─────────── */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          zIndex: 1,
+          background: showVideo ? `
+            radial-gradient(ellipse 60% 50% at 50% 45%, rgba(255,215,0,0.04) 0%, transparent 65%),
+            linear-gradient(to bottom,
+              rgba(11,11,11,0.72) 0%,
+              rgba(11,11,11,0.20) 30%,
+              rgba(11,11,11,0.15) 55%,
+              rgba(11,11,11,0.50) 80%,
+              rgba(11,11,11,0.88) 100%
+            ),
+            linear-gradient(to right,
+              rgba(11,11,11,0.35) 0%,
+              transparent 20%,
+              transparent 80%,
+              rgba(11,11,11,0.35) 100%
+            )
+          ` : `
+            radial-gradient(ellipse 80% 80% at 50% 40%, rgba(255,215,0,0.04) 0%, transparent 70%),
+            radial-gradient(ellipse 50% 50% at 20% 80%, rgba(255,215,0,0.03) 0%, transparent 60%),
+            #0b0b0b
+          `,
+        }} />
 
-      {/* ── Layer 1: Multi-layer cinematic overlay ─────────── */}
+        {/* ── Layer 2: Sacred geometry parallax ─────────────── */}
+        <div ref={geomRef} style={{
+          position: 'absolute', inset: 0,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          opacity: showVideo ? 0.07 : 0.12,
+          pointerEvents: 'none',
+          transition: 'transform 0.1s linear',
+          zIndex: 2,
+          mixBlendMode: showVideo ? 'screen' : 'normal',
+        }}>
+          <FlowerOfLife />
+        </div>
+
+        {/* ── Layer 3: Breathing rings ───────────────────────── */}
+        <BreathRing size="600px" mobileSize="92vw" opacity="0.06" delay={0}   zIndex={3} />
+        <BreathRing size="400px" mobileSize="65vw" opacity="0.10" delay={-2}  zIndex={3} />
+        <BreathRing size="200px" mobileSize="38vw" opacity="0.18" delay={-4}  zIndex={3} />
+
+        {/* ── Layer 4: Minimal title overlay ────────────────── */}
+        <div style={{
+          position: 'relative',
+          textAlign: 'center',
+          zIndex: 4,
+          width: '100%',
+          padding: '0 1.5rem',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}>
+          {/* Title — smaller, lighter, lets the video breathe */}
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.6, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontWeight: 300,
+              // Reduced from clamp(3rem,14vw,8rem) — intentionally understated
+              fontSize: 'clamp(1.8rem, 6vw, 3.8rem)',
+              lineHeight: 1.1,
+              letterSpacing: '0.04em',
+              // Reduced opacity so the video reads as the primary element
+              color: 'rgba(245,240,232,0.72)',
+              textShadow: '0 2px 24px rgba(0,0,0,0.6)',
+              margin: 0,
+            }}
+          >
+            {t('matrix.hero.title1')}{' '}
+            <em style={{
+              fontStyle: 'italic',
+              color: 'rgba(255,215,0,0.80)',
+              fontWeight: 300,
+              textShadow: '0 0 30px rgba(255,215,0,0.25), 0 2px 16px rgba(0,0,0,0.5)',
+            }}>
+              {t('matrix.hero.title2')}
+            </em>
+          </motion.h1>
+
+          {/* Animated gold line */}
+          <motion.div
+            animate={{ scaleY: [1, 1.1, 1], opacity: [0.4, 0.8, 0.4] }}
+            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+            style={{
+              width: '1px',
+              height: '52px',
+              background: 'linear-gradient(to bottom, transparent, rgba(255,215,0,0.7), transparent)',
+              margin: '2rem auto 0',
+              filter: 'drop-shadow(0 0 5px rgba(255,215,0,0.3))',
+            }}
+          />
+
+          {/* Scroll hint */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 2.0 }}
+            style={{
+              fontFamily: 'Raleway, sans-serif',
+              fontWeight: 200,
+              fontSize: '9px',
+              letterSpacing: '0.38em',
+              color: 'rgba(255,215,0,0.38)',
+              textTransform: 'uppercase',
+              marginTop: '0.75rem',
+              textShadow: '0 1px 8px rgba(0,0,0,0.5)',
+            }}
+          >
+            {t('matrix.hero.scroll')}
+          </motion.p>
+        </div>
+      </section>
+
+      {/* ── Tagline section — below the fold ────────────────── */}
+      <TaglineSection tagline={t('matrix.hero.tagline')} />
+    </>
+  )
+}
+
+// ── TaglineSection ───────────────────────────────────────────
+// Sits immediately below the hero video. Centered, elegant, responsive.
+function TaglineSection({ tagline }) {
+  return (
+    <section
+      aria-label="tagline"
+      style={{
+        background: '#0b0b0b',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 'clamp(3.5rem, 8vw, 6rem) clamp(1.5rem, 6vw, 4rem)',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
+      {/* Subtle radial glow behind the text */}
       <div style={{
-        position: 'absolute', inset: 0,
-        zIndex: 1,
-        // Stacked gradients:
-        // 1. Radial gold glow at center (brand accent)
-        // 2. Top-to-bottom dark vignette (nav readability + cinematic feel)
-        // 3. Bottom-to-top dark vignette (scroll indicator readability)
-        // 4. Left/right edge darkening (focus on center)
-        background: showVideo ? `
-          radial-gradient(ellipse 60% 50% at 50% 45%, rgba(255,215,0,0.05) 0%, transparent 65%),
-          linear-gradient(to bottom,
-            rgba(11,11,11,0.72) 0%,
-            rgba(11,11,11,0.25) 30%,
-            rgba(11,11,11,0.20) 55%,
-            rgba(11,11,11,0.55) 80%,
-            rgba(11,11,11,0.85) 100%
-          ),
-          linear-gradient(to right,
-            rgba(11,11,11,0.35) 0%,
-            transparent 20%,
-            transparent 80%,
-            rgba(11,11,11,0.35) 100%
-          )
-        ` : `
-          radial-gradient(ellipse 80% 80% at 50% 40%, rgba(255,215,0,0.04) 0%, transparent 70%),
-          radial-gradient(ellipse 50% 50% at 20% 80%, rgba(255,215,0,0.03) 0%, transparent 60%),
-          #0b0b0b
-        `,
+        position: 'absolute',
+        inset: 0,
+        background: 'radial-gradient(ellipse 70% 80% at 50% 50%, rgba(255,215,0,0.03) 0%, transparent 70%)',
+        pointerEvents: 'none',
       }} />
 
-      {/* ── Layer 2: Sacred geometry parallax ─────────────── */}
-      <div ref={geomRef} style={{
-        position: 'absolute', inset: 0,
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        // More visible over video — the geometry feels like it's inside the scene
-        opacity: showVideo ? 0.09 : 0.12,
-        pointerEvents: 'none',
-        transition: 'transform 0.1s linear',
-        zIndex: 2,
-        // Blend with video using screen mode for a luminous effect
-        mixBlendMode: showVideo ? 'screen' : 'normal',
-      }}>
-        <FlowerOfLife />
-      </div>
+      {/* Top rule */}
+      <motion.div
+        initial={{ scaleX: 0, opacity: 0 }}
+        whileInView={{ scaleX: 1, opacity: 1 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+        style={{
+          width: 'clamp(40px, 8vw, 80px)',
+          height: '1px',
+          background: 'linear-gradient(to right, transparent, rgba(255,215,0,0.45), transparent)',
+          marginBottom: 'clamp(1.5rem, 3vw, 2.5rem)',
+          transformOrigin: 'center',
+        }}
+      />
 
-      {/* ── Layer 3: Breathing rings ───────────────────────── */}
-      <BreathRing size="600px" mobileSize="92vw" opacity="0.06" delay={0}   zIndex={3} />
-      <BreathRing size="400px" mobileSize="65vw" opacity="0.10" delay={-2}  zIndex={3} />
-      <BreathRing size="200px" mobileSize="38vw" opacity="0.18" delay={-4}  zIndex={3} />
+      {/* Tagline text */}
+      <motion.p
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 1.2, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+        style={{
+          fontFamily: "'Cormorant Garamond', serif",
+          fontWeight: 300,
+          fontStyle: 'italic',
+          fontSize: 'clamp(1.1rem, 3.5vw, 1.9rem)',
+          lineHeight: 1.5,
+          letterSpacing: '0.02em',
+          color: 'rgba(245,240,232,0.65)',
+          textAlign: 'center',
+          maxWidth: 'clamp(280px, 70vw, 680px)',
+          margin: 0,
+          position: 'relative',
+          zIndex: 1,
+        }}
+      >
+        {tagline}
+      </motion.p>
 
-      {/* ── Layer 4: Hero text ─────────────────────────────── */}
-      <div style={{ position: 'relative', textAlign: 'center', zIndex: 4, width: '100%' }}>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 0.7, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.5 }}
-          style={{
-            fontFamily: 'Raleway, sans-serif', fontWeight: 200,
-            letterSpacing: '0.35em', fontSize: '10px',
-            color: '#FFD700', textTransform: 'uppercase',
-            marginBottom: '1.5rem',
-            // Subtle text shadow so it reads over any video frame
-            textShadow: '0 1px 12px rgba(0,0,0,0.6)',
-          }}
-        >
-          {t('matrix.hero.eyebrow', SITE.domain)}
-        </motion.p>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.4, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-          style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontWeight: 300,
-            fontSize: 'clamp(3rem, 14vw, 8rem)',
-            lineHeight: 1, letterSpacing: '-0.01em',
-            color: '#f5f0e8',
-            textShadow: '0 2px 30px rgba(0,0,0,0.5)',
-          }}
-        >
-          {t('matrix.hero.title1')}<br />
-          <em style={{
-            fontStyle: 'italic',
-            color: '#FFD700',
-            fontWeight: 300,
-            // Gold glow on the italic word
-            textShadow: '0 0 40px rgba(255,215,0,0.35), 0 2px 20px rgba(0,0,0,0.5)',
-          }}>
-            {t('matrix.hero.title2')}
-          </em>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.4, delay: 1.3 }}
-          style={{
-            fontFamily: 'Raleway, sans-serif', fontWeight: 200,
-            fontSize: 'clamp(0.65rem, 2.5vw, 1rem)',
-            letterSpacing: 'clamp(0.1em, 1.5vw, 0.25em)',
-            marginTop: '1.2rem',
-            color: 'rgba(245,240,232,0.5)',
-            textTransform: 'uppercase',
-            textShadow: '0 1px 12px rgba(0,0,0,0.5)',
-          }}
-        >
-          {t('matrix.hero.tagline', SITE.tagline)}
-        </motion.p>
-
-        {/* Animated gold line */}
-        <motion.div
-          animate={{ scaleY: [1, 1.1, 1], opacity: [0.5, 1, 0.5] }}
-          transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-          style={{
-            width: '1px', height: '60px',
-            background: 'linear-gradient(to bottom, transparent, #FFD700, transparent)',
-            margin: '2.5rem auto 0',
-            filter: 'drop-shadow(0 0 6px rgba(255,215,0,0.4))',
-          }}
-        />
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 2.2 }}
-          style={{
-            fontFamily: 'Raleway, sans-serif', fontWeight: 200,
-            fontSize: '10px', letterSpacing: '0.35em',
-            color: 'rgba(255,215,0,0.45)',
-            textTransform: 'uppercase', marginTop: '0.8rem',
-            textShadow: '0 1px 8px rgba(0,0,0,0.5)',
-          }}
-        >
-          {t('matrix.hero.scroll', 'Scroll to explore')}
-        </motion.p>
-      </div>
+      {/* Bottom rule */}
+      <motion.div
+        initial={{ scaleX: 0, opacity: 0 }}
+        whileInView={{ scaleX: 1, opacity: 1 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 1.2, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+        style={{
+          width: 'clamp(40px, 8vw, 80px)',
+          height: '1px',
+          background: 'linear-gradient(to right, transparent, rgba(255,215,0,0.45), transparent)',
+          marginTop: 'clamp(1.5rem, 3vw, 2.5rem)',
+          transformOrigin: 'center',
+        }}
+      />
     </section>
   )
 }

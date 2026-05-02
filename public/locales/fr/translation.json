@@ -12,26 +12,30 @@
     "vault": "Coffre",
     "inquire": "Contact"
   },
+
   "portal": {
     "tagline": "Là où la science se dissout dans le sacré",
     "enter": "Explorer",
     "scroll": "Défiler"
   },
+
   "matrix": {
     "hero": {
-      "eyebrow": "anatomiadelaliento.com",
+      "eyebrow": "",
       "title1": "Anatomie de la",
       "title2": "Respiration",
       "tagline": "Là où la science se dissout dans le sacré",
       "scroll": "Défiler pour explorer"
     },
+
     "philosophy": {
       "label": "Philosophie",
       "quote": "\"Chaque inspiration est un univers\nqui s'étend. Chaque expiration,\nun cosmos qui se souvient de lui-même.\"",
-      "body1": "Le corps humain respire environ 20 000 fois par jour — un rythme si ancien qu'il précède la conscience elle-même. Lorsque nous plaçons l'atlas anatomique à côté du canon géométrique sacré, quelque chose d'étonnant émerge.",
+      "body1": "Le corps humain respire environ 20 000 fois par jour — un rythme si ancien qu'il précède la conscience elle-même.",
       "body2": "L'Anatomie de la Respiration est une enquête méditative sur cette convergence — une philosophie visuelle qui honore à la fois le scientifique et le numineux.",
       "mantra": "— Respirez. Témoignez. Souvenez-vous."
     },
+
     "gallery": {
       "label": "Collection",
       "title": "L'Architecture",
@@ -45,6 +49,7 @@
       "clickToExplore": "Cliquer pour explorer",
       "tapToExplore": "Appuyer pour explorer"
     },
+
     "cards": {
       "lungField":      { "title": "Le Champ Pulmonaire",   "subtitle": "Expansion Pulmonaire" },
       "bronchialTree":  { "title": "Arbre Bronchique",      "subtitle": "Ramification Sacrée" },
@@ -59,13 +64,69 @@
       "vascularRivers": { "title": "Rivières Vasculaires",  "subtitle": "Le Flux de la Vie" },
       "innerEye":       { "title": "L'Œil Intérieur",       "subtitle": "Fenêtre de l'Âme" }
     },
+
     "timeline": {
       "label": "Le Voyage",
       "title": "De l'Inspiration au",
       "titleItalic": "Feu Cellulaire",
       "subtitle": "Défilez pour suivre le souffle",
-      "ending": "— Et puis, l'expiration commence."
+      "ending": "— Et puis, l'expiration commence.",
+
+      "steps": [
+        {
+          "title": "Le Premier Mouvement",
+          "subtitle": "Le Diaphragme Descend",
+          "description": "Le diaphragme — un dôme musculaire — se contracte et s’aplatit. La pression dans le thorax chute sous la pression atmosphérique. L’air entre par le nez, se réchauffant et se filtrant au passage.",
+          "stat": "0.5 L",
+          "statLabel": "volume courant",
+          "step": "01",
+          "phase": "Descente"
+        },
+        {
+          "title": "La Rivière Trachéale",
+          "subtitle": "L’Air Entre dans les Voies Respiratoires",
+          "description": "Réchauffé à 37°C et humidifié à 100%, l’air descend dans la trachée — un tube de 12 cm renforcé par des anneaux cartilagineux.",
+          "stat": "12 cm",
+          "statLabel": "longueur de la trachée",
+          "step": "02",
+          "phase": "Expansion"
+        },
+        {
+          "title": "Le Champ Pulmonaire S’ouvre",
+          "subtitle": "Inflation Alvéolaire",
+          "description": "L’air se diffuse dans 300 millions d’alvéoles — chacune mesurant environ 0.2 mm. La surface totale atteint environ 70 m².",
+          "stat": "300M",
+          "statLabel": "alvéoles",
+          "step": "03",
+          "phase": "Échange"
+        },
+        {
+          "title": "Le Transfert Sacré",
+          "subtitle": "L’Oxygène Traverse la Membrane",
+          "description": "À travers une membrane extrêmement fine, l’oxygène passe dans le sang tandis que le dioxyde de carbone en sort.",
+          "stat": "0.5 μm",
+          "statLabel": "épaisseur de la membrane",
+          "step": "04"
+        },
+        {
+          "title": "Le Voyage Vasculaire",
+          "subtitle": "L’Oxygène Entre dans le Sang",
+          "description": "L’hémoglobine transporte l’oxygène à travers le système circulatoire vers le cœur et les tissus.",
+          "stat": "60,000 mi",
+          "statLabel": "réseau vasculaire",
+          "step": "05"
+        },
+        {
+          "title": "La Flamme Cellulaire",
+          "subtitle": "Respiration Mitochondriale",
+          "description": "Dans chaque cellule, l’oxygène permet la production d’ATP — l’énergie fondamentale de la vie.",
+          "stat": "37 T",
+          "statLabel": "cellules recevant O₂",
+          "step": "06"
+        }
+      ]
     },
+
     "immersive": {
       "label": "Le Mandala Vivant",
       "title": "Dans Chaque",
@@ -74,47 +135,28 @@
       "technique": "4 · 7 · 8 · Technique de pranayama du Dr. Andrew Weil"
     }
   },
+
   "vault": {
     "comingSoon": "Bientôt disponible",
-    "description": "Le Coffre ouvrira bientôt ses portes. Laissez votre email pour être le premier à le savoir.",
+    "description": "Le Coffre ouvrira bientôt ses portes.",
     "emailPlaceholder": "votre@email.com",
     "notify": "Me notifier"
   },
+
   "soma": {
     "hero": {
       "title": "Soma",
       "subtitle": "Thérapies corporelles, respiration et mouvement",
-      "body": "Nous explorons le corps comme territoire sacré — une carte vivante de mémoire, d'émotion et de potentiel transformateur."
-    },
-    "offerings": {
-      "breathwork": {
-        "title": "Travail Respiratoire",
-        "description": "Techniques ancestrales et contemporaines pour libérer, énergiser et transformer par le souffle."
-      },
-      "movement": {
-        "title": "Mouvement Conscient",
-        "description": "Pratiques somatiques qui intègrent corps, esprit et âme dans un flux dynamique."
-      },
-      "alignment": {
-        "title": "Alignement Structurel",
-        "description": "Thérapies manuelles et posturales pour restaurer l'équilibre naturel du corps."
-      }
+      "body": "Nous explorons le corps comme territoire sacré."
     }
   },
+
   "common": {
     "comingSoon": "Bientôt disponible",
-    "sampleContent": "Affichage du contenu exemple",
     "noEvents": "Aucun événement à venir",
-    "noUpcomingEvents": "Aucun événement à venir pour le moment",
-    "noPosts": "Contenu bientôt disponible",
-    "noResults": "Aucun article trouvé dans cette catégorie",
-    "past": "Passé",
     "bookNow": "Réservez votre place",
     "readMore": "Lire la suite",
     "loading": "Chargement...",
-    "contentUnavailable": "Contenu indisponible",
-    "backToList": "Retour à la liste",
-    "back": "Retour",
-    "all": "Tous"
+    "back": "Retour"
   }
 }

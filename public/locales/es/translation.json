@@ -19,7 +19,7 @@
   },
   "matrix": {
     "hero": {
-      "eyebrow": "anatomiadelaliento.com",
+      "eyebrow": "",
       "title1": "Anatomía del",
       "title2": "Aliento",
       "tagline": "Donde la ciencia se disuelve en lo sagrado",
@@ -28,8 +28,8 @@
     "philosophy": {
       "label": "Filosofía",
       "quote": "\"Cada inhalación es un universo\nque se expande. Cada exhalación,\nun cosmos que se recuerda a sí mismo.\"",
-      "body1": "El cuerpo humano respira aproximadamente 20.000 veces al día — un ritmo tan antiguo que precede a la conciencia misma. Cuando colocamos el atlas anatómico junto al canon geométrico sagrado, emerge algo asombroso: la ramificación de los bronquios refleja la precisión fractal del triángulo de Sierpinski.",
-      "body2": "Anatomía del Aliento es una indagación meditativa sobre esta convergencia — una filosofía visual que honra tanto lo científico como lo numinoso, reconociendo que los dos siempre han hablado el mismo idioma.",
+      "body1": "El cuerpo humano respira aproximadamente 20.000 veces al día — un ritmo tan antiguo que precede a la conciencia misma.",
+      "body2": "Anatomía del Aliento es una indagación meditativa sobre esta convergencia — una filosofía visual que honra tanto lo científico como lo numinoso.",
       "mantra": "— Respira. Sé testigo. Recuerda."
     },
     "gallery": {
@@ -64,7 +64,61 @@
       "title": "Del Inhale al",
       "titleItalic": "Fuego Celular",
       "subtitle": "Desplázate para seguir el aliento",
-      "ending": "— Y entonces, comienza la exhalación."
+      "ending": "— Y entonces, comienza la exhalación.",
+
+      "steps": [
+        {
+          "title": "El Primer Movimiento",
+          "subtitle": "El Diafragma Desciende",
+          "description": "El diafragma — una cúpula muscular — se contrae y se aplana. La presión dentro del tórax cae por debajo de la atmosférica. El aire entra por la nariz, calentándose y filtrándose mientras recorre los 11 cm del conducto nasal.",
+          "stat": "0.5 L",
+          "statLabel": "volumen tidal",
+          "step": "01",
+          "phase": "Descenso"
+        },
+        {
+          "title": "El Río Traqueal",
+          "subtitle": "El Aire Entra en las Vías Respiratorias",
+          "description": "Calentado a 37°C y humidificado al 100%, el aire desciende por la tráquea — un tubo de 12 cm reforzado por anillos cartilaginosos en forma de C.",
+          "stat": "12 cm",
+          "statLabel": "longitud de la tráquea",
+          "step": "02",
+          "phase": "Expansión"
+        },
+        {
+          "title": "El Campo Pulmonar se Abre",
+          "subtitle": "Inflación Alveolar",
+          "description": "El aire se distribuye en 300 millones de alvéolos — cada uno de aproximadamente 0.2 mm. La superficie total se expande hasta 70 m².",
+          "stat": "300M",
+          "statLabel": "alvéolos",
+          "step": "03",
+          "phase": "Intercambio"
+        },
+        {
+          "title": "La Transferencia Sagrada",
+          "subtitle": "El Oxígeno Cruza la Membrana",
+          "description": "A través de una membrana de solo 0.5 micras, el oxígeno se disuelve en la sangre mientras el dióxido de carbono fluye en sentido contrario.",
+          "stat": "0.5 μm",
+          "statLabel": "grosor de la membrana",
+          "step": "04"
+        },
+        {
+          "title": "El Viaje Vascular",
+          "subtitle": "El Oxígeno Entra en la Sangre",
+          "description": "La hemoglobina transporta el oxígeno a través del torrente sanguíneo hacia el corazón y el resto del cuerpo.",
+          "stat": "60,000 mi",
+          "statLabel": "red vascular",
+          "step": "05"
+        },
+        {
+          "title": "La Llama Celular",
+          "subtitle": "Respiración Mitocondrial",
+          "description": "Dentro de cada célula, el oxígeno se utiliza para producir ATP — la energía que impulsa la vida.",
+          "stat": "37 T",
+          "statLabel": "células recibiendo O₂",
+          "step": "06"
+        }
+      ]
     },
     "immersive": {
       "label": "El Mandala Viviente",
@@ -76,7 +130,7 @@
   },
   "vault": {
     "comingSoon": "Próximamente",
-    "description": "El Vault abrirá sus puertas pronto. Déjanos tu correo para ser el primero en saber.",
+    "description": "El Vault abrirá sus puertas pronto.",
     "emailPlaceholder": "tu@correo.com",
     "notify": "Notifícame"
   },
@@ -84,37 +138,15 @@
     "hero": {
       "title": "Soma",
       "subtitle": "Terapias corporales, respiración y movimiento",
-      "body": "Exploramos el cuerpo como territorio sagrado — un mapa vivo de memoria, emoción y potencial transformador."
-    },
-    "offerings": {
-      "breathwork": {
-        "title": "Trabajo Respiratorio",
-        "description": "Técnicas ancestrales y contemporáneas para liberar, energizar y transformar a través del aliento."
-      },
-      "movement": {
-        "title": "Movimiento Consciente",
-        "description": "Prácticas somáticas que integran cuerpo, mente y espíritu en flujo dinámico."
-      },
-      "alignment": {
-        "title": "Alineación Estructural",
-        "description": "Terapias manuales y postural para restaurar el equilibrio natural del cuerpo."
-      }
+      "body": "Exploramos el cuerpo como territorio sagrado."
     }
   },
   "common": {
     "comingSoon": "Próximamente",
-    "sampleContent": "Mostrando contenido de ejemplo",
     "noEvents": "No hay eventos próximos",
-    "noUpcomingEvents": "No hay eventos próximos en este momento",
-    "noPosts": "Contenido próximamente",
-    "noResults": "No se encontraron publicaciones en esta categoría",
-    "past": "Pasado",
     "bookNow": "Reservar tu lugar",
     "readMore": "Leer más",
     "loading": "Cargando...",
-    "contentUnavailable": "Contenido no disponible",
-    "backToList": "Volver a la lista",
-    "back": "Volver",
-    "all": "Todos"
+    "back": "Volver"
   }
 }
