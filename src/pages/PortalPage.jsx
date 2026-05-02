@@ -138,26 +138,6 @@ export default function PortalPage() {
             Spiritus est origo
           </motion.h1>
 
-          {/* Tagline (translated) */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.8, ease: EASE }}
-            style={{
-              fontFamily: 'Raleway, sans-serif',
-              fontWeight: 200,
-              fontSize: 'clamp(12px, 2vw, 14px)',
-              letterSpacing: '0.15em',
-              color: 'rgba(245,240,232,0.8)',
-              textAlign: 'center',
-              textTransform: 'uppercase',
-              marginBottom: '3rem',
-              textShadow: '0 1px 10px rgba(0,0,0,0.5)',
-            }}
-          >
-            {t('portal.tagline')}
-          </motion.p>
-
           {/* Enter CTA */}
           <motion.button
             initial={{ opacity: 0, y: 20 }}
