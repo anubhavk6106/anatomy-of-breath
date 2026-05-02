@@ -16,7 +16,7 @@ const ANATOMY = {
             stroke="rgba(245,240,232,0.45)" stroke-width="1.2" fill="rgba(245,240,232,0.04)"/>
       <path d="M100 40 C120 40 150 60 155 100 C160 140 145 180 125 200 C115 210 100 200 100 200 C100 200 115 185 120 160 C128 130 125 90 110 70"
             stroke="rgba(245,240,232,0.45)" stroke-width="1.2" fill="rgba(245,240,232,0.04)"/>
-      <circle cx="100" cy="100" r="8" stroke="rgba(255,215,0,0.4)" stroke-width="0.8"/>
+      <circle cx="100" cy="100" r="8" stroke="rgba(212,175,55,0.4)" stroke-width="0.8"/>
     </svg>`,
 
   bronchialTree: `
@@ -44,7 +44,7 @@ const ANATOMY = {
       <path d="M30 150 Q100 90 170 150"  stroke="rgba(245,240,232,0.25)" stroke-width="1"/>
       <path d="M30 160 Q100 100 170 160" stroke="rgba(245,240,232,0.15)" stroke-width=".8"/>
       <line x1="100" y1="80" x2="100" y2="200" stroke="rgba(245,240,232,0.3)" stroke-width="1" stroke-dasharray="4 4"/>
-      <circle cx="100" cy="80" r="5" fill="rgba(255,215,0,0.3)"/>
+      <circle cx="100" cy="80" r="5" fill="rgba(212,175,55,0.3)"/>
     </svg>`,
 
   alveoli: `
@@ -99,7 +99,7 @@ const ANATOMY = {
       <!-- Chambers divider -->
       <line x1="100" y1="60" x2="100" y2="160" stroke="rgba(245,240,232,0.15)" stroke-width=".8" stroke-dasharray="3 3"/>
       <!-- Apex dot -->
-      <circle cx="100" cy="188" r="3" fill="rgba(255,215,0,0.5)"/>
+      <circle cx="100" cy="188" r="3" fill="rgba(212,175,55,0.5)"/>
     </svg>`,
 
   spine: `
@@ -122,7 +122,7 @@ const ANATOMY = {
       <line x1="82" y1="131" x2="60" y2="131" stroke="rgba(245,240,232,0.15)" stroke-width=".8"/>
       <line x1="118" y1="131" x2="140" y2="131" stroke="rgba(245,240,232,0.15)" stroke-width=".8"/>
       <!-- Sacrum -->
-      <path d="M82 196 Q100 215 118 196" stroke="rgba(255,215,0,0.3)" stroke-width="1" fill="rgba(255,215,0,0.04)"/>
+      <path d="M82 196 Q100 215 118 196" stroke="rgba(212,175,55,0.3)" stroke-width="1" fill="rgba(212,175,55,0.04)"/>
     </svg>`,
 
   ribcage: `
@@ -144,7 +144,7 @@ const ANATOMY = {
       <path d="M100 122 C122 122 145 132 148 152" stroke="rgba(245,240,232,0.25)" stroke-width=".9" fill="none"/>
       <path d="M100 140 C118 140 138 148 140 165" stroke="rgba(245,240,232,0.2)" stroke-width=".8" fill="none"/>
       <!-- Costal cartilage arc -->
-      <path d="M60 165 Q100 185 140 165" stroke="rgba(255,215,0,0.25)" stroke-width="1" fill="none"/>
+      <path d="M60 165 Q100 185 140 165" stroke="rgba(212,175,55,0.25)" stroke-width="1" fill="none"/>
     </svg>`,
 
   skull: `
@@ -186,9 +186,9 @@ const ANATOMY = {
       <path d="M45 80 C38 85 35 92 40 98"   stroke="rgba(245,240,232,0.18)" stroke-width=".7" fill="none"/>
       <path d="M155 80 C162 85 165 92 160 98" stroke="rgba(245,240,232,0.18)" stroke-width=".7" fill="none"/>
       <!-- Flow dots -->
-      <circle cx="100" cy="50"  r="3" fill="rgba(255,215,0,0.35)"/>
-      <circle cx="100" cy="120" r="3" fill="rgba(255,215,0,0.25)"/>
-      <circle cx="100" cy="190" r="3" fill="rgba(255,215,0,0.2)"/>
+      <circle cx="100" cy="50"  r="3" fill="rgba(212,175,55,0.35)"/>
+      <circle cx="100" cy="120" r="3" fill="rgba(212,175,55,0.25)"/>
+      <circle cx="100" cy="190" r="3" fill="rgba(212,175,55,0.2)"/>
     </svg>`,
 
   eye: `
@@ -211,7 +211,7 @@ const ANATOMY = {
       <line x1="75"  y1="95"  x2="90"  y2="107" stroke="rgba(245,240,232,0.1)" stroke-width=".5"/>
       <line x1="125" y1="95"  x2="110" y2="107" stroke="rgba(245,240,232,0.1)" stroke-width=".5"/>
       <!-- Highlight -->
-      <circle cx="110" cy="112" r="4" fill="rgba(255,215,0,0.15)"/>
+      <circle cx="110" cy="112" r="4" fill="rgba(212,175,55,0.15)"/>
       <!-- Optic nerve suggestion -->
       <line x1="135" y1="120" x2="170" y2="120" stroke="rgba(245,240,232,0.2)" stroke-width="1.5"/>
     </svg>`,
@@ -221,7 +221,7 @@ const ANATOMY = {
 const GEOMETRY = {
   vesicaPiscis: `
     <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" stroke="#FFD700" stroke-width="0.7" opacity="0.9">
+      <g fill="none" stroke="#D4AF37" stroke-width="0.7" opacity="0.9">
         <circle cx="85"  cy="120" r="55"/>
         <circle cx="115" cy="120" r="55"/>
         <circle cx="100" cy="120" r="70"/>
@@ -230,7 +230,7 @@ const GEOMETRY = {
 
   starOfDavid: `
     <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" stroke="#FFD700" stroke-width="0.7" opacity="0.9">
+      <g fill="none" stroke="#D4AF37" stroke-width="0.7" opacity="0.9">
         <polygon points="100,50 160,155 40,155"/>
         <polygon points="100,190 40,85 160,85"/>
         <circle cx="100" cy="120" r="65"/>
@@ -239,7 +239,7 @@ const GEOMETRY = {
 
   metatron: `
     <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" stroke="#FFD700" stroke-width="0.6" opacity="0.9">
+      <g fill="none" stroke="#D4AF37" stroke-width="0.6" opacity="0.9">
         <circle cx="100" cy="120"    r="55"/>
         <circle cx="100" cy="65"     r="55"/>
         <circle cx="147.6" cy="92.5" r="55"/>
@@ -252,7 +252,7 @@ const GEOMETRY = {
 
   sriYantra: `
     <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" stroke="#FFD700" stroke-width="0.7" opacity="0.9">
+      <g fill="none" stroke="#D4AF37" stroke-width="0.7" opacity="0.9">
         <polygon points="100,55 162,160 38,160"/>
         <polygon points="100,185 162,80 38,80"/>
         <polygon points="100,70 155,150 45,150"/>
@@ -264,7 +264,7 @@ const GEOMETRY = {
 
   pentagram: `
     <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" stroke="#FFD700" stroke-width="0.7" opacity="0.9">
+      <g fill="none" stroke="#D4AF37" stroke-width="0.7" opacity="0.9">
         <polygon points="100,50 168,152 34,100 166,100 32,152"/>
         <circle cx="100" cy="120" r="70"/>
         <circle cx="100" cy="120" r="38"/>
@@ -273,7 +273,7 @@ const GEOMETRY = {
 
   torus: `
     <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" stroke="#FFD700" stroke-width="0.6" opacity="0.9">
+      <g fill="none" stroke="#D4AF37" stroke-width="0.6" opacity="0.9">
         <ellipse cx="100" cy="120" rx="65" ry="25"/>
         <ellipse cx="100" cy="120" rx="65" ry="45"/>
         <ellipse cx="100" cy="120" rx="65" ry="65"/>
@@ -285,7 +285,7 @@ const GEOMETRY = {
 
   flowerOfLife: `
     <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" stroke="#FFD700" stroke-width="0.6" opacity="0.9">
+      <g fill="none" stroke="#D4AF37" stroke-width="0.6" opacity="0.9">
         <circle cx="100" cy="120" r="40"/>
         <circle cx="100" cy="80"  r="40"/>
         <circle cx="134.6" cy="100" r="40"/>
@@ -299,7 +299,7 @@ const GEOMETRY = {
 
   goldenSpiral: `
     <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" stroke="#FFD700" stroke-width="0.7" opacity="0.9">
+      <g fill="none" stroke="#D4AF37" stroke-width="0.7" opacity="0.9">
         <path d="M100 120 Q100 60 160 60 Q160 180 40 180 Q40 40 160 40"/>
         <rect x="40"  y="60"  width="60" height="60"/>
         <rect x="100" y="60"  width="60" height="60"/>
@@ -310,7 +310,7 @@ const GEOMETRY = {
 
   kabbalah: `
     <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" stroke="#FFD700" stroke-width="0.6" opacity="0.9">
+      <g fill="none" stroke="#D4AF37" stroke-width="0.6" opacity="0.9">
         <!-- Tree of Life nodes -->
         <circle cx="100" cy="30"  r="8"/>
         <circle cx="60"  cy="70"  r="7"/>
@@ -347,7 +347,7 @@ const CARDS = [
     number: '01', key: 'lungField',
     tags: ['lungs', 'pulmonary', 'breath', 'respiratory'],
     baseColor: '#1a1208',
-    overlayGradient: 'radial-gradient(ellipse at center, rgba(255,215,0,0.35), rgba(255,140,0,0.15) 50%, transparent 70%)',
+    overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.35), rgba(255,140,0,0.15) 50%, transparent 70%)',
     anatomySVG: ANATOMY.lungs,
     geometrySVG: GEOMETRY.vesicaPiscis,
   },
@@ -355,7 +355,7 @@ const CARDS = [
     number: '02', key: 'bronchialTree',
     tags: ['bronchial', 'tree', 'airways', 'fractal'],
     baseColor: '#0d1318',
-    overlayGradient: 'radial-gradient(ellipse at center, rgba(255,215,0,0.3), rgba(100,180,255,0.12) 50%, transparent 70%)',
+    overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.3), rgba(100,180,255,0.12) 50%, transparent 70%)',
     anatomySVG: ANATOMY.bronchialTree,
     geometrySVG: GEOMETRY.starOfDavid,
   },
@@ -363,7 +363,7 @@ const CARDS = [
     number: '03', key: 'diaphragm',
     tags: ['diaphragm', 'muscle', 'breath', 'movement'],
     baseColor: '#120d18',
-    overlayGradient: 'radial-gradient(ellipse at center, rgba(255,215,0,0.32), rgba(180,100,255,0.15) 50%, transparent 70%)',
+    overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.32), rgba(180,100,255,0.15) 50%, transparent 70%)',
     anatomySVG: ANATOMY.diaphragm,
     geometrySVG: GEOMETRY.metatron,
   },
@@ -371,7 +371,7 @@ const CARDS = [
     number: '04', key: 'alveolarBloom',
     tags: ['alveoli', 'bloom', 'oxygen', 'exchange'],
     baseColor: '#0f1a0f',
-    overlayGradient: 'radial-gradient(ellipse at center, rgba(255,215,0,0.28), rgba(80,220,120,0.15) 50%, transparent 70%)',
+    overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.28), rgba(80,220,120,0.15) 50%, transparent 70%)',
     anatomySVG: ANATOMY.alveoli,
     geometrySVG: GEOMETRY.sriYantra,
   },
@@ -379,7 +379,7 @@ const CARDS = [
     number: '05', key: 'neuralBreath',
     tags: ['neural', 'nervous', 'rhythm', 'signal'],
     baseColor: '#1a0f0f',
-    overlayGradient: 'radial-gradient(ellipse at center, rgba(255,215,0,0.35), rgba(255,80,80,0.12) 50%, transparent 70%)',
+    overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.35), rgba(255,80,80,0.12) 50%, transparent 70%)',
     anatomySVG: ANATOMY.neural,
     geometrySVG: GEOMETRY.pentagram,
   },
@@ -387,7 +387,7 @@ const CARDS = [
     number: '06', key: 'theSilence',
     tags: ['silence', 'pause', 'stillness', 'void'],
     baseColor: '#0a0a0a',
-    overlayGradient: 'radial-gradient(ellipse at center, rgba(255,215,0,0.4), rgba(255,255,255,0.08) 50%, transparent 70%)',
+    overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.4), rgba(255,255,255,0.08) 50%, transparent 70%)',
     anatomySVG: ANATOMY.silence,
     geometrySVG: GEOMETRY.torus,
   },
@@ -395,7 +395,7 @@ const CARDS = [
     number: '07', key: 'sacredHeart',
     tags: ['heart', 'pulse', 'cardiac', 'circulation'],
     baseColor: '#1a0808',
-    overlayGradient: 'radial-gradient(ellipse at center, rgba(255,215,0,0.38), rgba(255,60,60,0.18) 50%, transparent 70%)',
+    overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.38), rgba(255,60,60,0.18) 50%, transparent 70%)',
     anatomySVG: ANATOMY.heart,
     geometrySVG: GEOMETRY.flowerOfLife,
   },
@@ -403,7 +403,7 @@ const CARDS = [
     number: '08', key: 'spinalColumn',
     tags: ['spine', 'vertebrae', 'axis', 'column', 'skeletal'],
     baseColor: '#0d0d18',
-    overlayGradient: 'radial-gradient(ellipse at center, rgba(255,215,0,0.3), rgba(120,120,255,0.15) 50%, transparent 70%)',
+    overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.3), rgba(120,120,255,0.15) 50%, transparent 70%)',
     anatomySVG: ANATOMY.spine,
     geometrySVG: GEOMETRY.kabbalah,
   },
@@ -411,7 +411,7 @@ const CARDS = [
     number: '09', key: 'ribCage',
     tags: ['ribs', 'ribcage', 'thorax', 'skeletal', 'chest'],
     baseColor: '#101510',
-    overlayGradient: 'radial-gradient(ellipse at center, rgba(255,215,0,0.32), rgba(80,200,100,0.12) 50%, transparent 70%)',
+    overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.32), rgba(80,200,100,0.12) 50%, transparent 70%)',
     anatomySVG: ANATOMY.ribcage,
     geometrySVG: GEOMETRY.goldenSpiral,
   },
@@ -419,7 +419,7 @@ const CARDS = [
     number: '10', key: 'cranialVault',
     tags: ['skull', 'cranium', 'head', 'brain', 'consciousness'],
     baseColor: '#181210',
-    overlayGradient: 'radial-gradient(ellipse at center, rgba(255,215,0,0.35), rgba(200,150,80,0.15) 50%, transparent 70%)',
+    overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.35), rgba(200,150,80,0.15) 50%, transparent 70%)',
     anatomySVG: ANATOMY.skull,
     geometrySVG: GEOMETRY.metatron,
   },
@@ -427,7 +427,7 @@ const CARDS = [
     number: '11', key: 'vascularRivers',
     tags: ['blood', 'vessel', 'artery', 'vein', 'circulation', 'flow'],
     baseColor: '#180a0a',
-    overlayGradient: 'radial-gradient(ellipse at center, rgba(255,215,0,0.36), rgba(255,40,40,0.14) 50%, transparent 70%)',
+    overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.36), rgba(255,40,40,0.14) 50%, transparent 70%)',
     anatomySVG: ANATOMY.bloodVessel,
     geometrySVG: GEOMETRY.sriYantra,
   },
@@ -435,7 +435,7 @@ const CARDS = [
     number: '12', key: 'innerEye',
     tags: ['eye', 'iris', 'vision', 'sight', 'optic'],
     baseColor: '#080d18',
-    overlayGradient: 'radial-gradient(ellipse at center, rgba(255,215,0,0.4), rgba(60,120,255,0.18) 50%, transparent 70%)',
+    overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.4), rgba(60,120,255,0.18) 50%, transparent 70%)',
     anatomySVG: ANATOMY.eye,
     geometrySVG: GEOMETRY.goldenSpiral,
   },
@@ -459,8 +459,8 @@ function SearchBar({ value, onChange, t }) {
           pointerEvents: 'none',
         }}
       >
-        <circle cx="11" cy="11" r="7" stroke="rgba(255,215,0,0.45)" strokeWidth="1.5"/>
-        <line x1="16.5" y1="16.5" x2="21" y2="21" stroke="rgba(255,215,0,0.45)" strokeWidth="1.5" strokeLinecap="round"/>
+        <circle cx="11" cy="11" r="7" stroke="rgba(212,175,55,0.45)" strokeWidth="1.5"/>
+        <line x1="16.5" y1="16.5" x2="21" y2="21" stroke="rgba(212,175,55,0.45)" strokeWidth="1.5" strokeLinecap="round"/>
       </svg>
 
       <input
@@ -471,8 +471,8 @@ function SearchBar({ value, onChange, t }) {
         style={{
           width: '100%',
           padding: '0.75rem 2.5rem 0.75rem 2.5rem',
-          background: 'rgba(255,215,0,0.04)',
-          border: '1px solid rgba(255,215,0,0.2)',
+          background: 'rgba(212,175,55,0.04)',
+          border: '1px solid rgba(212,175,55,0.2)',
           borderRadius: '2px',
           color: '#f5f0e8',
           fontFamily: 'Raleway, sans-serif',
@@ -482,8 +482,8 @@ function SearchBar({ value, onChange, t }) {
           outline: 'none',
           transition: 'border-color 0.3s',
         }}
-        onFocus={e => e.target.style.borderColor = 'rgba(255,215,0,0.55)'}
-        onBlur={e => e.target.style.borderColor = 'rgba(255,215,0,0.2)'}
+        onFocus={e => e.target.style.borderColor = 'rgba(212,175,55,0.55)'}
+        onBlur={e => e.target.style.borderColor = 'rgba(212,175,55,0.2)'}
       />
 
       {/* Clear button */}
@@ -494,7 +494,7 @@ function SearchBar({ value, onChange, t }) {
             position: 'absolute', right: '12px', top: '50%',
             transform: 'translateY(-50%)',
             background: 'none', border: 'none',
-            color: 'rgba(255,215,0,0.45)',
+            color: 'rgba(212,175,55,0.45)',
             fontSize: '16px', cursor: 'pointer',
             lineHeight: 1, padding: 0,
           }}
@@ -551,14 +551,14 @@ export default function Gallery() {
         <p style={{
           fontFamily: 'Raleway, sans-serif', fontWeight: 200,
           fontSize: '10px', letterSpacing: '0.6em',
-          color: '#FFD700', textTransform: 'uppercase',
+          color: '#D4AF37', textTransform: 'uppercase',
           marginBottom: '1.5rem', opacity: 0.7,
         }}>
           {t('matrix.gallery.label', 'Collection')}
         </p>
         <div style={{
           width: '60px', height: '1px',
-          background: 'linear-gradient(to right, #FFD700, transparent)',
+          background: 'linear-gradient(to right, #D4AF37, transparent)',
           margin: '0 auto 2rem',
         }} />
         <h2 style={{
@@ -567,7 +567,7 @@ export default function Gallery() {
           fontWeight: 300, color: '#f5f0e8',
         }}>
           {t('matrix.gallery.title', 'The Living')}{' '}
-          <em style={{ fontStyle: 'italic', color: '#FFD700' }}>{t('matrix.gallery.titleItalic', 'Architecture')}</em>
+          <em style={{ fontStyle: 'italic', color: '#D4AF37' }}>{t('matrix.gallery.titleItalic', 'Architecture')}</em>
         </h2>
         <p style={{
           fontFamily: 'Raleway, sans-serif', fontWeight: 200,
@@ -586,7 +586,7 @@ export default function Gallery() {
           <p style={{
             fontFamily: 'Raleway, sans-serif', fontWeight: 200,
             fontSize: '10px', letterSpacing: '0.3em',
-            color: 'rgba(255,215,0,0.4)', textTransform: 'uppercase',
+            color: 'rgba(212,175,55,0.4)', textTransform: 'uppercase',
             marginTop: '1rem',
           }}>
             {filtered.length} {filtered.length === 1 ? t('matrix.gallery.results', 'result') : t('matrix.gallery.resultsPlural', 'results')} found
@@ -619,7 +619,7 @@ export default function Gallery() {
           <p style={{
             fontFamily: 'Raleway, sans-serif', fontWeight: 200,
             fontSize: '11px', letterSpacing: '0.3em',
-            color: 'rgba(255,215,0,0.3)', textTransform: 'uppercase',
+            color: 'rgba(212,175,55,0.3)', textTransform: 'uppercase',
             marginTop: '0.75rem',
           }}>
             {t('matrix.gallery.noResultsSub', 'Try: lungs, heart, spine, diaphragm…')}

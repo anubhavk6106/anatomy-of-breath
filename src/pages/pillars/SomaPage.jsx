@@ -12,9 +12,9 @@ const EASE = [0.25, 0.46, 0.45, 0.94]
 
 // Anatomical SVG illustrations (reused from Gallery ANATOMY library concept)
 const ANATOMY_ICONS = {
-  lungs: `<svg viewBox="0 0 100 100" fill="none"><path d="M50 20 Q30 30 30 50 Q30 70 40 80 L50 70 L60 80 Q70 70 70 50 Q70 30 50 20Z" stroke="#FFD700" stroke-width="0.8" opacity="0.7"/></svg>`,
-  heart: `<svg viewBox="0 0 100 100" fill="none"><path d="M50 80 Q20 60 20 40 Q20 20 35 20 Q50 20 50 35 Q50 20 65 20 Q80 20 80 40 Q80 60 50 80Z" stroke="#FFD700" stroke-width="0.8" opacity="0.7"/></svg>`,
-  spine: `<svg viewBox="0 0 100 100" fill="none"><line x1="50" y1="10" x2="50" y2="90" stroke="#FFD700" stroke-width="0.8" opacity="0.7"/><circle cx="50" cy="30" r="4" stroke="#FFD700" stroke-width="0.6" opacity="0.7"/><circle cx="50" cy="50" r="4" stroke="#FFD700" stroke-width="0.6" opacity="0.7"/><circle cx="50" cy="70" r="4" stroke="#FFD700" stroke-width="0.6" opacity="0.7"/></svg>`,
+  lungs: `<svg viewBox="0 0 100 100" fill="none"><path d="M50 20 Q30 30 30 50 Q30 70 40 80 L50 70 L60 80 Q70 70 70 50 Q70 30 50 20Z" stroke="#D4AF37" stroke-width="0.8" opacity="0.7"/></svg>`,
+  heart: `<svg viewBox="0 0 100 100" fill="none"><path d="M50 80 Q20 60 20 40 Q20 20 35 20 Q50 20 50 35 Q50 20 65 20 Q80 20 80 40 Q80 60 50 80Z" stroke="#D4AF37" stroke-width="0.8" opacity="0.7"/></svg>`,
+  spine: `<svg viewBox="0 0 100 100" fill="none"><line x1="50" y1="10" x2="50" y2="90" stroke="#D4AF37" stroke-width="0.8" opacity="0.7"/><circle cx="50" cy="30" r="4" stroke="#D4AF37" stroke-width="0.6" opacity="0.7"/><circle cx="50" cy="50" r="4" stroke="#D4AF37" stroke-width="0.6" opacity="0.7"/><circle cx="50" cy="70" r="4" stroke="#D4AF37" stroke-width="0.6" opacity="0.7"/></svg>`,
 }
 
 const offerings = [
@@ -51,7 +51,7 @@ export default function SomaPage() {
             fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
             fontWeight: 300,
             fontStyle: 'italic',
-            color: '#FFD700',
+            color: '#D4AF37',
             marginBottom: '1.5rem',
           }}
         >
@@ -119,17 +119,17 @@ export default function SomaPage() {
               transition={{ duration: 0.8, delay: 0.1 * index, ease: EASE }}
               style={{
                 padding: '2.5rem 2rem',
-                border: '1px solid rgba(255,215,0,0.2)',
+                border: '1px solid rgba(212,175,55,0.2)',
                 background: 'rgba(11,11,11,0.8)',
                 textAlign: 'center',
                 transition: 'border-color 0.4s, box-shadow 0.4s',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,215,0,0.5)'
-                e.currentTarget.style.boxShadow = 'inset 0 0 40px rgba(255,215,0,0.04)'
+                e.currentTarget.style.borderColor = 'rgba(212,175,55,0.5)'
+                e.currentTarget.style.boxShadow = 'inset 0 0 40px rgba(212,175,55,0.04)'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,215,0,0.2)'
+                e.currentTarget.style.borderColor = 'rgba(212,175,55,0.2)'
                 e.currentTarget.style.boxShadow = 'none'
               }}
             >

@@ -18,7 +18,7 @@ function Field({ as: Tag = 'input', label, error, ...props }) {
         display: 'block',
         fontFamily: 'Raleway, sans-serif', fontWeight: 200,
         fontSize: '9px', letterSpacing: '0.45em',
-        color: error ? 'rgba(255,100,100,0.7)' : focused ? 'rgba(255,215,0,0.7)' : 'rgba(245,240,232,0.3)',
+        color: error ? 'rgba(255,100,100,0.7)' : focused ? 'rgba(212,175,55,0.7)' : 'rgba(245,240,232,0.3)',
         textTransform: 'uppercase',
         marginBottom: '0.5rem',
         transition: 'color 0.3s',
@@ -32,8 +32,8 @@ function Field({ as: Tag = 'input', label, error, ...props }) {
         style={{
           width: '100%',
           padding: Tag === 'textarea' ? '0.9rem 1rem' : '0.75rem 1rem',
-          background: focused ? 'rgba(255,215,0,0.03)' : 'transparent',
-          border: `1px solid ${error ? 'rgba(255,100,100,0.4)' : focused ? 'rgba(255,215,0,0.45)' : 'rgba(255,215,0,0.15)'}`,
+          background: focused ? 'rgba(212,175,55,0.03)' : 'transparent',
+          border: `1px solid ${error ? 'rgba(255,100,100,0.4)' : focused ? 'rgba(212,175,55,0.45)' : 'rgba(212,175,55,0.15)'}`,
           color: '#f5f0e8',
           fontFamily: 'Raleway, sans-serif',
           fontWeight: 200,
@@ -111,7 +111,7 @@ export default function Contact() {
       <p style={{
         fontFamily: 'Raleway, sans-serif', fontWeight: 200,
         letterSpacing: '0.6em', fontSize: '10px',
-        color: '#FFD700', textTransform: 'uppercase',
+        color: '#D4AF37', textTransform: 'uppercase',
         marginBottom: '1.5rem', opacity: 0.7,
       }}>
         Contact
@@ -123,7 +123,7 @@ export default function Contact() {
         fontWeight: 300, color: '#f5f0e8',
         marginBottom: '1rem',
       }}>
-        Begin the <em style={{ color: '#FFD700', fontStyle: 'italic' }}>Dialogue</em>
+        Begin the <em style={{ color: '#D4AF37', fontStyle: 'italic' }}>Dialogue</em>
       </h2>
 
       <p style={{
@@ -138,7 +138,7 @@ export default function Contact() {
       {/* Gold divider */}
       <div style={{
         width: '1px', height: '40px',
-        background: 'linear-gradient(to bottom, transparent, rgba(255,215,0,0.4), transparent)',
+        background: 'linear-gradient(to bottom, transparent, rgba(212,175,55,0.4), transparent)',
         margin: '0 auto 3rem',
       }} />
 
@@ -153,8 +153,8 @@ export default function Contact() {
             transition={{ duration: 0.6, ease: EASE }}
             style={{
               padding: '3rem 2rem',
-              border: '1px solid rgba(255,215,0,0.2)',
-              background: 'rgba(255,215,0,0.03)',
+              border: '1px solid rgba(212,175,55,0.2)',
+              background: 'rgba(212,175,55,0.03)',
             }}
           >
             {/* Animated check */}
@@ -163,12 +163,12 @@ export default function Contact() {
               style={{ width: '52px', height: '52px', margin: '0 auto 1.5rem', display: 'block' }}
             >
               <motion.circle cx="30" cy="30" r="28"
-                stroke="rgba(255,215,0,0.5)" strokeWidth="1"
+                stroke="rgba(212,175,55,0.5)" strokeWidth="1"
                 initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
                 transition={{ duration: 0.8, ease: EASE }}
               />
               <motion.path d="M18 30 L26 38 L42 22"
-                stroke="#FFD700" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
+                stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
                 fill="none"
                 initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
                 transition={{ duration: 0.5, delay: 0.6, ease: EASE }}
@@ -185,7 +185,7 @@ export default function Contact() {
             <p style={{
               fontFamily: 'Raleway, sans-serif', fontWeight: 200,
               fontSize: '11px', letterSpacing: '0.3em',
-              color: 'rgba(255,215,0,0.5)', textTransform: 'uppercase',
+              color: 'rgba(212,175,55,0.5)', textTransform: 'uppercase',
             }}>
               Complete sending from your email app
             </p>
@@ -194,16 +194,16 @@ export default function Contact() {
               onClick={() => setStatus('idle')}
               style={{
                 marginTop: '2rem',
-                background: 'none', border: '1px solid rgba(255,215,0,0.2)',
-                color: 'rgba(255,215,0,0.5)',
+                background: 'none', border: '1px solid rgba(212,175,55,0.2)',
+                color: 'rgba(212,175,55,0.5)',
                 fontFamily: 'Raleway, sans-serif', fontWeight: 200,
                 fontSize: '9px', letterSpacing: '0.4em',
                 textTransform: 'uppercase',
                 padding: '0.6rem 1.4rem', cursor: 'pointer',
                 transition: 'border-color 0.3s, color 0.3s',
               }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(255,215,0,0.5)'; e.currentTarget.style.color = '#FFD700' }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,215,0,0.2)'; e.currentTarget.style.color = 'rgba(255,215,0,0.5)' }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(212,175,55,0.5)'; e.currentTarget.style.color = '#D4AF37' }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(212,175,55,0.2)'; e.currentTarget.style.color = 'rgba(212,175,55,0.5)' }}
             >
               Send another
             </button>
@@ -219,8 +219,8 @@ export default function Contact() {
             transition={{ duration: 0.4 }}
             style={{
               padding: 'clamp(1.5rem, 4vw, 2.5rem)',
-              border: '1px solid rgba(255,215,0,0.12)',
-              background: 'rgba(255,215,0,0.02)',
+              border: '1px solid rgba(212,175,55,0.12)',
+              background: 'rgba(212,175,55,0.02)',
               textAlign: 'left',
             }}
             noValidate
@@ -269,15 +269,15 @@ export default function Contact() {
                 style={{
                   padding: '0.9rem 3rem',
                   background: 'transparent',
-                  border: '1px solid rgba(255,215,0,0.5)',
-                  color: '#FFD700',
+                  border: '1px solid rgba(212,175,55,0.5)',
+                  color: '#D4AF37',
                   fontFamily: 'Raleway, sans-serif', fontWeight: 200,
                   fontSize: '10px', letterSpacing: '0.4em',
                   textTransform: 'uppercase',
                   cursor: 'pointer',
                   transition: 'border-color 0.3s, color 0.3s, background 0.3s',
                 }}
-                whileHover={{ backgroundColor: 'rgba(255,215,0,0.06)' }}
+                whileHover={{ backgroundColor: 'rgba(212,175,55,0.06)' }}
                 whileTap={{ scale: 0.97 }}
               >
                 Send Message
@@ -296,9 +296,9 @@ export default function Contact() {
       }}>
         Or write directly —{' '}
         <a href={SITE.mailtoHref}
-          style={{ color: 'rgba(255,215,0,0.35)', textDecoration: 'none' }}
-          onMouseEnter={e => e.currentTarget.style.color = '#FFD700'}
-          onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,215,0,0.35)'}
+          style={{ color: 'rgba(212,175,55,0.35)', textDecoration: 'none' }}
+          onMouseEnter={e => e.currentTarget.style.color = '#D4AF37'}
+          onMouseLeave={e => e.currentTarget.style.color = 'rgba(212,175,55,0.35)'}
         >
           {SITE.email}
         </a>

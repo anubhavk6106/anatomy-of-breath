@@ -10,7 +10,7 @@ import { PortableText } from '@portabletext/react'
  * - Cormorant Garamond for headings
  * - Raleway for body text
  * - Cream (#f5f0e8) text on obsidian (#0b0b0b) background
- * - Gold (#FFD700) accents for links
+ * - Gold (#D4AF37) accents for links
  */
 const components = {
   block: {
@@ -38,7 +38,7 @@ const components = {
           fontFamily: "'Cormorant Garamond', serif",
           fontSize: 'clamp(1.5rem, 4vw, 2.25rem)',
           fontWeight: 300,
-          color: '#FFD700',
+          color: '#D4AF37',
           lineHeight: 1.3,
           marginTop: '2rem',
           marginBottom: '1.25rem',
@@ -70,7 +70,7 @@ const components = {
           fontFamily: 'Raleway, sans-serif',
           fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
           fontWeight: 300,
-          color: 'rgba(255,215,0,0.9)',
+          color: 'rgba(212,175,55,0.9)',
           lineHeight: 1.5,
           marginTop: '1.5rem',
           marginBottom: '0.75rem',
@@ -106,12 +106,12 @@ const components = {
           fontFamily: "'Cormorant Garamond', serif",
           fontSize: 'clamp(1.1rem, 2.5vw, 1.35rem)',
           fontStyle: 'italic',
-          color: '#FFD700',
+          color: '#D4AF37',
           lineHeight: 1.6,
           margin: '2rem 0',
           padding: '1.5rem 2rem',
-          borderLeft: '2px solid rgba(255,215,0,0.4)',
-          background: 'rgba(255,215,0,0.03)',
+          borderLeft: '2px solid rgba(212,175,55,0.4)',
+          background: 'rgba(212,175,55,0.03)',
           letterSpacing: '0.01em',
         }}
       >
@@ -169,7 +169,7 @@ const components = {
           style={{
             position: 'absolute',
             left: 0,
-            color: '#FFD700',
+            color: '#D4AF37',
             fontSize: '0.8rem',
           }}
         >
@@ -196,7 +196,7 @@ const components = {
       <strong
         style={{
           fontWeight: 400,
-          color: '#FFD700',
+          color: '#D4AF37',
         }}
       >
         {children}
@@ -218,17 +218,17 @@ const components = {
         target={value?.blank ? '_blank' : undefined}
         rel={value?.blank ? 'noopener noreferrer' : undefined}
         style={{
-          color: '#FFD700',
+          color: '#D4AF37',
           textDecoration: 'underline',
-          textDecorationColor: 'rgba(255,215,0,0.3)',
+          textDecorationColor: 'rgba(212,175,55,0.3)',
           textUnderlineOffset: '3px',
           transition: 'text-decoration-color 0.3s',
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.textDecorationColor = 'rgba(255,215,0,0.8)'
+          e.currentTarget.style.textDecorationColor = 'rgba(212,175,55,0.8)'
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.textDecorationColor = 'rgba(255,215,0,0.3)'
+          e.currentTarget.style.textDecorationColor = 'rgba(212,175,55,0.3)'
         }}
       >
         {children}
@@ -258,7 +258,7 @@ const components = {
               width: '100%',
               height: 'auto',
               display: 'block',
-              border: '1px solid rgba(255,215,0,0.15)',
+              border: '1px solid rgba(212,175,55,0.15)',
             }}
           />
           {value.caption && (

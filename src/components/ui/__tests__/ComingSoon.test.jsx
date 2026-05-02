@@ -53,8 +53,9 @@ describe('ComingSoon', () => {
     
     const heading = container.querySelector('h2')
     
-    // Check gold color (#FFD700)
-    expect(heading.style.color).toBe('rgb(255, 215, 0)')
+    // Check gold gradient is applied (background-clip text technique)
+    // The heading now uses a gradient instead of a flat color
+    expect(heading.style.background).toContain('#D4AF37')
   })
 
   it('renders decorative line element', () => {

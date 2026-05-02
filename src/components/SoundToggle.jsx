@@ -14,16 +14,16 @@ export default function SoundToggle({ playing, onToggle }) {
       title={playing ? 'Mute' : 'Ambient sound'}
       style={{
         background: 'none',
-        border: '1px solid rgba(255,215,0,0.22)',
+        border: '1px solid rgba(212,175,55,0.22)',
         cursor: 'pointer',
         padding: '6px 10px',
         display: 'flex',
         alignItems: 'center',
         gap: '7px',
-        color: playing ? '#FFD700' : 'rgba(255,215,0,0.4)',
+        color: playing ? '#D4AF37' : 'rgba(212,175,55,0.4)',
         transition: 'border-color 0.3s, color 0.3s',
       }}
-      whileHover={{ borderColor: 'rgba(255,215,0,0.6)', color: '#FFD700' }}
+      whileHover={{ borderColor: 'rgba(212,175,55,0.6)', color: '#D4AF37' }}
       whileTap={{ scale: 0.93 }}
     >
       {/* Waveform icon */}

@@ -40,8 +40,8 @@ describe('PageLoader', () => {
     
     const svgContainer = container.querySelector('div[style*="width: 80px"]')
     
-    // Check that SVG contains gold stroke color (#FFD700)
-    expect(svgContainer.innerHTML).toContain('#FFD700')
+    // Check that SVG contains gold stroke color (#D4AF37)
+    expect(svgContainer.innerHTML).toContain('#D4AF37')
   })
 
   it('renders as fullscreen overlay', () => {

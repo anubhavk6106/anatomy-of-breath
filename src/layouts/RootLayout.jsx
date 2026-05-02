@@ -68,14 +68,14 @@ function CustomCursor() {
       if (ring) {
         ring.style.width  = '44px'
         ring.style.height = '44px'
-        ring.style.borderColor = 'rgba(255,215,0,0.7)'
+        ring.style.borderColor = 'rgba(212,175,55,0.7)'
       }
     }
     const shrink = () => {
       if (ring) {
         ring.style.width  = '28px'
         ring.style.height = '28px'
-        ring.style.borderColor = 'rgba(255,215,0,0.4)'
+        ring.style.borderColor = 'rgba(212,175,55,0.4)'
       }
     }
 
@@ -105,13 +105,13 @@ function CustomCursor() {
           position: 'fixed',
           width: '7px',
           height: '7px',
-          background: '#FFD700',
+          background: '#D4AF37',
           borderRadius: '50%',
           pointerEvents: 'none',
           zIndex: 9999,
           transform: 'translate(-50%, -50%)',
           opacity: 0,
-          boxShadow: '0 0 8px rgba(255,215,0,0.9)',
+          boxShadow: '0 0 8px rgba(212,175,55,0.9)',
           // No mix-blend-mode — keeps gold visible on dark backgrounds
         }}
       />
@@ -122,7 +122,7 @@ function CustomCursor() {
           position: 'fixed',
           width: '28px',
           height: '28px',
-          border: '1px solid rgba(255,215,0,0.4)',
+          border: '1px solid rgba(212,175,55,0.4)',
           borderRadius: '50%',
           pointerEvents: 'none',
           zIndex: 9998,
@@ -151,7 +151,7 @@ function GlobalFooter() {
   return (
     <footer style={{
       background: 'rgba(4,4,4,0.99)',
-      borderTop: '1px solid rgba(255,215,0,0.07)',
+      borderTop: '1px solid rgba(212,175,55,0.07)',
     }}>
       {/* Main footer grid */}
       <div style={{
@@ -172,14 +172,14 @@ function GlobalFooter() {
               animate={{ scale: [1, 1.08, 1] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
             >
-              <circle cx="12" cy="12" r="10" stroke="rgba(255,215,0,0.25)" strokeWidth="0.8"/>
-              <circle cx="12" cy="12" r="6"  stroke="rgba(255,215,0,0.45)" strokeWidth="0.8"/>
-              <circle cx="12" cy="12" r="2"  fill="rgba(255,215,0,0.6)"/>
+              <circle cx="12" cy="12" r="10" stroke="rgba(212,175,55,0.25)" strokeWidth="0.8"/>
+              <circle cx="12" cy="12" r="6"  stroke="rgba(212,175,55,0.45)" strokeWidth="0.8"/>
+              <circle cx="12" cy="12" r="2"  fill="rgba(212,175,55,0.6)"/>
             </motion.svg>
             <span style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: '1.05rem',
-              color: '#FFD700',
+              color: '#D4AF37',
               fontStyle: 'italic',
               letterSpacing: '0.02em',
             }}>
@@ -213,13 +213,13 @@ function GlobalFooter() {
                 fontWeight: 200,
                 fontSize: '10px',
                 letterSpacing: '0.12em',
-                color: 'rgba(255,215,0,0.45)',
+                color: 'rgba(212,175,55,0.45)',
                 textDecoration: 'none',
                 transition: 'color 0.3s',
                 paddingBottom: '0.85rem',
               }}
-              onMouseEnter={e => e.currentTarget.style.color = '#FFD700'}
-              onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,215,0,0.45)'}
+              onMouseEnter={e => e.currentTarget.style.color = '#D4AF37'}
+              onMouseLeave={e => e.currentTarget.style.color = 'rgba(212,175,55,0.45)'}
             >
               <svg width="12" height="9" viewBox="0 0 12 9" fill="none">
                 <rect x="0.5" y="0.5" width="11" height="8" rx="0.5" stroke="currentColor" strokeWidth="0.8"/>
@@ -232,7 +232,7 @@ function GlobalFooter() {
             <div style={{
               width: '100%',
               height: '1px',
-              background: 'linear-gradient(to right, rgba(255,215,0,0.12), transparent)',
+              background: 'linear-gradient(to right, rgba(212,175,55,0.12), transparent)',
               marginBottom: '0.85rem',
             }} />
 
@@ -249,12 +249,12 @@ function GlobalFooter() {
                 fontWeight: 200,
                 fontSize: '10px',
                 letterSpacing: '0.12em',
-                color: 'rgba(255,215,0,0.45)',
+                color: 'rgba(212,175,55,0.45)',
                 textDecoration: 'none',
                 transition: 'color 0.3s',
               }}
-              onMouseEnter={e => e.currentTarget.style.color = '#FFD700'}
-              onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,215,0,0.45)'}
+              onMouseEnter={e => e.currentTarget.style.color = '#D4AF37'}
+              onMouseLeave={e => e.currentTarget.style.color = 'rgba(212,175,55,0.45)'}
             >
               <svg
                 width="13"
@@ -283,7 +283,7 @@ function GlobalFooter() {
             fontWeight: 200,
             fontSize: '8px',
             letterSpacing: '0.55em',
-            color: 'rgba(255,215,0,0.35)',
+            color: 'rgba(212,175,55,0.35)',
             textTransform: 'uppercase',
             marginBottom: '1.5rem',
           }}>
@@ -308,7 +308,7 @@ function GlobalFooter() {
                     transition: 'color 0.3s, gap 0.3s',
                   }}
                   onMouseEnter={e => {
-                    e.currentTarget.style.color = 'rgba(255,215,0,0.8)'
+                    e.currentTarget.style.color = 'rgba(212,175,55,0.8)'
                     e.currentTarget.style.gap = '14px'
                   }}
                   onMouseLeave={e => {
@@ -318,7 +318,7 @@ function GlobalFooter() {
                 >
                   <span style={{
                     width: '14px', height: '1px',
-                    background: 'rgba(255,215,0,0.25)',
+                    background: 'rgba(212,175,55,0.25)',
                     display: 'inline-block',
                     flexShrink: 0,
                     transition: 'background 0.3s',
@@ -337,7 +337,7 @@ function GlobalFooter() {
             fontWeight: 200,
             fontSize: '8px',
             letterSpacing: '0.55em',
-            color: 'rgba(255,215,0,0.35)',
+            color: 'rgba(212,175,55,0.35)',
             textTransform: 'uppercase',
             marginBottom: '1.5rem',
           }}>
@@ -356,9 +356,9 @@ function GlobalFooter() {
                     fontWeight: 200,
                     fontSize: '9px',
                     letterSpacing: '0.18em',
-                    color: isActive ? '#FFD700' : 'rgba(245,240,232,0.3)',
-                    background: isActive ? 'rgba(255,215,0,0.07)' : 'transparent',
-                    border: `1px solid ${isActive ? 'rgba(255,215,0,0.4)' : 'rgba(255,215,0,0.08)'}`,
+                    color: isActive ? '#D4AF37' : 'rgba(245,240,232,0.3)',
+                    background: isActive ? 'rgba(212,175,55,0.07)' : 'transparent',
+                    border: `1px solid ${isActive ? 'rgba(212,175,55,0.4)' : 'rgba(212,175,55,0.08)'}`,
                     padding: '0.4rem 0.85rem',
                     cursor: 'pointer',
                     transition: 'all 0.25s',
@@ -369,13 +369,13 @@ function GlobalFooter() {
                   onMouseEnter={e => {
                     if (!isActive) {
                       e.currentTarget.style.color = 'rgba(245,240,232,0.65)'
-                      e.currentTarget.style.borderColor = 'rgba(255,215,0,0.22)'
+                      e.currentTarget.style.borderColor = 'rgba(212,175,55,0.22)'
                     }
                   }}
                   onMouseLeave={e => {
                     if (!isActive) {
                       e.currentTarget.style.color = 'rgba(245,240,232,0.3)'
-                      e.currentTarget.style.borderColor = 'rgba(255,215,0,0.08)'
+                      e.currentTarget.style.borderColor = 'rgba(212,175,55,0.08)'
                     }
                   }}
                 >
@@ -392,7 +392,7 @@ function GlobalFooter() {
             fontWeight: 300,
             fontStyle: 'italic',
             fontSize: '0.95rem',
-            color: 'rgba(255,215,0,0.2)',
+            color: 'rgba(212,175,55,0.2)',
             marginTop: '2rem',
             letterSpacing: '0.02em',
             lineHeight: 1.5,
@@ -406,7 +406,7 @@ function GlobalFooter() {
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 clamp(1.5rem, 4vw, 3rem)' }}>
         <div style={{
           height: '1px',
-          background: 'linear-gradient(to right, transparent, rgba(255,215,0,0.07), transparent)',
+          background: 'linear-gradient(to right, transparent, rgba(212,175,55,0.07), transparent)',
         }} />
       </div>
 

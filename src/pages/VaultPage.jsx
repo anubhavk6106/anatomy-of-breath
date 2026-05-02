@@ -13,7 +13,7 @@ const EASE = [0.25, 0.46, 0.45, 0.94]
 // Sacred geometry SVG - Flower of Life pattern
 const GEOMETRY_SVG = `
   <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <g fill="none" stroke="#FFD700" stroke-width="0.5" opacity="0.15">
+    <g fill="none" stroke="#D4AF37" stroke-width="0.5" opacity="0.15">
       <circle cx="100" cy="100" r="30"/>
       <circle cx="100" cy="70"  r="30"/>
       <circle cx="126" cy="85"  r="30"/>
@@ -132,18 +132,18 @@ export default function VaultPage() {
               transition={{ duration: 0.7, delay: 0.7 + index * 0.1, ease: EASE }}
               style={{
                 padding: '2rem 1.5rem',
-                border: '1px solid rgba(255,215,0,0.12)',
-                background: 'rgba(255,215,0,0.02)',
+                border: '1px solid rgba(212,175,55,0.12)',
+                background: 'rgba(212,175,55,0.02)',
                 textAlign: 'center',
                 transition: 'border-color 0.4s, background 0.4s',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,215,0,0.25)'
-                e.currentTarget.style.background = 'rgba(255,215,0,0.04)'
+                e.currentTarget.style.borderColor = 'rgba(212,175,55,0.25)'
+                e.currentTarget.style.background = 'rgba(212,175,55,0.04)'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,215,0,0.12)'
-                e.currentTarget.style.background = 'rgba(255,215,0,0.02)'
+                e.currentTarget.style.borderColor = 'rgba(212,175,55,0.12)'
+                e.currentTarget.style.background = 'rgba(212,175,55,0.02)'
               }}
             >
               <div

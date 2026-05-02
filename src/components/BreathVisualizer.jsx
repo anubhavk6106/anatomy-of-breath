@@ -17,10 +17,10 @@ const EASE_BREATH = [0.45, 0.05, 0.55, 0.95]
 
 // ── Phase config ─────────────────────────────────────────────
 const PHASES = [
-  { name: 'Inhale',  duration: 4,  instruction: 'Breathe in',       color: 'rgba(255,215,0,0.9)'  },
+  { name: 'Inhale',  duration: 4,  instruction: 'Breathe in',       color: 'rgba(212,175,55,0.9)'  },
   { name: 'Hold',    duration: 7,  instruction: 'Hold',              color: 'rgba(255,180,60,0.85)' },
-  { name: 'Exhale',  duration: 8,  instruction: 'Breathe out',       color: 'rgba(255,215,0,0.6)'  },
-  { name: 'Rest',    duration: 1,  instruction: 'Rest',              color: 'rgba(255,215,0,0.35)' },
+  { name: 'Exhale',  duration: 8,  instruction: 'Breathe out',       color: 'rgba(212,175,55,0.6)'  },
+  { name: 'Rest',    duration: 1,  instruction: 'Rest',              color: 'rgba(212,175,55,0.35)' },
 ]
 
 const TOTAL_CYCLE = PHASES.reduce((s, p) => s + p.duration, 0) // 20s
@@ -33,7 +33,7 @@ function OrbitRing({ radius, duration, reverse, strokeWidth, opacity, active }) 
         position: 'absolute',
         width: radius * 2, height: radius * 2,
         borderRadius: '50%',
-        border: `${strokeWidth}px solid rgba(255,215,0,${opacity})`,
+        border: `${strokeWidth}px solid rgba(212,175,55,${opacity})`,
         top: '50%', left: '50%',
         marginTop: -radius, marginLeft: -radius,
         pointerEvents: 'none',
@@ -81,7 +81,7 @@ function TickRing({ radius, count, active }) {
               y1={cy + Math.sin(rad) * inner}
               x2={cx + Math.cos(rad) * outer}
               y2={cy + Math.sin(rad) * outer}
-              stroke="#FFD700"
+              stroke="#D4AF37"
               strokeWidth={i % 4 === 0 ? 1.2 : 0.5}
               animate={{ opacity: active ? (i % 4 === 0 ? 0.6 : 0.2) : 0.08 }}
               transition={{ duration: 0.8 }}
@@ -120,11 +120,11 @@ function CountdownArc({ duration, phase, active }) {
     >
       {/* Track */}
       <circle cx="100" cy="100" r={R}
-        fill="none" stroke="rgba(255,215,0,0.08)" strokeWidth="1" />
+        fill="none" stroke="rgba(212,175,55,0.08)" strokeWidth="1" />
       {/* Progress */}
       <motion.circle cx="100" cy="100" r={R}
         fill="none"
-        stroke="rgba(255,215,0,0.45)"
+        stroke="rgba(212,175,55,0.45)"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeDasharray={circumference}
@@ -234,7 +234,7 @@ export default function BreathVisualizer() {
           style={{
             position: 'absolute', inset: 0,
             borderRadius: '50%',
-            border: '1px solid rgba(255,215,0,0.2)',
+            border: '1px solid rgba(212,175,55,0.2)',
             pointerEvents: 'none',
           }}
           animate={active && phase.name === 'Inhale'
@@ -251,18 +251,18 @@ export default function BreathVisualizer() {
             position: 'absolute', inset: 0,
             borderRadius: '50%',
             background: active
-              ? `radial-gradient(circle at 40% 38%, rgba(255,215,0,0.22), rgba(255,180,0,0.08) 55%, transparent 75%)`
-              : 'radial-gradient(circle at 40% 38%, rgba(255,215,0,0.08), transparent 70%)',
-            border: `1px solid ${active ? phase.color : 'rgba(255,215,0,0.25)'}`,
+              ? `radial-gradient(circle at 40% 38%, rgba(212,175,55,0.22), rgba(255,180,0,0.08) 55%, transparent 75%)`
+              : 'radial-gradient(circle at 40% 38%, rgba(212,175,55,0.08), transparent 70%)',
+            border: `1px solid ${active ? phase.color : 'rgba(212,175,55,0.25)'}`,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             cursor: 'pointer',
             boxShadow: active
-              ? `0 0 40px rgba(255,215,0,0.12), inset 0 0 30px rgba(255,215,0,0.06)`
+              ? `0 0 40px rgba(212,175,55,0.12), inset 0 0 30px rgba(212,175,55,0.06)`
               : 'none',
           }}
           animate={{
             scale: targetScale,
-            borderColor: active ? phase.color : 'rgba(255,215,0,0.25)',
+            borderColor: active ? phase.color : 'rgba(212,175,55,0.25)',
           }}
           transition={
             phase.name === 'Inhale'
@@ -320,7 +320,7 @@ export default function BreathVisualizer() {
                   <div style={{
                     fontFamily: 'Raleway, sans-serif', fontWeight: 200,
                     fontSize: 'clamp(7px, 1.8vw, 9px)', letterSpacing: '0.4em',
-                    color: 'rgba(255,215,0,0.5)', textTransform: 'uppercase',
+                    color: 'rgba(212,175,55,0.5)', textTransform: 'uppercase',
                     marginBottom: '0.4rem',
                   }}>
                     4 · 7 · 8
@@ -354,7 +354,7 @@ export default function BreathVisualizer() {
               fontSize: 'clamp(1rem, 3vw, 1.4rem)',
               fontWeight: 300,
               color: active && PHASES[phaseIdx].name === p.name
-                ? '#FFD700' : 'rgba(245,240,232,0.25)',
+                ? '#D4AF37' : 'rgba(245,240,232,0.25)',
               transition: 'color 0.5s',
             }}>
               {p.duration}
@@ -363,7 +363,7 @@ export default function BreathVisualizer() {
               fontFamily: 'Raleway, sans-serif', fontWeight: 200,
               fontSize: 'clamp(6px, 1.5vw, 8px)', letterSpacing: '0.35em',
               color: active && PHASES[phaseIdx].name === p.name
-                ? 'rgba(255,215,0,0.6)' : 'rgba(245,240,232,0.18)',
+                ? 'rgba(212,175,55,0.6)' : 'rgba(245,240,232,0.18)',
               textTransform: 'uppercase',
               transition: 'color 0.5s',
             }}>
@@ -384,7 +384,7 @@ export default function BreathVisualizer() {
               marginTop: '1.2rem',
               fontFamily: 'Raleway, sans-serif', fontWeight: 200,
               fontSize: '9px', letterSpacing: '0.4em',
-              color: 'rgba(255,215,0,0.3)', textTransform: 'uppercase',
+              color: 'rgba(212,175,55,0.3)', textTransform: 'uppercase',
             }}
           >
             Cycle {cycleCount}
@@ -404,7 +404,7 @@ export default function BreathVisualizer() {
               marginTop: '0.8rem',
               fontFamily: 'Raleway, sans-serif', fontWeight: 200,
               fontSize: '8px', letterSpacing: '0.3em',
-              color: 'rgba(255,215,0,0.2)', textTransform: 'uppercase',
+              color: 'rgba(212,175,55,0.2)', textTransform: 'uppercase',
             }}
           >
             Tap to stop

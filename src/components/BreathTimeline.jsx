@@ -26,15 +26,15 @@ const ORIGINAL_STAGES = [
       <path d="M30 155 Q100 95 170 155" stroke="rgba(245,240,232,0.3)" stroke-width="1"/>
       <path d="M30 170 Q100 110 170 170" stroke="rgba(245,240,232,0.15)" stroke-width=".8"/>
       <line x1="100" y1="80" x2="100" y2="210" stroke="rgba(245,240,232,0.25)" stroke-width="1" stroke-dasharray="4 4"/>
-      <circle cx="100" cy="80" r="6" fill="rgba(255,215,0,0.5)"/>
-      <path d="M60 200 Q100 220 140 200" stroke="rgba(255,215,0,0.3)" stroke-width="1" fill="none"/>
-      <line x1="40" y1="140" x2="40" y2="175" stroke="rgba(255,215,0,0.4)" stroke-width="1"/>
-      <line x1="160" y1="140" x2="160" y2="175" stroke="rgba(255,215,0,0.4)" stroke-width="1"/>
+      <circle cx="100" cy="80" r="6" fill="rgba(212,175,55,0.5)"/>
+      <path d="M60 200 Q100 220 140 200" stroke="rgba(212,175,55,0.3)" stroke-width="1" fill="none"/>
+      <line x1="40" y1="140" x2="40" y2="175" stroke="rgba(212,175,55,0.4)" stroke-width="1"/>
+      <line x1="160" y1="140" x2="160" y2="175" stroke="rgba(212,175,55,0.4)" stroke-width="1"/>
     </svg>`,
     geometryAccent: `<svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="60" cy="60" r="55" stroke="rgba(255,215,0,0.12)" stroke-width="0.5"/>
-      <circle cx="60" cy="60" r="35" stroke="rgba(255,215,0,0.18)" stroke-width="0.5"/>
-      <path d="M60 5 Q115 60 60 115 Q5 60 60 5Z" stroke="rgba(255,215,0,0.1)" stroke-width="0.5" fill="none"/>
+      <circle cx="60" cy="60" r="55" stroke="rgba(212,175,55,0.12)" stroke-width="0.5"/>
+      <circle cx="60" cy="60" r="35" stroke="rgba(212,175,55,0.18)" stroke-width="0.5"/>
+      <path d="M60 5 Q115 60 60 115 Q5 60 60 5Z" stroke="rgba(212,175,55,0.1)" stroke-width="0.5" fill="none"/>
     </svg>`,
   },
   {
@@ -62,12 +62,12 @@ const ORIGINAL_STAGES = [
       <line x1="120" y1="190" x2="128" y2="218" stroke="rgba(245,240,232,0.2)" stroke-width=".8"/>
       <line x1="156" y1="190" x2="148" y2="218" stroke="rgba(245,240,232,0.2)" stroke-width=".8"/>
       <line x1="156" y1="190" x2="164" y2="218" stroke="rgba(245,240,232,0.2)" stroke-width=".8"/>
-      <circle cx="100" cy="95" r="5" stroke="rgba(255,215,0,0.5)" stroke-width="1" fill="rgba(255,215,0,0.1)"/>
+      <circle cx="100" cy="95" r="5" stroke="rgba(212,175,55,0.5)" stroke-width="1" fill="rgba(212,175,55,0.1)"/>
     </svg>`,
     geometryAccent: `<svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="60,8 112,90 8,90" stroke="rgba(255,215,0,0.15)" stroke-width="0.5" fill="none"/>
-      <polygon points="60,112 8,30 112,30" stroke="rgba(255,215,0,0.1)" stroke-width="0.5" fill="none"/>
-      <circle cx="60" cy="60" r="40" stroke="rgba(255,215,0,0.1)" stroke-width="0.5"/>
+      <polygon points="60,8 112,90 8,90" stroke="rgba(212,175,55,0.15)" stroke-width="0.5" fill="none"/>
+      <polygon points="60,112 8,30 112,30" stroke="rgba(212,175,55,0.1)" stroke-width="0.5" fill="none"/>
+      <circle cx="60" cy="60" r="40" stroke="rgba(212,175,55,0.1)" stroke-width="0.5"/>
     </svg>`,
   },
   {
@@ -90,13 +90,13 @@ const ORIGINAL_STAGES = [
       <circle cx="40" cy="130" r="14" stroke="rgba(245,240,232,0.22)" stroke-width=".7"/>
       <circle cx="160" cy="130" r="14" stroke="rgba(245,240,232,0.22)" stroke-width=".7"/>
       <circle cx="100" cy="175" r="12" stroke="rgba(245,240,232,0.18)" stroke-width=".6"/>
-      <circle cx="100" cy="115" r="5" fill="rgba(255,215,0,0.35)"/>
+      <circle cx="100" cy="115" r="5" fill="rgba(212,175,55,0.35)"/>
     </svg>`,
     geometryAccent: `<svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="60" cy="60" r="50" stroke="rgba(255,215,0,0.1)" stroke-width="0.5"/>
-      <circle cx="60" cy="35" r="25" stroke="rgba(255,215,0,0.12)" stroke-width="0.5"/>
-      <circle cx="82" cy="72" r="25" stroke="rgba(255,215,0,0.12)" stroke-width="0.5"/>
-      <circle cx="38" cy="72" r="25" stroke="rgba(255,215,0,0.12)" stroke-width="0.5"/>
+      <circle cx="60" cy="60" r="50" stroke="rgba(212,175,55,0.1)" stroke-width="0.5"/>
+      <circle cx="60" cy="35" r="25" stroke="rgba(212,175,55,0.12)" stroke-width="0.5"/>
+      <circle cx="82" cy="72" r="25" stroke="rgba(212,175,55,0.12)" stroke-width="0.5"/>
+      <circle cx="38" cy="72" r="25" stroke="rgba(212,175,55,0.12)" stroke-width="0.5"/>
     </svg>`,
   },
   {
@@ -115,19 +115,19 @@ const ORIGINAL_STAGES = [
       <circle cx="100" cy="120" r="60" stroke="rgba(245,240,232,0.2)" stroke-width=".8"/>
       <line x1="40" y1="120" x2="160" y2="120" stroke="rgba(245,240,232,0.3)" stroke-width="1"/>
       <line x1="100" y1="60" x2="100" y2="180" stroke="rgba(245,240,232,0.3)" stroke-width="1"/>
-      <circle cx="72" cy="100" r="8" fill="rgba(255,215,0,0.2)" stroke="rgba(255,215,0,0.5)" stroke-width="0.8"/>
+      <circle cx="72" cy="100" r="8" fill="rgba(212,175,55,0.2)" stroke="rgba(212,175,55,0.5)" stroke-width="0.8"/>
       <circle cx="128" cy="140" r="8" fill="rgba(255,100,100,0.15)" stroke="rgba(255,100,100,0.4)" stroke-width="0.8"/>
-      <line x1="80" y1="100" x2="120" y2="100" stroke="rgba(255,215,0,0.3)" stroke-width=".6" stroke-dasharray="3 2"/>
+      <line x1="80" y1="100" x2="120" y2="100" stroke="rgba(212,175,55,0.3)" stroke-width=".6" stroke-dasharray="3 2"/>
       <line x1="80" y1="140" x2="120" y2="140" stroke="rgba(255,100,100,0.25)" stroke-width=".6" stroke-dasharray="3 2"/>
-      <text x="62" y="98" font-size="7" fill="rgba(255,215,0,0.6)" font-family="serif">O₂</text>
+      <text x="62" y="98" font-size="7" fill="rgba(212,175,55,0.6)" font-family="serif">O₂</text>
       <text x="118" y="138" font-size="7" fill="rgba(255,120,120,0.6)" font-family="serif">CO₂</text>
     </svg>`,
     geometryAccent: `<svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="60" cy="60" r="52" stroke="rgba(255,215,0,0.1)" stroke-width="0.5"/>
-      <ellipse cx="60" cy="60" rx="52" ry="20" stroke="rgba(255,215,0,0.12)" stroke-width="0.5"/>
-      <ellipse cx="60" cy="60" rx="52" ry="38" stroke="rgba(255,215,0,0.08)" stroke-width="0.5"/>
-      <line x1="8" y1="60" x2="112" y2="60" stroke="rgba(255,215,0,0.1)" stroke-width="0.4"/>
-      <line x1="60" y1="8" x2="60" y2="112" stroke="rgba(255,215,0,0.1)" stroke-width="0.4"/>
+      <circle cx="60" cy="60" r="52" stroke="rgba(212,175,55,0.1)" stroke-width="0.5"/>
+      <ellipse cx="60" cy="60" rx="52" ry="20" stroke="rgba(212,175,55,0.12)" stroke-width="0.5"/>
+      <ellipse cx="60" cy="60" rx="52" ry="38" stroke="rgba(212,175,55,0.08)" stroke-width="0.5"/>
+      <line x1="8" y1="60" x2="112" y2="60" stroke="rgba(212,175,55,0.1)" stroke-width="0.4"/>
+      <line x1="60" y1="8" x2="60" y2="112" stroke="rgba(212,175,55,0.1)" stroke-width="0.4"/>
     </svg>`,
   },
   {
@@ -147,14 +147,14 @@ const ORIGINAL_STAGES = [
       <path d="M96 108 C78 113 60 106 45 116" stroke="rgba(245,240,232,0.32)" stroke-width="1.2" fill="none"/>
       <path d="M96 155 C78 158 60 152 46 160" stroke="rgba(245,240,232,0.25)" stroke-width="1" fill="none"/>
       <path d="M104 155 C122 158 140 152 154 160" stroke="rgba(245,240,232,0.25)" stroke-width="1" fill="none"/>
-      <circle cx="100" cy="48" r="4" fill="rgba(255,215,0,0.4)"/>
-      <circle cx="100" cy="120" r="4" fill="rgba(255,215,0,0.3)"/>
-      <circle cx="100" cy="192" r="4" fill="rgba(255,215,0,0.2)"/>
+      <circle cx="100" cy="48" r="4" fill="rgba(212,175,55,0.4)"/>
+      <circle cx="100" cy="120" r="4" fill="rgba(212,175,55,0.3)"/>
+      <circle cx="100" cy="192" r="4" fill="rgba(212,175,55,0.2)"/>
     </svg>`,
     geometryAccent: `<svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M60 10 Q110 60 60 110 Q10 60 60 10Z" stroke="rgba(255,215,0,0.12)" stroke-width="0.5" fill="none"/>
-      <circle cx="60" cy="60" r="45" stroke="rgba(255,215,0,0.1)" stroke-width="0.5"/>
-      <circle cx="60" cy="60" r="25" stroke="rgba(255,215,0,0.14)" stroke-width="0.5"/>
+      <path d="M60 10 Q110 60 60 110 Q10 60 60 10Z" stroke="rgba(212,175,55,0.12)" stroke-width="0.5" fill="none"/>
+      <circle cx="60" cy="60" r="45" stroke="rgba(212,175,55,0.1)" stroke-width="0.5"/>
+      <circle cx="60" cy="60" r="25" stroke="rgba(212,175,55,0.14)" stroke-width="0.5"/>
     </svg>`,
   },
   {
@@ -169,19 +169,19 @@ const ORIGINAL_STAGES = [
     svg: `<svg viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
       <ellipse cx="100" cy="120" rx="70" ry="50" stroke="rgba(245,240,232,0.4)" stroke-width="1.2"/>
       <ellipse cx="100" cy="120" rx="50" ry="34" stroke="rgba(245,240,232,0.25)" stroke-width=".8"/>
-      <ellipse cx="85" cy="112" rx="18" ry="12" stroke="rgba(255,215,0,0.45)" stroke-width="1" fill="rgba(255,215,0,0.04)"/>
-      <ellipse cx="118" cy="130" rx="16" ry="10" stroke="rgba(255,215,0,0.38)" stroke-width=".9" fill="rgba(255,215,0,0.03)"/>
-      <ellipse cx="95" cy="138" rx="12" ry="8" stroke="rgba(255,215,0,0.3)" stroke-width=".8" fill="rgba(255,215,0,0.03)"/>
-      <circle cx="100" cy="120" r="6" fill="rgba(255,215,0,0.5)" stroke="rgba(255,215,0,0.8)" stroke-width="0.8"/>
+      <ellipse cx="85" cy="112" rx="18" ry="12" stroke="rgba(212,175,55,0.45)" stroke-width="1" fill="rgba(212,175,55,0.04)"/>
+      <ellipse cx="118" cy="130" rx="16" ry="10" stroke="rgba(212,175,55,0.38)" stroke-width=".9" fill="rgba(212,175,55,0.03)"/>
+      <ellipse cx="95" cy="138" rx="12" ry="8" stroke="rgba(212,175,55,0.3)" stroke-width=".8" fill="rgba(212,175,55,0.03)"/>
+      <circle cx="100" cy="120" r="6" fill="rgba(212,175,55,0.5)" stroke="rgba(212,175,55,0.8)" stroke-width="0.8"/>
       <line x1="100" y1="70" x2="100" y2="114" stroke="rgba(245,240,232,0.15)" stroke-width=".6" stroke-dasharray="3 3"/>
       <line x1="30" y1="120" x2="50" y2="120" stroke="rgba(245,240,232,0.15)" stroke-width=".6" stroke-dasharray="3 3"/>
       <line x1="150" y1="120" x2="170" y2="120" stroke="rgba(245,240,232,0.15)" stroke-width=".6" stroke-dasharray="3 3"/>
     </svg>`,
     geometryAccent: `<svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="60" cy="60" r="55" stroke="rgba(255,215,0,0.08)" stroke-width="0.5"/>
-      <circle cx="60" cy="60" r="38" stroke="rgba(255,215,0,0.12)" stroke-width="0.5"/>
-      <circle cx="60" cy="60" r="20" stroke="rgba(255,215,0,0.18)" stroke-width="0.5"/>
-      <circle cx="60" cy="60" r="6" fill="rgba(255,215,0,0.25)"/>
+      <circle cx="60" cy="60" r="55" stroke="rgba(212,175,55,0.08)" stroke-width="0.5"/>
+      <circle cx="60" cy="60" r="38" stroke="rgba(212,175,55,0.12)" stroke-width="0.5"/>
+      <circle cx="60" cy="60" r="20" stroke="rgba(212,175,55,0.18)" stroke-width="0.5"/>
+      <circle cx="60" cy="60" r="6" fill="rgba(212,175,55,0.25)"/>
     </svg>`,
   },
 ]
@@ -228,12 +228,12 @@ function SpineLine({ totalStages }) {
       left: '50%', top: 0, bottom: 0,
       transform: 'translateX(-50%)',
       width: '1px',
-      background: 'rgba(255,215,0,0.08)',
+      background: 'rgba(212,175,55,0.08)',
       pointerEvents: 'none',
     }}>
       <motion.div style={{
         position: 'absolute', top: 0, left: 0, right: 0,
-        background: 'linear-gradient(to bottom, transparent, rgba(255,215,0,0.5), rgba(255,215,0,0.2))',
+        background: 'linear-gradient(to bottom, transparent, rgba(212,175,55,0.5), rgba(212,175,55,0.2))',
         height: `${height}%`,
         transition: 'height 0.1s linear',
       }} />
@@ -273,7 +273,7 @@ function Stage({ stage, isMobile }) {
         <div style={{
           fontFamily: 'Raleway, sans-serif', fontWeight: 200,
           fontSize: '9px', letterSpacing: '0.55em',
-          color: 'rgba(255,215,0,0.5)', textTransform: 'uppercase',
+          color: 'rgba(212,175,55,0.5)', textTransform: 'uppercase',
           marginBottom: '0.7rem',
           textAlign: isMobile ? 'left' : isRight ? 'right' : 'left',
         }}>
@@ -295,7 +295,7 @@ function Stage({ stage, isMobile }) {
         <div style={{
           fontFamily: 'Raleway, sans-serif', fontWeight: 200,
           fontSize: '9px', letterSpacing: '0.4em',
-          color: '#FFD700', textTransform: 'uppercase',
+          color: '#D4AF37', textTransform: 'uppercase',
           marginBottom: '1.2rem',
           textAlign: isMobile ? 'left' : isRight ? 'right' : 'left',
         }}>
@@ -307,8 +307,8 @@ function Stage({ stage, isMobile }) {
           style={{
             height: '1px', marginBottom: '1.2rem',
             background: isRight
-              ? 'linear-gradient(to left, #FFD700, transparent)'
-              : 'linear-gradient(to right, #FFD700, transparent)',
+              ? 'linear-gradient(to left, #D4AF37, transparent)'
+              : 'linear-gradient(to right, #D4AF37, transparent)',
             transformOrigin: isRight ? 'right' : 'left',
           }}
           initial={{ scaleX: 0 }}
@@ -338,7 +338,7 @@ function Stage({ stage, isMobile }) {
           <span style={{
             fontFamily: "'Cormorant Garamond', serif",
             fontSize: 'clamp(1.2rem, 2.5vw, 1.8rem)',
-            fontWeight: 300, color: '#FFD700',
+            fontWeight: 300, color: '#D4AF37',
             letterSpacing: '-0.01em',
           }}>
             {stage.metric}
@@ -346,7 +346,7 @@ function Stage({ stage, isMobile }) {
           <span style={{
             fontFamily: 'Raleway, sans-serif', fontWeight: 200,
             fontSize: '8px', letterSpacing: '0.35em',
-            color: 'rgba(255,215,0,0.4)', textTransform: 'uppercase',
+            color: 'rgba(212,175,55,0.4)', textTransform: 'uppercase',
           }}>
             {stage.metricLabel}
           </span>
@@ -365,7 +365,7 @@ function Stage({ stage, isMobile }) {
             style={{
               width: '36px', height: '36px',
               borderRadius: '50%',
-              border: '1px solid rgba(255,215,0,0.4)',
+              border: '1px solid rgba(212,175,55,0.4)',
               background: '#0b0b0b',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               position: 'relative',
@@ -378,7 +378,7 @@ function Stage({ stage, isMobile }) {
             <motion.div style={{
               position: 'absolute', inset: -6,
               borderRadius: '50%',
-              border: '1px solid rgba(255,215,0,0.2)',
+              border: '1px solid rgba(212,175,55,0.2)',
             }}
               animate={inView ? { scale: [1, 1.4, 1], opacity: [0.4, 0, 0.4] } : {}}
               transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
@@ -386,7 +386,7 @@ function Stage({ stage, isMobile }) {
             <span style={{
               fontFamily: 'Raleway, sans-serif', fontWeight: 200,
               fontSize: '8px', letterSpacing: '0.1em',
-              color: 'rgba(255,215,0,0.7)',
+              color: 'rgba(212,175,55,0.7)',
             }}>
               {stage.index}
             </span>
@@ -438,7 +438,7 @@ function Stage({ stage, isMobile }) {
             position: 'absolute', top: 0, right: 0,
             fontFamily: 'Raleway, sans-serif', fontWeight: 200,
             fontSize: '9px', letterSpacing: '0.3em',
-            color: 'rgba(255,215,0,0.4)',
+            color: 'rgba(212,175,55,0.4)',
           }}>
             {stage.index}
           </div>
@@ -496,14 +496,14 @@ export default function BreathTimeline() {
         <p style={{
           fontFamily: 'Raleway, sans-serif', fontWeight: 200,
           fontSize: '10px', letterSpacing: '0.6em',
-          color: '#FFD700', textTransform: 'uppercase',
+          color: '#D4AF37', textTransform: 'uppercase',
           marginBottom: '1.2rem', opacity: 0.7,
         }}>
           {t('matrix.timeline.label', 'The Journey')}
         </p>
         <div style={{
           width: '50px', height: '1px',
-          background: 'linear-gradient(to right, transparent, #FFD700, transparent)',
+          background: 'linear-gradient(to right, transparent, #D4AF37, transparent)',
           margin: '0 auto 1.8rem',
         }} />
         <h2 style={{
@@ -512,7 +512,7 @@ export default function BreathTimeline() {
           fontWeight: 300, color: '#f5f0e8', lineHeight: 1.1,
         }}>
           {t('matrix.timeline.title', 'From Inhale to')}<br />
-          <em style={{ fontStyle: 'italic', color: '#FFD700' }}>{t('matrix.timeline.titleItalic', 'Cellular Fire')}</em>
+          <em style={{ fontStyle: 'italic', color: '#D4AF37' }}>{t('matrix.timeline.titleItalic', 'Cellular Fire')}</em>
         </h2>
         <p style={{
           fontFamily: 'Raleway, sans-serif', fontWeight: 200,
@@ -548,14 +548,14 @@ export default function BreathTimeline() {
       >
         <div style={{
           width: '1px', height: '50px',
-          background: 'linear-gradient(to bottom, rgba(255,215,0,0.3), transparent)',
+          background: 'linear-gradient(to bottom, rgba(212,175,55,0.3), transparent)',
           margin: '0 auto 1.5rem',
         }} />
         <p style={{
           fontFamily: "'Cormorant Garamond', serif",
           fontSize: 'clamp(0.9rem, 2vw, 1.1rem)',
           fontWeight: 300, fontStyle: 'italic',
-          color: 'rgba(255,215,0,0.4)',
+          color: 'rgba(212,175,55,0.4)',
           letterSpacing: '0.08em',
         }}>
           {t('matrix.timeline.ending', '— And then, the exhale begins.')}

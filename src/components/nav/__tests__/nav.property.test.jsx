@@ -146,7 +146,7 @@ const makeNavRoutes = () => [
 ]
 
 describe('GlobalNav — Property 6: Active nav item reflects current route', () => {
-  it('renders the active nav item in gold (#FFD700) for every defined route', async () => {
+  it('renders the active nav item in gold (#D4AF37) for every defined route', async () => {
     await fc.assert(
       fc.asyncProperty(
         fc.constantFrom(...DEFINED_ROUTES),
@@ -160,7 +160,7 @@ describe('GlobalNav — Property 6: Active nav item reflects current route', () 
           // Since t(key) returns the key itself (mocked), we look for the key string
           const activeElements = document.querySelectorAll('nav a, nav span')
           const goldElements = Array.from(activeElements).filter(
-            el => el.style.color === 'rgb(255, 215, 0)' || el.style.color === '#FFD700'
+            el => el.style.color === 'rgb(212, 175, 55)' || el.style.color === '#D4AF37'
           )
 
           // At least one element should be gold (the active nav item)

@@ -64,7 +64,10 @@ export default function MedicinaPage() {
               fontSize: 'clamp(2.5rem, 6vw, 4rem)',
               fontWeight: 300,
               fontStyle: 'italic',
-              color: '#FFD700',
+              background: 'linear-gradient(90deg, #EBD197, #D4AF37, #A67C00)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
               marginBottom: '1rem',
             }}
           >
@@ -93,7 +96,7 @@ export default function MedicinaPage() {
                 fontWeight: 200,
                 fontSize: '11px',
                 letterSpacing: '0.04em',
-                color: 'rgba(255,215,0,0.4)',
+                color: 'rgba(212,175,55,0.4)',
                 marginTop: '1rem',
                 fontStyle: 'italic',
               }}
@@ -128,23 +131,23 @@ export default function MedicinaPage() {
                     fontWeight: 200,
                     fontSize: '10px',
                     letterSpacing: '0.3em',
-                    color: isActive ? '#FFD700' : 'rgba(245,240,232,0.5)',
+                    color: isActive ? '#D4AF37' : 'rgba(245,240,232,0.5)',
                     textTransform: 'uppercase',
                     padding: '0.6rem 1.5rem',
-                    background: isActive ? 'rgba(255,215,0,0.06)' : 'transparent',
-                    border: `1px solid ${isActive ? 'rgba(255,215,0,0.5)' : 'rgba(255,215,0,0.2)'}`,
+                    background: isActive ? 'rgba(212,175,55,0.06)' : 'transparent',
+                    border: `1px solid ${isActive ? 'rgba(212,175,55,0.5)' : 'rgba(212,175,55,0.2)'}`,
                     cursor: 'pointer',
                     transition: 'all 0.3s',
                   }}
                   onMouseEnter={(e) => {
                     if (!isActive) {
-                      e.currentTarget.style.borderColor = 'rgba(255,215,0,0.4)'
+                      e.currentTarget.style.borderColor = 'rgba(212,175,55,0.4)'
                       e.currentTarget.style.color = 'rgba(245,240,232,0.8)'
                     }
                   }}
                   onMouseLeave={(e) => {
                     if (!isActive) {
-                      e.currentTarget.style.borderColor = 'rgba(255,215,0,0.2)'
+                      e.currentTarget.style.borderColor = 'rgba(212,175,55,0.2)'
                       e.currentTarget.style.color = 'rgba(245,240,232,0.5)'
                     }
                   }}
@@ -181,7 +184,7 @@ export default function MedicinaPage() {
             <p style={{
               fontFamily: 'Raleway, sans-serif', fontWeight: 200,
               fontSize: '11px', letterSpacing: '0.3em',
-              color: 'rgba(255,215,0,0.3)', textTransform: 'uppercase',
+              color: 'rgba(212,175,55,0.3)', textTransform: 'uppercase',
             }}>
               Add posts in Sanity Studio to see them here
             </p>

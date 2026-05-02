@@ -9,7 +9,7 @@ const EASE = [0.25, 0.46, 0.45, 0.94]
 // Sacred geometry SVG
 const GEOMETRY_SVG = `
   <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
-    <g fill="none" stroke="#FFD700" stroke-width="0.6" opacity="0.9">
+    <g fill="none" stroke="#D4AF37" stroke-width="0.6" opacity="0.9">
       <circle cx="100" cy="120" r="40"/>
       <circle cx="100" cy="80"  r="40"/>
       <circle cx="134.6" cy="100" r="40"/>
@@ -62,7 +62,10 @@ export default function NotFoundPage() {
           fontSize: 'clamp(4rem, 12vw, 8rem)',
           fontWeight: 300,
           fontStyle: 'italic',
-          color: '#FFD700',
+          background: 'linear-gradient(90deg, #EBD197, #D4AF37, #A67C00)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
           textAlign: 'center',
           marginBottom: '1rem',
           position: 'relative',
@@ -109,21 +112,21 @@ export default function NotFoundPage() {
             fontWeight: 200,
             fontSize: '10px',
             letterSpacing: '0.4em',
-            color: '#FFD700',
+            color: '#D4AF37',
             textDecoration: 'none',
             textTransform: 'uppercase',
             padding: '0.9rem 2.5rem',
-            border: '1px solid rgba(255,215,0,0.5)',
+            border: '1px solid rgba(212,175,55,0.5)',
             display: 'inline-block',
             transition: 'background 0.3s, border-color 0.3s',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.background = 'rgba(255,215,0,0.06)'
-            e.currentTarget.style.borderColor = '#FFD700'
+            e.currentTarget.style.background = 'rgba(212,175,55,0.06)'
+            e.currentTarget.style.borderColor = '#D4AF37'
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.background = 'transparent'
-            e.currentTarget.style.borderColor = 'rgba(255,215,0,0.5)'
+            e.currentTarget.style.borderColor = 'rgba(212,175,55,0.5)'
           }}
         >
           Return to Portal

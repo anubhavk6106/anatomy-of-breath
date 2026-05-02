@@ -28,7 +28,7 @@ export default function TransitionFlash({ flash }) {
               left: 0, right: 0,
               top: '50%',
               height: '1px',
-              background: 'linear-gradient(to right, transparent, rgba(255,215,0,0.6), transparent)',
+              background: 'linear-gradient(to right, transparent, rgba(212,175,55,0.6), transparent)',
               transformOrigin: 'left',
             }}
             initial={{ scaleX: 0, opacity: 0 }}

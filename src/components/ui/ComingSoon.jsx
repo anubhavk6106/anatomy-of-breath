@@ -10,7 +10,7 @@ const EASE = [0.25, 0.46, 0.45, 0.94]
 // Sacred geometry SVG — Flower of Life pattern (reused from Gallery.jsx GEOMETRY library)
 const GEOMETRY_SVG = `
   <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
-    <g fill="none" stroke="#FFD700" stroke-width="0.6" opacity="0.9">
+    <g fill="none" stroke="#D4AF37" stroke-width="0.6" opacity="0.9">
       <circle cx="100" cy="120" r="40"/>
       <circle cx="100" cy="80"  r="40"/>
       <circle cx="134.6" cy="100" r="40"/>
@@ -64,7 +64,10 @@ export default function ComingSoon() {
           fontSize: 'clamp(2.5rem, 6vw, 4rem)',
           fontWeight: 300,
           fontStyle: 'italic',
-          color: '#FFD700',
+          background: 'linear-gradient(90deg, #EBD197, #D4AF37, #A67C00)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
           textAlign: 'center',
           marginBottom: '1rem',
           position: 'relative',
@@ -82,7 +85,7 @@ export default function ComingSoon() {
         style={{
           width: '120px',
           height: '1px',
-          background: 'linear-gradient(90deg, transparent, rgba(255,215,0,0.5), transparent)',
+          background: 'linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent)',
           position: 'relative',
           zIndex: 1,
         }}

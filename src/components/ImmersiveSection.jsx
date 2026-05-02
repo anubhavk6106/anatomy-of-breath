@@ -63,7 +63,7 @@ export default function ImmersiveSection() {
         <GeometryRing duration={30} style={{ position: 'absolute' }}>
           <svg viewBox="0 0 800 800" style={{ width: 'min(900px, 140vw)', height: 'min(900px, 140vw)' }}
                xmlns="http://www.w3.org/2000/svg">
-            <g stroke="#FFD700" strokeWidth="0.4" fill="none">
+            <g stroke="#D4AF37" strokeWidth="0.4" fill="none">
               <polygon points="400,50 699,225 699,575 400,750 101,575 101,225"/>
               <polygon points="400,100 664,250 664,550 400,700 136,550 136,250"/>
               <circle cx="400" cy="400" r="350"/>
@@ -75,7 +75,7 @@ export default function ImmersiveSection() {
         <GeometryRing duration={20} reverse style={{ position: 'absolute' }}>
           <svg viewBox="0 0 800 800" style={{ width: 'min(800px, 120vw)', height: 'min(800px, 120vw)' }}
                xmlns="http://www.w3.org/2000/svg">
-            <g stroke="#FFD700" strokeWidth="0.6" fill="none">
+            <g stroke="#D4AF37" strokeWidth="0.6" fill="none">
               <polygon points="400,150 616,275 616,525 400,650 184,525 184,275"/>
               <polygon points="400,200 582,300 582,500 400,600 218,500 218,300"/>
               <circle cx="400" cy="400" r="250"/>
@@ -90,7 +90,7 @@ export default function ImmersiveSection() {
         <GeometryRing duration={12} style={{ position: 'absolute' }}>
           <svg viewBox="0 0 800 800" style={{ width: 'min(600px, 95vw)', height: 'min(600px, 95vw)' }}
                xmlns="http://www.w3.org/2000/svg">
-            <g stroke="#FFD700" strokeWidth="0.8" fill="none">
+            <g stroke="#D4AF37" strokeWidth="0.8" fill="none">
               <circle cx="400" cy="400" r="100"/>
               <circle cx="400" cy="400" r="70"/>
               <polygon points="400,300 487,350 487,450 400,500 313,450 313,350"/>
@@ -112,7 +112,7 @@ export default function ImmersiveSection() {
         <p style={{
           fontFamily: 'Raleway, sans-serif', fontWeight: 200,
           fontSize: '10px', letterSpacing: '0.6em',
-          color: '#FFD700', textTransform: 'uppercase',
+          color: '#D4AF37', textTransform: 'uppercase',
           marginBottom: '1.5rem', opacity: 0.7,
         }}>
           {t('matrix.immersive.label', 'The Living Mandala')}
@@ -123,17 +123,17 @@ export default function ImmersiveSection() {
           fontFamily: "'Cormorant Garamond', serif",
           fontSize: 'clamp(2rem, 6vw, 4.5rem)',
           fontWeight: 300, color: '#f5f0e8',
-          textShadow: '0 0 80px rgba(255,215,0,0.2)',
+          textShadow: '0 0 80px rgba(212,175,55,0.2)',
           lineHeight: 1.15, marginBottom: '0.6rem',
         }}>
           {t('matrix.immersive.title', 'Within Every')}<br />
-          <em style={{ fontStyle: 'italic', color: '#FFD700' }}>{t('matrix.immersive.titleItalic', 'Breath')}</em>
+          <em style={{ fontStyle: 'italic', color: '#D4AF37' }}>{t('matrix.immersive.titleItalic', 'Breath')}</em>
         </h2>
 
         <p style={{
           fontFamily: 'Raleway, sans-serif', fontWeight: 200,
           fontSize: 'clamp(0.7rem, 2vw, 0.8rem)', letterSpacing: '0.4em',
-          color: 'rgba(255,215,0,0.5)', textTransform: 'uppercase',
+          color: 'rgba(212,175,55,0.5)', textTransform: 'uppercase',
           marginBottom: '3rem',
         }}>
           {t('matrix.immersive.subtitle', 'a universe unfolds')}
@@ -142,7 +142,7 @@ export default function ImmersiveSection() {
         {/* Gold divider */}
         <div style={{
           width: '1px', height: '40px',
-          background: 'linear-gradient(to bottom, transparent, rgba(255,215,0,0.4), transparent)',
+          background: 'linear-gradient(to bottom, transparent, rgba(212,175,55,0.4), transparent)',
           marginBottom: '3rem',
         }} />
 

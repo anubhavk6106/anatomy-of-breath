@@ -36,7 +36,7 @@ function EventCard({ event }) {
         style={{
           aspectRatio: '3 / 4',
           background: '#0b0b0b',
-          border: '1px solid rgba(255,215,0,0.2)',
+          border: '1px solid rgba(212,175,55,0.2)',
           overflow: 'hidden',
           position: 'relative',
           display: 'flex',
@@ -46,8 +46,8 @@ function EventCard({ event }) {
           transition: 'opacity 0.3s',
         }}
         whileHover={{
-          borderColor: 'rgba(255,215,0,0.6)',
-          boxShadow: 'inset 0 0 40px rgba(255,215,0,0.06), 0 0 30px rgba(255,215,0,0.15)',
+          borderColor: 'rgba(212,175,55,0.6)',
+          boxShadow: 'inset 0 0 40px rgba(212,175,55,0.06), 0 0 30px rgba(212,175,55,0.15)',
           opacity: isPast ? 0.7 : 1,
         }}
         transition={{ duration: 0.4, ease: EASE }}
@@ -83,7 +83,7 @@ function EventCard({ event }) {
               height: '60%',
               overflow: 'hidden',
               position: 'relative',
-              background: 'rgba(255,215,0,0.03)',
+              background: 'rgba(212,175,55,0.03)',
             }}
           >
             <motion.img
@@ -129,7 +129,7 @@ function EventCard({ event }) {
                 fontWeight: 200,
                 fontSize: '0.625rem',
                 letterSpacing: '0.15em',
-                color: '#FFD700',
+                color: '#D4AF37',
                 textTransform: 'uppercase',
               }}
             >
@@ -175,11 +175,11 @@ function EventCard({ event }) {
               fontWeight: 200,
               fontSize: '0.625rem',
               letterSpacing: '0.2em',
-              color: 'rgba(255,215,0,0.5)',
+              color: 'rgba(212,175,55,0.5)',
               textTransform: 'uppercase',
               marginTop: 'auto',
             }}
-            whileHover={{ color: 'rgba(255,215,0,0.9)' }}
+            whileHover={{ color: 'rgba(212,175,55,0.9)' }}
             transition={{ duration: 0.3 }}
           >
             {isPast ? 'Ver detalles' : 'Más información'} →
@@ -191,7 +191,7 @@ function EventCard({ event }) {
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'rgba(255,215,0,0.06)',
+            background: 'rgba(212,175,55,0.06)',
             pointerEvents: 'none',
             opacity: 0,
           }}

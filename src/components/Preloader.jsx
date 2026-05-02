@@ -39,7 +39,7 @@ function Ring({ r, delay, stroke, opacity, show }) {
     <motion.circle
       cx="0" cy="0" r={r}
       fill="none"
-      stroke="#FFD700"
+      stroke="#D4AF37"
       strokeWidth={stroke}
       initial={{ pathLength: 0, opacity: 0 }}
       animate={show ? { pathLength: 1, opacity } : { pathLength: 0, opacity: 0 }}
@@ -53,7 +53,7 @@ function Petal({ cx, cy, delay, show }) {
     <motion.circle
       cx={cx} cy={cy} r={54}
       fill="none"
-      stroke="#FFD700"
+      stroke="#D4AF37"
       strokeWidth="0.4"
       initial={{ pathLength: 0, opacity: 0 }}
       animate={show ? { pathLength: 1, opacity: 0.25 } : { pathLength: 0, opacity: 0 }}
@@ -127,14 +127,14 @@ export default function Preloader({ onComplete }) {
                 <>
                   <motion.line
                     x1="-130" y1="0" x2="130" y2="0"
-                    stroke="#FFD700" strokeWidth="0.3"
+                    stroke="#D4AF37" strokeWidth="0.3"
                     initial={{ pathLength: 0, opacity: 0 }}
                     animate={{ pathLength: 1, opacity: 0.2 }}
                     transition={{ duration: 1.2, delay: 0.5, ease: EASE_OUT }}
                   />
                   <motion.line
                     x1="0" y1="-130" x2="0" y2="130"
-                    stroke="#FFD700" strokeWidth="0.3"
+                    stroke="#D4AF37" strokeWidth="0.3"
                     initial={{ pathLength: 0, opacity: 0 }}
                     animate={{ pathLength: 1, opacity: 0.2 }}
                     transition={{ duration: 1.2, delay: 0.5, ease: EASE_OUT }}
@@ -142,14 +142,14 @@ export default function Preloader({ onComplete }) {
                   {/* Diagonal axes */}
                   <motion.line
                     x1="-92" y1="-92" x2="92" y2="92"
-                    stroke="#FFD700" strokeWidth="0.3"
+                    stroke="#D4AF37" strokeWidth="0.3"
                     initial={{ pathLength: 0, opacity: 0 }}
                     animate={{ pathLength: 1, opacity: 0.12 }}
                     transition={{ duration: 1.2, delay: 0.7, ease: EASE_OUT }}
                   />
                   <motion.line
                     x1="92" y1="-92" x2="-92" y2="92"
-                    stroke="#FFD700" strokeWidth="0.3"
+                    stroke="#D4AF37" strokeWidth="0.3"
                     initial={{ pathLength: 0, opacity: 0 }}
                     animate={{ pathLength: 1, opacity: 0.12 }}
                     transition={{ duration: 1.2, delay: 0.7, ease: EASE_OUT }}
@@ -160,7 +160,7 @@ export default function Preloader({ onComplete }) {
               {/* Center dot — always visible, pulses */}
               <motion.circle
                 cx="0" cy="0" r="3"
-                fill="#FFD700"
+                fill="#D4AF37"
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: [0, 1.4, 1], opacity: [0, 1, 0.9] }}
                 transition={{ duration: 0.7, ease: EASE_OUT }}
@@ -168,7 +168,7 @@ export default function Preloader({ onComplete }) {
               {/* Breathing outer ring on dot */}
               <motion.circle
                 cx="0" cy="0" r="8"
-                fill="none" stroke="#FFD700" strokeWidth="0.6"
+                fill="none" stroke="#D4AF37" strokeWidth="0.6"
                 animate={{ scale: [1, 1.6, 1], opacity: [0.6, 0, 0.6] }}
                 transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
               />
@@ -185,7 +185,7 @@ export default function Preloader({ onComplete }) {
             <p style={{
               fontFamily: 'Raleway, sans-serif', fontWeight: 200,
               fontSize: '9px', letterSpacing: '0.55em',
-              color: 'rgba(255,215,0,0.5)', textTransform: 'uppercase',
+              color: 'rgba(212,175,55,0.5)', textTransform: 'uppercase',
               marginBottom: '0.9rem',
             }}>
               {SITE.domain}
@@ -199,7 +199,13 @@ export default function Preloader({ onComplete }) {
               letterSpacing: '-0.01em',
             }}>
               Anatomy of<br />
-              <em style={{ fontStyle: 'italic', color: '#FFD700' }}>Breath</em>
+              <em style={{
+                fontStyle: 'italic',
+                background: 'linear-gradient(90deg, #EBD197, #D4AF37, #A67C00)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}>Breath</em>
             </h1>
           </motion.div>
 
@@ -222,13 +228,13 @@ export default function Preloader({ onComplete }) {
             {/* Progress bar */}
             <div style={{
               width: '160px', height: '1px',
-              background: 'rgba(255,215,0,0.12)',
+              background: 'rgba(212,175,55,0.12)',
               margin: '0 auto', position: 'relative', overflow: 'hidden',
             }}>
               <motion.div
                 style={{
                   position: 'absolute', left: 0, top: 0, bottom: 0,
-                  background: 'linear-gradient(to right, transparent, #FFD700)',
+                  background: 'linear-gradient(to right, transparent, #D4AF37)',
                   width: `${progress}%`,
                 }}
                 transition={{ duration: 0.1 }}
@@ -245,10 +251,10 @@ export default function Preloader({ onComplete }) {
                 ...(pos.includes('top')    ? { top: '2rem' }    : { bottom: '2rem' }),
                 ...(pos.includes('left')   ? { left: '2rem' }   : { right: '2rem' }),
                 width: '40px', height: '40px',
-                borderTop:    pos.includes('top')    ? '1px solid rgba(255,215,0,0.2)' : 'none',
-                borderBottom: pos.includes('bottom') ? '1px solid rgba(255,215,0,0.2)' : 'none',
-                borderLeft:   pos.includes('left')   ? '1px solid rgba(255,215,0,0.2)' : 'none',
-                borderRight:  pos.includes('right')  ? '1px solid rgba(255,215,0,0.2)' : 'none',
+                borderTop:    pos.includes('top')    ? '1px solid rgba(212,175,55,0.2)' : 'none',
+                borderBottom: pos.includes('bottom') ? '1px solid rgba(212,175,55,0.2)' : 'none',
+                borderLeft:   pos.includes('left')   ? '1px solid rgba(212,175,55,0.2)' : 'none',
+                borderRight:  pos.includes('right')  ? '1px solid rgba(212,175,55,0.2)' : 'none',
               }}
               initial={{ opacity: 0, scale: 0.5 }}
               animate={phase >= 1 ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}

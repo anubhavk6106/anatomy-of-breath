@@ -124,11 +124,15 @@ export default function PortalPage() {
               fontSize: 'clamp(2rem, 6vw, 5rem)',
               fontWeight: 300,
               fontStyle: 'italic',
-              color: '#FFD700',
+              // Premium gold gradient
+              background: 'linear-gradient(90deg, #EBD197, #D4AF37, #A67C00)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
               textAlign: 'center',
               marginBottom: '1.5rem',
               letterSpacing: '0.02em',
-              textShadow: '0 2px 20px rgba(0,0,0,0.5)',
+              filter: 'drop-shadow(0 2px 16px rgba(212,175,55,0.2))',
             }}
           >
             Spiritus est origo
@@ -167,22 +171,22 @@ export default function PortalPage() {
               fontWeight: 200,
               fontSize: '10px',
               letterSpacing: '0.4em',
-              color: '#FFD700',
+              color: '#D4AF37',
               textTransform: 'uppercase',
               padding: '0.9rem 2.5rem',
               background: 'transparent',
-              border: '1px solid rgba(255,215,0,0.5)',
+              border: '1px solid rgba(212,175,55,0.5)',
               cursor: 'pointer',
               transition: 'background 0.3s, border-color 0.3s',
               marginBottom: '4rem',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(255,215,0,0.06)'
-              e.currentTarget.style.borderColor = '#FFD700'
+              e.currentTarget.style.background = 'rgba(212,175,55,0.06)'
+              e.currentTarget.style.borderColor = '#D4AF37'
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = 'transparent'
-              e.currentTarget.style.borderColor = 'rgba(255,215,0,0.5)'
+              e.currentTarget.style.borderColor = 'rgba(212,175,55,0.5)'
             }}
           >
             {t('portal.enter')}
@@ -226,7 +230,7 @@ export default function PortalPage() {
             >
               <path
                 d="M12 5v14m0 0l-7-7m7 7l7-7"
-                stroke="rgba(255,215,0,0.5)"
+                stroke="rgba(212,175,55,0.5)"
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"

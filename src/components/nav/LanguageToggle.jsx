@@ -34,7 +34,7 @@ export default function LanguageToggle() {
         aria-expanded={open}
         style={{
           background: 'none',
-          border: '1px solid rgba(255,215,0,0.25)',
+          border: '1px solid rgba(212,175,55,0.25)',
           cursor: 'pointer',
           display: 'flex',
           alignItems: 'center',
@@ -42,15 +42,15 @@ export default function LanguageToggle() {
           padding: '4px 10px',
           transition: 'border-color 0.3s',
         }}
-        onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(255,215,0,0.6)'}
-        onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255,215,0,0.25)'}
+        onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(212,175,55,0.6)'}
+        onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(212,175,55,0.25)'}
       >
         <span style={{
           fontFamily: 'Raleway, sans-serif',
           fontWeight: 200,
           fontSize: '10px',
           letterSpacing: '0.2em',
-          color: '#FFD700',
+          color: '#D4AF37',
         }}>
           {current.nativeLabel}
         </span>
@@ -59,7 +59,7 @@ export default function LanguageToggle() {
           width="8" height="5" viewBox="0 0 8 5" fill="none"
           style={{ transition: 'transform 0.25s', transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}
         >
-          <path d="M1 1l3 3 3-3" stroke="rgba(255,215,0,0.6)" strokeWidth="1.2" strokeLinecap="round"/>
+          <path d="M1 1l3 3 3-3" stroke="rgba(212,175,55,0.6)" strokeWidth="1.2" strokeLinecap="round"/>
         </svg>
       </button>
 
@@ -70,7 +70,7 @@ export default function LanguageToggle() {
           top: 'calc(100% + 6px)',
           right: 0,
           background: 'rgba(11,11,11,0.97)',
-          border: '1px solid rgba(255,215,0,0.12)',
+          border: '1px solid rgba(212,175,55,0.12)',
           backdropFilter: 'blur(14px)',
           minWidth: '140px',
           zIndex: 200,
@@ -87,14 +87,14 @@ export default function LanguageToggle() {
                   gap: '10px',
                   width: '100%',
                   padding: '0.55rem 1rem',
-                  background: isActive ? 'rgba(255,215,0,0.06)' : 'transparent',
+                  background: isActive ? 'rgba(212,175,55,0.06)' : 'transparent',
                   border: 'none',
-                  borderLeft: isActive ? '1px solid #FFD700' : '1px solid transparent',
+                  borderLeft: isActive ? '1px solid #D4AF37' : '1px solid transparent',
                   cursor: 'pointer',
                   textAlign: 'left',
                   transition: 'background 0.2s',
                 }}
-                onMouseEnter={e => { if (!isActive) e.currentTarget.style.background = 'rgba(255,215,0,0.04)' }}
+                onMouseEnter={e => { if (!isActive) e.currentTarget.style.background = 'rgba(212,175,55,0.04)' }}
                 onMouseLeave={e => { if (!isActive) e.currentTarget.style.background = 'transparent' }}
               >
                 <span style={{
@@ -102,7 +102,7 @@ export default function LanguageToggle() {
                   fontWeight: 200,
                   fontSize: '9px',
                   letterSpacing: '0.2em',
-                  color: isActive ? '#FFD700' : 'rgba(245,240,232,0.4)',
+                  color: isActive ? '#D4AF37' : 'rgba(245,240,232,0.4)',
                   textTransform: 'uppercase',
                   minWidth: '22px',
                 }}>

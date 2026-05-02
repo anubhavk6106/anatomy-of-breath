@@ -75,21 +75,21 @@ function MandalaBg({ overlayGradient }) {
             style={{ originX: '50%', originY: '50%' }}
           >
             <circle cx="0" cy="0" r={ring.r} fill="none"
-              stroke="#FFD700" strokeWidth={ring.sw} opacity={ring.op} />
+              stroke="#D4AF37" strokeWidth={ring.sw} opacity={ring.op} />
             {Array.from({ length: 12 }, (_, t) => {
               const a = (t / 12) * Math.PI * 2
               return (
                 <line key={t}
                   x1={Math.cos(a) * (ring.r - 5)} y1={Math.sin(a) * (ring.r - 5)}
                   x2={Math.cos(a) * (ring.r + 5)} y2={Math.sin(a) * (ring.r + 5)}
-                  stroke="#FFD700" strokeWidth={ring.sw * 1.5} opacity={ring.op * 1.5} />
+                  stroke="#D4AF37" strokeWidth={ring.sw * 1.5} opacity={ring.op * 1.5} />
               )
             })}
           </motion.g>
         ))}
-        <line x1="-320" y1="0" x2="320" y2="0" stroke="#FFD700" strokeWidth="0.2" opacity="0.05" />
-        <line x1="0" y1="-320" x2="0" y2="320" stroke="#FFD700" strokeWidth="0.2" opacity="0.05" />
-        <motion.circle cx="0" cy="0" r="4" fill="#FFD700" opacity="0.5"
+        <line x1="-320" y1="0" x2="320" y2="0" stroke="#D4AF37" strokeWidth="0.2" opacity="0.05" />
+        <line x1="0" y1="-320" x2="0" y2="320" stroke="#D4AF37" strokeWidth="0.2" opacity="0.05" />
+        <motion.circle cx="0" cy="0" r="4" fill="#D4AF37" opacity="0.5"
           animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0.9, 0.5] }}
           transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }} />
       </svg>
@@ -137,7 +137,7 @@ function VisualPanel({ card, height }) {
         position: 'absolute', bottom: '1rem', left: '1.2rem',
         fontFamily: 'Raleway, sans-serif', fontWeight: 200,
         fontSize: '10px', letterSpacing: '0.3em',
-        color: 'rgba(255,215,0,0.3)',
+        color: 'rgba(212,175,55,0.3)',
       }}>
         {card.number}
       </div>
@@ -161,7 +161,7 @@ function ContentPanel({ card, isMobile }) {
       <motion.p style={{
         fontFamily: 'Raleway, sans-serif', fontWeight: 200,
         fontSize: '9px', letterSpacing: '0.5em',
-        color: 'rgba(255,215,0,0.5)', textTransform: 'uppercase',
+        color: 'rgba(212,175,55,0.5)', textTransform: 'uppercase',
         marginBottom: '0.9rem',
       }}
         initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
@@ -185,7 +185,7 @@ function ContentPanel({ card, isMobile }) {
       <motion.p style={{
         fontFamily: 'Raleway, sans-serif', fontWeight: 200,
         fontSize: '9px', letterSpacing: '0.4em',
-        color: '#FFD700', textTransform: 'uppercase',
+        color: '#D4AF37', textTransform: 'uppercase',
         marginBottom: '1.4rem',
       }}
         initial={{ opacity: 0 }} animate={{ opacity: 1 }}
@@ -196,7 +196,7 @@ function ContentPanel({ card, isMobile }) {
 
       <motion.div style={{
         height: '1px', marginBottom: '1.4rem',
-        background: 'linear-gradient(to right, #FFD700, rgba(255,215,0,0.1), transparent)',
+        background: 'linear-gradient(to right, #D4AF37, rgba(212,175,55,0.1), transparent)',
         transformOrigin: 'left',
       }}
         initial={{ scaleX: 0, opacity: 0 }} animate={{ scaleX: 1, opacity: 1 }}
@@ -224,8 +224,8 @@ function ContentPanel({ card, isMobile }) {
           <span key={tag} style={{
             fontFamily: 'Raleway, sans-serif', fontWeight: 200,
             fontSize: '8px', letterSpacing: '0.3em',
-            color: 'rgba(255,215,0,0.4)', textTransform: 'uppercase',
-            border: '1px solid rgba(255,215,0,0.14)',
+            color: 'rgba(212,175,55,0.4)', textTransform: 'uppercase',
+            border: '1px solid rgba(212,175,55,0.14)',
             padding: '0.28rem 0.6rem',
           }}>
             {tag}
@@ -305,7 +305,7 @@ export default function CardModal({ card, onClose }) {
           onClick={e => e.stopPropagation()}
           style={{
             position: 'relative', zIndex: 2,
-            border: isMobile ? 'none' : '1px solid rgba(255,215,0,0.14)',
+            border: isMobile ? 'none' : '1px solid rgba(212,175,55,0.14)',
             background: 'rgba(11,11,11,0.92)',
             overflow: isMobile ? 'auto' : 'hidden',
             WebkitOverflowScrolling: 'touch',
@@ -332,8 +332,8 @@ export default function CardModal({ card, onClose }) {
               right: isMobile ? '0.8rem' : '1rem',
               zIndex: 20,
               background: 'rgba(11,11,11,0.85)',
-              border: '1px solid rgba(255,215,0,0.25)',
-              color: 'rgba(255,215,0,0.7)',
+              border: '1px solid rgba(212,175,55,0.25)',
+              color: 'rgba(212,175,55,0.7)',
               width: isMobile ? '40px' : '36px',
               height: isMobile ? '40px' : '36px',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -351,10 +351,10 @@ export default function CardModal({ card, onClose }) {
 
           {/* Corner accents — desktop/tablet only */}
           {!isMobile && [
-            { top: 0, left: 0,    borderTop: '1px solid rgba(255,215,0,0.28)', borderLeft:  '1px solid rgba(255,215,0,0.28)' },
-            { bottom: 0, left: 0, borderBottom: '1px solid rgba(255,215,0,0.28)', borderLeft: '1px solid rgba(255,215,0,0.28)' },
-            { top: 0, right: 0,   borderTop: '1px solid rgba(255,215,0,0.28)', borderRight: '1px solid rgba(255,215,0,0.28)' },
-            { bottom: 0, right: 0, borderBottom: '1px solid rgba(255,215,0,0.28)', borderRight: '1px solid rgba(255,215,0,0.28)' },
+            { top: 0, left: 0,    borderTop: '1px solid rgba(212,175,55,0.28)', borderLeft:  '1px solid rgba(212,175,55,0.28)' },
+            { bottom: 0, left: 0, borderBottom: '1px solid rgba(212,175,55,0.28)', borderLeft: '1px solid rgba(212,175,55,0.28)' },
+            { top: 0, right: 0,   borderTop: '1px solid rgba(212,175,55,0.28)', borderRight: '1px solid rgba(212,175,55,0.28)' },
+            { bottom: 0, right: 0, borderBottom: '1px solid rgba(212,175,55,0.28)', borderRight: '1px solid rgba(212,175,55,0.28)' },
           ].map((s, i) => (
             <motion.div key={i} style={{
               position: 'absolute', width: '18px', height: '18px',

@@ -33,7 +33,11 @@ export default function ExperiencesPage() {
             fontFamily: "'Cormorant Garamond', serif",
             fontSize: 'clamp(2.5rem, 6vw, 4rem)',
             fontWeight: 300, fontStyle: 'italic',
-            color: '#FFD700', marginBottom: '1rem',
+            background: 'linear-gradient(90deg, #EBD197, #D4AF37, #A67C00)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            marginBottom: '1rem',
           }}>
             {t('nav.experiences')}
           </h1>
@@ -71,7 +75,7 @@ export default function ExperiencesPage() {
             <p style={{
               fontFamily: 'Raleway, sans-serif', fontWeight: 200,
               fontSize: '11px', letterSpacing: '0.3em',
-              color: 'rgba(255,215,0,0.3)', textTransform: 'uppercase',
+              color: 'rgba(212,175,55,0.3)', textTransform: 'uppercase',
             }}>
               Add events in Sanity Studio to see them here
             </p>

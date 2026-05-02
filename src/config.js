@@ -34,3 +34,16 @@ export const LANGUAGES = [
   { code: 'fr', label: 'Français',   nativeLabel: 'FR' },
   { code: 'pt', label: 'Português',  nativeLabel: 'PT' },
 ]
+
+// ── Design tokens ─────────────────────────────────────────────
+// Single source of truth for the gold palette.
+// Use GOLD.solid for text/icons, GOLD.dim/glow for borders/glows,
+// and GOLD.gradient for important headings via CSS background-clip.
+export const GOLD = {
+  solid:    '#D4AF37',
+  // rgba equivalents of #D4AF37 at various opacities
+  dim:      (opacity = 0.15) => `rgba(212,175,55,${opacity})`,
+  // Gradient for premium headings: apply as inline style with bgClip trick
+  // background: GOLD.gradient, WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent'
+  gradient: 'linear-gradient(90deg, #EBD197, #D4AF37, #A67C00)',
+}

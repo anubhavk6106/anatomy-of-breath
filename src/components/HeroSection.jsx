@@ -1,12 +1,21 @@
 // HeroSection.jsx
 // Full-screen hero with cinematic video background, breathing concentric rings,
-// and sacred geometry parallax. Title is intentionally minimal — the video is
-// the hero. Tagline lives in the TaglineSection below the fold.
+// and sacred geometry parallax.
+//
+// Title animation sequence (one-shot, ~5s total):
+//   0.0s  opacity 0   — hidden on mount
+//   0.8s  opacity 1   — fades in over ~1.4s (with slight upward drift + blur)
+//   2.5s  opacity 1   — holds at peak
+//   4.5s  opacity 0   — fades out over ~1s
+//   5.5s+             — video is the sole focus, no text overlay
 
 import { useEffect, useRef } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import useIsMobile from '../hooks/useIsMobile'
+
+const EASE_IN  = [0.25, 0.46, 0.45, 0.94]
+const EASE_OUT = [0.55, 0.0,  0.45, 1.0]
 
 // ── Flower of Life SVG ───────────────────────────────────────
 function FlowerOfLife() {
@@ -16,7 +25,7 @@ function FlowerOfLife() {
       style={{ width: 'min(700px, 95vw)', height: 'min(700px, 95vw)' }}
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g stroke="#FFD700" strokeWidth="0.5" fill="none">
+      <g stroke="#D4AF37" strokeWidth="0.5" fill="none">
         <circle cx="250" cy="250" r="80" />
         <circle cx="250" cy="170" r="80" />
         <circle cx="319.3" cy="210" r="80" />
@@ -48,7 +57,7 @@ function BreathRing({ size, mobileSize, opacity, delay, zIndex = 1 }) {
         width: `min(${size}, ${mobileSize})`,
         height: `min(${size}, ${mobileSize})`,
         borderRadius: '50%',
-        border: `1px solid rgba(255,215,0,${opacity})`,
+        border: `1px solid rgba(212,175,55,${opacity})`,
         pointerEvents: 'none',
         zIndex,
       }}
@@ -97,6 +106,56 @@ export default function HeroSection() {
     }
   }, [showVideo])
 
+  // ── Title animation keyframes ──────────────────────────────
+  // When prefersReducedMotion is true, skip the animation entirely and
+  // show a static, permanently visible title instead.
+  //
+  // Timeline (normal motion):
+  //   t=0.0s  opacity:0, y:16, filter:blur(8px)   — initial (hidden)
+  //   t=0.8s  opacity:1, y:0,  filter:blur(0px)   — fade in starts (delay 0.8s, duration 1.4s)
+  //   t=2.5s  opacity:1                            — hold (the keyframe array pauses here)
+  //   t=4.5s  opacity:0, y:-8, filter:blur(4px)   — fade out
+  //
+  // Framer Motion keyframe arrays map evenly across the total duration unless
+  // `times` is provided. We use `times` to control the exact hold window.
+  //
+  // Total duration: 5.5s  (delay 0.8s + animation 4.7s)
+  const titleVariants = prefersReducedMotion
+    ? {
+        // Reduced motion: static, always visible, no blur
+        initial: { opacity: 1, y: 0, filter: 'blur(0px)' },
+        animate: { opacity: 1, y: 0, filter: 'blur(0px)' },
+      }
+    : {
+        initial: { opacity: 0, y: 16, filter: 'blur(8px)' },
+        animate: {
+          // Keyframe arrays: [start, peak, hold, end]
+          opacity: [0,   1,    1,    0  ],
+          y:       [16,  0,    0,    -8 ],
+          filter:  [
+            'blur(8px)',
+            'blur(0px)',
+            'blur(0px)',
+            'blur(4px)',
+          ],
+        },
+      }
+
+  const titleTransition = prefersReducedMotion
+    ? { duration: 0 }
+    : {
+        // Total animation duration after the delay
+        duration: 4.7,
+        delay: 0.8,
+        ease: 'easeInOut',
+        // times maps each keyframe to a position in [0, 1]
+        // 0.0 → t=0.8s (start)
+        // 0.3 → t=2.2s (peak reached)
+        // 0.7 → t=4.1s (hold ends, fade-out begins)
+        // 1.0 → t=5.5s (fully gone)
+        times: [0, 0.3, 0.7, 1],
+      }
+
   return (
     <>
       {/* ── Hero: full-screen video section ─────────────────── */}
@@ -124,7 +183,7 @@ export default function HeroSection() {
             playsInline
             initial={{ opacity: 0, scale: 1.12 }}
             animate={{ opacity: 1, scale: 1.05 }}
-            transition={{ duration: 2.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{ duration: 2.5, ease: EASE_IN }}
             style={{
               position: 'absolute',
               inset: 0,
@@ -156,7 +215,7 @@ export default function HeroSection() {
           position: 'absolute', inset: 0,
           zIndex: 1,
           background: showVideo ? `
-            radial-gradient(ellipse 60% 50% at 50% 45%, rgba(255,215,0,0.04) 0%, transparent 65%),
+            radial-gradient(ellipse 60% 50% at 50% 45%, rgba(212,175,55,0.04) 0%, transparent 65%),
             linear-gradient(to bottom,
               rgba(11,11,11,0.72) 0%,
               rgba(11,11,11,0.20) 30%,
@@ -171,8 +230,8 @@ export default function HeroSection() {
               rgba(11,11,11,0.35) 100%
             )
           ` : `
-            radial-gradient(ellipse 80% 80% at 50% 40%, rgba(255,215,0,0.04) 0%, transparent 70%),
-            radial-gradient(ellipse 50% 50% at 20% 80%, rgba(255,215,0,0.03) 0%, transparent 60%),
+            radial-gradient(ellipse 80% 80% at 50% 40%, rgba(212,175,55,0.04) 0%, transparent 70%),
+            radial-gradient(ellipse 50% 50% at 20% 80%, rgba(212,175,55,0.03) 0%, transparent 60%),
             #0b0b0b
           `,
         }} />
@@ -195,78 +254,114 @@ export default function HeroSection() {
         <BreathRing size="400px" mobileSize="65vw" opacity="0.10" delay={-2}  zIndex={3} />
         <BreathRing size="200px" mobileSize="38vw" opacity="0.18" delay={-4}  zIndex={3} />
 
-        {/* ── Layer 4: Minimal title overlay ────────────────── */}
-        <div style={{
-          position: 'relative',
-          textAlign: 'center',
-          zIndex: 4,
-          width: '100%',
-          padding: '0 1.5rem',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}>
-          {/* Title — smaller, lighter, lets the video breathe */}
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.6, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+        {/* ── Layer 4: Cinematic title — fades in then out ───── */}
+        <motion.div
+          // pointerEvents none after fade-out so the video is fully interactive
+          style={{
+            position: 'absolute',
+            inset: 0,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 4,
+            padding: '0 1.5rem',
+            pointerEvents: 'none',
+          }}
+          // Wrapper fades with the same keyframe sequence so the
+          // glow halo and the text disappear together
+          variants={titleVariants}
+          initial="initial"
+          animate="animate"
+          transition={titleTransition}
+        >
+          {/* Cinematic glow halo behind the text */}
+          <div style={{
+            position: 'absolute',
+            width: 'clamp(280px, 60vw, 600px)',
+            height: 'clamp(120px, 20vw, 220px)',
+            background: 'radial-gradient(ellipse at center, rgba(212,175,55,0.08) 0%, transparent 70%)',
+            pointerEvents: 'none',
+            // Halo is always present in the DOM but invisible when wrapper opacity=0
+          }} />
+
+          {/* Title */}
+          <h1
             style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 300,
-              // Reduced from clamp(3rem,14vw,8rem) — intentionally understated
               fontSize: 'clamp(1.8rem, 6vw, 3.8rem)',
               lineHeight: 1.1,
               letterSpacing: '0.04em',
-              // Reduced opacity so the video reads as the primary element
-              color: 'rgba(245,240,232,0.72)',
-              textShadow: '0 2px 24px rgba(0,0,0,0.6)',
+              color: 'rgba(245,240,232,0.82)',
+              // Cinematic text shadow — soft depth + subtle gold bloom
+              textShadow: [
+                '0 2px 32px rgba(0,0,0,0.7)',
+                '0 0 60px rgba(212,175,55,0.12)',
+              ].join(', '),
               margin: 0,
+              textAlign: 'center',
+              position: 'relative',
+              zIndex: 1,
             }}
           >
             {t('matrix.hero.title1')}{' '}
             <em style={{
               fontStyle: 'italic',
-              color: 'rgba(255,215,0,0.80)',
+              // Premium gold gradient on the accent word
+              background: 'linear-gradient(90deg, #EBD197, #D4AF37, #A67C00)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
               fontWeight: 300,
-              textShadow: '0 0 30px rgba(255,215,0,0.25), 0 2px 16px rgba(0,0,0,0.5)',
+              // Gold bloom — visible during the hold phase
+              filter: 'drop-shadow(0 0 18px rgba(212,175,55,0.35))',
             }}>
               {t('matrix.hero.title2')}
             </em>
-          </motion.h1>
+          </h1>
 
-          {/* Animated gold line */}
-          <motion.div
-            animate={{ scaleY: [1, 1.1, 1], opacity: [0.4, 0.8, 0.4] }}
-            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-            style={{
-              width: '1px',
-              height: '52px',
-              background: 'linear-gradient(to bottom, transparent, rgba(255,215,0,0.7), transparent)',
-              margin: '2rem auto 0',
-              filter: 'drop-shadow(0 0 5px rgba(255,215,0,0.3))',
-            }}
-          />
+          {/* Thin gold rule below the title — part of the cinematic moment */}
+          <div style={{
+            width: 'clamp(40px, 8vw, 80px)',
+            height: '1px',
+            background: 'linear-gradient(to right, transparent, rgba(212,175,55,0.5), transparent)',
+            marginTop: '1.4rem',
+            position: 'relative',
+            zIndex: 1,
+          }} />
+        </motion.div>
 
-          {/* Scroll hint */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 2.0 }}
-            style={{
-              fontFamily: 'Raleway, sans-serif',
-              fontWeight: 200,
-              fontSize: '9px',
-              letterSpacing: '0.38em',
-              color: 'rgba(255,215,0,0.38)',
-              textTransform: 'uppercase',
-              marginTop: '0.75rem',
-              textShadow: '0 1px 8px rgba(0,0,0,0.5)',
-            }}
-          >
-            {t('matrix.hero.scroll')}
-          </motion.p>
-        </div>
+        {/* ── Layer 5: Scroll hint — fades in after title is gone ── */}
+        {/* Delayed so it only appears once the video is the sole focus */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: prefersReducedMotion ? 0.45 : 1 }}
+          transition={{
+            duration: 1.2,
+            // Start appearing as the title finishes fading out
+            delay: prefersReducedMotion ? 1.0 : 5.8,
+            ease: EASE_IN,
+          }}
+          style={{
+            position: 'absolute',
+            bottom: 'clamp(2rem, 5vh, 3.5rem)',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: 4,
+            fontFamily: 'Raleway, sans-serif',
+            fontWeight: 200,
+            fontSize: '9px',
+            letterSpacing: '0.38em',
+            color: 'rgba(212,175,55,0.38)',
+            textTransform: 'uppercase',
+            textShadow: '0 1px 8px rgba(0,0,0,0.5)',
+            whiteSpace: 'nowrap',
+            pointerEvents: 'none',
+          }}
+        >
+          {t('matrix.hero.scroll')}
+        </motion.p>
       </section>
 
       {/* ── Tagline section — below the fold ────────────────── */}
@@ -296,7 +391,7 @@ function TaglineSection({ tagline }) {
       <div style={{
         position: 'absolute',
         inset: 0,
-        background: 'radial-gradient(ellipse 70% 80% at 50% 50%, rgba(255,215,0,0.03) 0%, transparent 70%)',
+        background: 'radial-gradient(ellipse 70% 80% at 50% 50%, rgba(212,175,55,0.03) 0%, transparent 70%)',
         pointerEvents: 'none',
       }} />
 
@@ -305,11 +400,11 @@ function TaglineSection({ tagline }) {
         initial={{ scaleX: 0, opacity: 0 }}
         whileInView={{ scaleX: 1, opacity: 1 }}
         viewport={{ once: true, margin: '-80px' }}
-        transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+        transition={{ duration: 1.2, ease: EASE_IN }}
         style={{
           width: 'clamp(40px, 8vw, 80px)',
           height: '1px',
-          background: 'linear-gradient(to right, transparent, rgba(255,215,0,0.45), transparent)',
+          background: 'linear-gradient(to right, transparent, rgba(212,175,55,0.45), transparent)',
           marginBottom: 'clamp(1.5rem, 3vw, 2.5rem)',
           transformOrigin: 'center',
         }}
@@ -320,7 +415,7 @@ function TaglineSection({ tagline }) {
         initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-80px' }}
-        transition={{ duration: 1.2, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+        transition={{ duration: 1.2, delay: 0.15, ease: EASE_IN }}
         style={{
           fontFamily: "'Cormorant Garamond', serif",
           fontWeight: 300,
@@ -344,11 +439,11 @@ function TaglineSection({ tagline }) {
         initial={{ scaleX: 0, opacity: 0 }}
         whileInView={{ scaleX: 1, opacity: 1 }}
         viewport={{ once: true, margin: '-80px' }}
-        transition={{ duration: 1.2, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+        transition={{ duration: 1.2, delay: 0.3, ease: EASE_IN }}
         style={{
           width: 'clamp(40px, 8vw, 80px)',
           height: '1px',
-          background: 'linear-gradient(to right, transparent, rgba(255,215,0,0.45), transparent)',
+          background: 'linear-gradient(to right, transparent, rgba(212,175,55,0.45), transparent)',
           marginTop: 'clamp(1.5rem, 3vw, 2.5rem)',
           transformOrigin: 'center',
         }}

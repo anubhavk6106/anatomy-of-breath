@@ -85,7 +85,7 @@ function Nav({ navigateTo }) {
                   navigateTo(item.toLowerCase())
                 }}
                 style={{
-                  color: activeSection === item.toLowerCase() ? '#FFD700' : '#aaa'
+                  color: activeSection === item.toLowerCase() ? '#D4AF37' : '#aaa'
                 }}
               >
                 {item}
@@ -154,7 +154,7 @@ function CustomCursor() {
         position: 'fixed',
         width: '10px',
         height: '10px',
-        background: '#FFD700',
+        background: '#D4AF37',
         borderRadius: '50%',
         pointerEvents: 'none',
         zIndex: 9999

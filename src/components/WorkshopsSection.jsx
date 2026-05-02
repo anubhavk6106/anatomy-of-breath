@@ -27,7 +27,7 @@ export default function WorkshopsSection() {
           <h2>
             <Link
               to={`/pillars/experiences/${workshop.slug.current}`}
-              style={{ color: '#FFD700', textDecoration: 'none' }}
+              style={{ color: '#D4AF37', textDecoration: 'none' }}
             >
               {workshop.title}
             </Link>

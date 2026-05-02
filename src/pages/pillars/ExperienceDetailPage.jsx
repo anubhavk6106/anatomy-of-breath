@@ -18,7 +18,7 @@ export default function ExperienceDetailPage() {
   if (loading) {
     return (
       <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#0b0b0b' }}>
-        <p style={{ fontFamily: 'Raleway, sans-serif', fontWeight: 200, fontSize: '12px', letterSpacing: '0.3em', color: 'rgba(255,215,0,0.5)', textTransform: 'uppercase' }}>
+        <p style={{ fontFamily: 'Raleway, sans-serif', fontWeight: 200, fontSize: '12px', letterSpacing: '0.3em', color: 'rgba(212,175,55,0.5)', textTransform: 'uppercase' }}>
           {t('common.loading') || 'Loading...'}
         </p>
       </div>
@@ -34,9 +34,9 @@ export default function ExperienceDetailPage() {
           {t('common.contentUnavailable') || 'Content unavailable'}
         </motion.p>
         <Link to="/pillars/experiences"
-          style={{ fontFamily: 'Raleway, sans-serif', fontWeight: 200, fontSize: '10px', letterSpacing: '0.4em', color: '#FFD700', textDecoration: 'none', textTransform: 'uppercase', padding: '0.9rem 2.5rem', border: '1px solid rgba(255,215,0,0.5)', display: 'inline-block', transition: 'background 0.3s, border-color 0.3s' }}
-          onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,215,0,0.06)'; e.currentTarget.style.borderColor = '#FFD700' }}
-          onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(255,215,0,0.5)' }}
+          style={{ fontFamily: 'Raleway, sans-serif', fontWeight: 200, fontSize: '10px', letterSpacing: '0.4em', color: '#D4AF37', textDecoration: 'none', textTransform: 'uppercase', padding: '0.9rem 2.5rem', border: '1px solid rgba(212,175,55,0.5)', display: 'inline-block', transition: 'background 0.3s, border-color 0.3s' }}
+          onMouseEnter={e => { e.currentTarget.style.background = 'rgba(212,175,55,0.06)'; e.currentTarget.style.borderColor = '#D4AF37' }}
+          onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(212,175,55,0.5)' }}
         >
           {t('common.backToList') || 'Back to Experiences'}
         </Link>
@@ -55,9 +55,9 @@ export default function ExperienceDetailPage() {
 
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, ease: EASE }} style={{ marginBottom: '2rem' }}>
           <Link to="/pillars/experiences"
-            style={{ fontFamily: 'Raleway, sans-serif', fontWeight: 200, fontSize: '10px', letterSpacing: '0.3em', color: 'rgba(255,215,0,0.6)', textDecoration: 'none', textTransform: 'uppercase', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'color 0.3s' }}
-            onMouseEnter={e => e.currentTarget.style.color = '#FFD700'}
-            onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,215,0,0.6)'}
+            style={{ fontFamily: 'Raleway, sans-serif', fontWeight: 200, fontSize: '10px', letterSpacing: '0.3em', color: 'rgba(212,175,55,0.6)', textDecoration: 'none', textTransform: 'uppercase', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'color 0.3s' }}
+            onMouseEnter={e => e.currentTarget.style.color = '#D4AF37'}
+            onMouseLeave={e => e.currentTarget.style.color = 'rgba(212,175,55,0.6)'}
           >
             ← {t('common.back') || 'Back'}
           </Link>
@@ -65,7 +65,7 @@ export default function ExperienceDetailPage() {
 
         {event.coverImage && (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: EASE }}
-            style={{ width: '100%', aspectRatio: '16 / 9', overflow: 'hidden', marginBottom: '3rem', border: '1px solid rgba(255,215,0,0.15)' }}
+            style={{ width: '100%', aspectRatio: '16 / 9', overflow: 'hidden', marginBottom: '3rem', border: '1px solid rgba(212,175,55,0.15)' }}
           >
             <img src={event.coverImage.asset?.url || event.coverImage.url} alt={event.coverImage.alt || event.title}
               loading="lazy" width="900" height="506" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -80,7 +80,7 @@ export default function ExperienceDetailPage() {
               Past Event
             </span>
           )}
-          <span style={{ fontFamily: 'Raleway, sans-serif', fontWeight: 200, fontSize: '10px', letterSpacing: '0.3em', color: '#FFD700', textTransform: 'uppercase' }}>
+          <span style={{ fontFamily: 'Raleway, sans-serif', fontWeight: 200, fontSize: '10px', letterSpacing: '0.3em', color: '#D4AF37', textTransform: 'uppercase' }}>
             {formattedDate} • {formattedTime}
           </span>
           {(event.location || event.isOnline) && (
@@ -108,9 +108,9 @@ export default function ExperienceDetailPage() {
         {event.bookingUrl && !isPast && (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.4, ease: EASE }} style={{ textAlign: 'center', marginTop: '3rem' }}>
             <a href={event.bookingUrl} target="_blank" rel="noopener noreferrer"
-              style={{ fontFamily: 'Raleway, sans-serif', fontWeight: 200, fontSize: '10px', letterSpacing: '0.4em', color: '#FFD700', textDecoration: 'none', textTransform: 'uppercase', padding: '0.9rem 2.5rem', border: '1px solid rgba(255,215,0,0.5)', display: 'inline-block', transition: 'background 0.3s, border-color 0.3s' }}
-              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,215,0,0.06)'; e.currentTarget.style.borderColor = '#FFD700' }}
-              onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(255,215,0,0.5)' }}
+              style={{ fontFamily: 'Raleway, sans-serif', fontWeight: 200, fontSize: '10px', letterSpacing: '0.4em', color: '#D4AF37', textDecoration: 'none', textTransform: 'uppercase', padding: '0.9rem 2.5rem', border: '1px solid rgba(212,175,55,0.5)', display: 'inline-block', transition: 'background 0.3s, border-color 0.3s' }}
+              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(212,175,55,0.06)'; e.currentTarget.style.borderColor = '#D4AF37' }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(212,175,55,0.5)' }}
             >
               {t('common.bookNow') || 'Reserve Your Spot'}
             </a>

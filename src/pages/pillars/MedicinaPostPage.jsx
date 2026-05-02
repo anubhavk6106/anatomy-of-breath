@@ -18,7 +18,7 @@ export default function MedicinaPostPage() {
   if (loading) {
     return (
       <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#0b0b0b' }}>
-        <p style={{ fontFamily: 'Raleway, sans-serif', fontWeight: 200, fontSize: '12px', letterSpacing: '0.3em', color: 'rgba(255,215,0,0.5)', textTransform: 'uppercase' }}>
+        <p style={{ fontFamily: 'Raleway, sans-serif', fontWeight: 200, fontSize: '12px', letterSpacing: '0.3em', color: 'rgba(212,175,55,0.5)', textTransform: 'uppercase' }}>
           {t('common.loading') || 'Loading...'}
         </p>
       </div>
@@ -34,9 +34,9 @@ export default function MedicinaPostPage() {
           {t('common.contentUnavailable') || 'Content unavailable'}
         </motion.p>
         <Link to="/pillars/medicina-de-la-voz"
-          style={{ fontFamily: 'Raleway, sans-serif', fontWeight: 200, fontSize: '10px', letterSpacing: '0.4em', color: '#FFD700', textDecoration: 'none', textTransform: 'uppercase', padding: '0.9rem 2.5rem', border: '1px solid rgba(255,215,0,0.5)', display: 'inline-block', transition: 'background 0.3s, border-color 0.3s' }}
-          onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,215,0,0.06)'; e.currentTarget.style.borderColor = '#FFD700' }}
-          onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(255,215,0,0.5)' }}
+          style={{ fontFamily: 'Raleway, sans-serif', fontWeight: 200, fontSize: '10px', letterSpacing: '0.4em', color: '#D4AF37', textDecoration: 'none', textTransform: 'uppercase', padding: '0.9rem 2.5rem', border: '1px solid rgba(212,175,55,0.5)', display: 'inline-block', transition: 'background 0.3s, border-color 0.3s' }}
+          onMouseEnter={e => { e.currentTarget.style.background = 'rgba(212,175,55,0.06)'; e.currentTarget.style.borderColor = '#D4AF37' }}
+          onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(212,175,55,0.5)' }}
         >
           {t('common.backToList') || 'Back to Medicina de la Voz'}
         </Link>
@@ -54,9 +54,9 @@ export default function MedicinaPostPage() {
 
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, ease: EASE }} style={{ marginBottom: '2rem' }}>
           <Link to="/pillars/medicina-de-la-voz"
-            style={{ fontFamily: 'Raleway, sans-serif', fontWeight: 200, fontSize: '10px', letterSpacing: '0.3em', color: 'rgba(255,215,0,0.6)', textDecoration: 'none', textTransform: 'uppercase', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'color 0.3s' }}
-            onMouseEnter={e => e.currentTarget.style.color = '#FFD700'}
-            onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,215,0,0.6)'}
+            style={{ fontFamily: 'Raleway, sans-serif', fontWeight: 200, fontSize: '10px', letterSpacing: '0.3em', color: 'rgba(212,175,55,0.6)', textDecoration: 'none', textTransform: 'uppercase', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'color 0.3s' }}
+            onMouseEnter={e => e.currentTarget.style.color = '#D4AF37'}
+            onMouseLeave={e => e.currentTarget.style.color = 'rgba(212,175,55,0.6)'}
           >
             ← {t('common.back') || 'Back'}
           </Link>
@@ -64,7 +64,7 @@ export default function MedicinaPostPage() {
 
         {post.coverImage && (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: EASE }}
-            style={{ width: '100%', aspectRatio: '16 / 9', overflow: 'hidden', marginBottom: '3rem', border: '1px solid rgba(255,215,0,0.15)' }}
+            style={{ width: '100%', aspectRatio: '16 / 9', overflow: 'hidden', marginBottom: '3rem', border: '1px solid rgba(212,175,55,0.15)' }}
           >
             <img src={post.coverImage.asset?.url || post.coverImage.url} alt={post.coverImage.alt || post.title}
               loading="lazy" width="900" height="506" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -74,7 +74,7 @@ export default function MedicinaPostPage() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.1, ease: EASE }}
           style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap', marginBottom: '2rem' }}
         >
-          {post.category && <span style={{ fontFamily: 'Raleway, sans-serif', fontWeight: 200, fontSize: '10px', letterSpacing: '0.3em', color: '#FFD700', textTransform: 'uppercase' }}>{post.category}</span>}
+          {post.category && <span style={{ fontFamily: 'Raleway, sans-serif', fontWeight: 200, fontSize: '10px', letterSpacing: '0.3em', color: '#D4AF37', textTransform: 'uppercase' }}>{post.category}</span>}
           {formattedDate && (
             <>
               {post.category && <span style={{ color: 'rgba(245,240,232,0.3)', fontSize: '10px' }}>•</span>}

@@ -66,7 +66,7 @@ export default function GlobalNav() {
     { to: '/vault',                      label: t('nav.vault'),       match: isVault },
   ]
 
-  const gold    = '#FFD700'
+  const gold    = '#D4AF37'
   const dimText = 'rgba(245,240,232,0.55)'
 
   return (
@@ -87,7 +87,7 @@ export default function GlobalNav() {
         backdropFilter: 'blur(18px)',
         WebkitBackdropFilter: 'blur(18px)',
         borderBottom: scrolled
-          ? '1px solid rgba(255,215,0,0.1)'
+          ? '1px solid rgba(212,175,55,0.1)'
           : '1px solid transparent',
         transition: 'background 0.5s ease, border-color 0.5s ease',
       }}>
@@ -104,9 +104,9 @@ export default function GlobalNav() {
             animate={{ scale: [1, 1.08, 1] }}
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
           >
-            <circle cx="12" cy="12" r="10" stroke="rgba(255,215,0,0.3)" strokeWidth="0.8"/>
-            <circle cx="12" cy="12" r="6"  stroke="rgba(255,215,0,0.55)" strokeWidth="0.8"/>
-            <circle cx="12" cy="12" r="2"  fill="rgba(255,215,0,0.75)"/>
+            <circle cx="12" cy="12" r="10" stroke="rgba(212,175,55,0.3)" strokeWidth="0.8"/>
+            <circle cx="12" cy="12" r="6"  stroke="rgba(212,175,55,0.55)" strokeWidth="0.8"/>
+            <circle cx="12" cy="12" r="2"  fill="rgba(212,175,55,0.75)"/>
           </motion.svg>
           <span style={{
             fontFamily: "'Cormorant Garamond', serif",
@@ -226,17 +226,17 @@ export default function GlobalNav() {
                   textDecoration: 'none',
                   textTransform: 'uppercase',
                   padding: '0.45rem 1.1rem',
-                  border: '1px solid rgba(255,215,0,0.35)',
+                  border: '1px solid rgba(212,175,55,0.35)',
                   transition: 'background 0.3s, border-color 0.3s, box-shadow 0.3s',
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.background = 'rgba(255,215,0,0.08)'
+                  e.currentTarget.style.background = 'rgba(212,175,55,0.08)'
                   e.currentTarget.style.borderColor = gold
-                  e.currentTarget.style.boxShadow = '0 0 16px rgba(255,215,0,0.12)'
+                  e.currentTarget.style.boxShadow = '0 0 16px rgba(212,175,55,0.12)'
                 }}
                 onMouseLeave={e => {
                   e.currentTarget.style.background = 'transparent'
-                  e.currentTarget.style.borderColor = 'rgba(255,215,0,0.35)'
+                  e.currentTarget.style.borderColor = 'rgba(212,175,55,0.35)'
                   e.currentTarget.style.boxShadow = 'none'
                 }}
               >
@@ -296,12 +296,12 @@ export default function GlobalNav() {
         left: 0, right: 0,
         height: '1px',
         zIndex: 101,
-        background: 'rgba(255,215,0,0.06)',
+        background: 'rgba(212,175,55,0.06)',
       }}>
         <motion.div
           style={{
             height: '100%',
-            background: 'linear-gradient(to right, rgba(255,215,0,0.6), rgba(255,215,0,0.3))',
+            background: 'linear-gradient(to right, rgba(212,175,55,0.6), rgba(212,175,55,0.3))',
             transformOrigin: 'left',
           }}
           animate={{ scaleX: scrollPct / 100 }}
@@ -333,11 +333,11 @@ export default function GlobalNav() {
               transform: 'translate(-50%, -50%)',
               width: '340px', opacity: 0.03, pointerEvents: 'none',
             }}>
-              <circle cx="150" cy="150" r="130" stroke="#FFD700" strokeWidth="0.5" fill="none"/>
-              <circle cx="150" cy="150" r="90"  stroke="#FFD700" strokeWidth="0.5" fill="none"/>
-              <circle cx="150" cy="150" r="50"  stroke="#FFD700" strokeWidth="0.5" fill="none"/>
-              <line x1="20" y1="150" x2="280" y2="150" stroke="#FFD700" strokeWidth="0.3"/>
-              <line x1="150" y1="20" x2="150" y2="280" stroke="#FFD700" strokeWidth="0.3"/>
+              <circle cx="150" cy="150" r="130" stroke="#D4AF37" strokeWidth="0.5" fill="none"/>
+              <circle cx="150" cy="150" r="90"  stroke="#D4AF37" strokeWidth="0.5" fill="none"/>
+              <circle cx="150" cy="150" r="50"  stroke="#D4AF37" strokeWidth="0.5" fill="none"/>
+              <line x1="20" y1="150" x2="280" y2="150" stroke="#D4AF37" strokeWidth="0.3"/>
+              <line x1="150" y1="20" x2="150" y2="280" stroke="#D4AF37" strokeWidth="0.3"/>
             </svg>
 
             {/* Top bar — logo + close */}
@@ -345,16 +345,16 @@ export default function GlobalNav() {
               display: 'flex', justifyContent: 'space-between', alignItems: 'center',
               padding: '0 1.25rem',
               height: '58px',
-              borderBottom: '1px solid rgba(255,215,0,0.06)',
+              borderBottom: '1px solid rgba(212,175,55,0.06)',
               flexShrink: 0,
             }}>
               <Link to="/" onClick={() => setMenuOpen(false)}
                 style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}
               >
                 <svg viewBox="0 0 24 24" fill="none" style={{ width: '16px', height: '16px' }}>
-                  <circle cx="12" cy="12" r="10" stroke="rgba(255,215,0,0.3)" strokeWidth="0.8"/>
-                  <circle cx="12" cy="12" r="6"  stroke="rgba(255,215,0,0.5)" strokeWidth="0.8"/>
-                  <circle cx="12" cy="12" r="2"  fill="rgba(255,215,0,0.7)"/>
+                  <circle cx="12" cy="12" r="10" stroke="rgba(212,175,55,0.3)" strokeWidth="0.8"/>
+                  <circle cx="12" cy="12" r="6"  stroke="rgba(212,175,55,0.5)" strokeWidth="0.8"/>
+                  <circle cx="12" cy="12" r="2"  fill="rgba(212,175,55,0.7)"/>
                 </svg>
                 <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1rem', color: gold, fontStyle: 'italic' }}>
                   {SITE.name}
@@ -363,7 +363,7 @@ export default function GlobalNav() {
               <button
                 onClick={() => setMenuOpen(false)}
                 aria-label="Close menu"
-                style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '6px', color: 'rgba(255,215,0,0.6)' }}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '6px', color: 'rgba(212,175,55,0.6)' }}
               >
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                   <line x1="2" y1="2" x2="16" y2="16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
@@ -403,7 +403,7 @@ export default function GlobalNav() {
                       padding: '0.5rem 0',
                       letterSpacing: '0.01em',
                       transition: 'color 0.25s',
-                      borderBottom: '1px solid rgba(255,215,0,0.05)',
+                      borderBottom: '1px solid rgba(212,175,55,0.05)',
                     }}
                   >
                     {/* Index number */}
@@ -412,7 +412,7 @@ export default function GlobalNav() {
                       fontWeight: 200,
                       fontSize: '9px',
                       letterSpacing: '0.2em',
-                      color: match ? 'rgba(255,215,0,0.6)' : 'rgba(245,240,232,0.2)',
+                      color: match ? 'rgba(212,175,55,0.6)' : 'rgba(245,240,232,0.2)',
                       minWidth: '20px',
                     }}>
                       0{i + 1}
@@ -434,7 +434,7 @@ export default function GlobalNav() {
 
             {/* Bottom bar — contact + language + sound */}
             <div style={{
-              borderTop: '1px solid rgba(255,215,0,0.06)',
+              borderTop: '1px solid rgba(212,175,55,0.06)',
               padding: '1.5rem 2.5rem',
               flexShrink: 0,
             }}>
@@ -448,16 +448,16 @@ export default function GlobalNav() {
                   fontWeight: 200,
                   fontSize: '10px',
                   letterSpacing: '0.4em',
-                  color: 'rgba(255,215,0,0.7)',
+                  color: 'rgba(212,175,55,0.7)',
                   textDecoration: 'none',
                   textTransform: 'uppercase',
-                  border: '1px solid rgba(255,215,0,0.2)',
+                  border: '1px solid rgba(212,175,55,0.2)',
                   padding: '0.85rem 2rem',
                   marginBottom: '1.5rem',
                   transition: 'border-color 0.3s, color 0.3s',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(255,215,0,0.5)'; e.currentTarget.style.color = gold }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,215,0,0.2)'; e.currentTarget.style.color = 'rgba(255,215,0,0.7)' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(212,175,55,0.5)'; e.currentTarget.style.color = gold }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(212,175,55,0.2)'; e.currentTarget.style.color = 'rgba(212,175,55,0.7)' }}
               >
                 {t('nav.inquire')}
               </a>
@@ -469,7 +469,7 @@ export default function GlobalNav() {
                   fontWeight: 200,
                   fontSize: '8px',
                   letterSpacing: '0.5em',
-                  color: 'rgba(255,215,0,0.3)',
+                  color: 'rgba(212,175,55,0.3)',
                   textTransform: 'uppercase',
                   marginBottom: '0.75rem',
                   textAlign: 'center',
@@ -494,8 +494,8 @@ export default function GlobalNav() {
                           fontSize: '9px',
                           letterSpacing: '0.2em',
                           color: isActive ? gold : 'rgba(245,240,232,0.4)',
-                          background: isActive ? 'rgba(255,215,0,0.08)' : 'transparent',
-                          border: `1px solid ${isActive ? 'rgba(255,215,0,0.4)' : 'rgba(255,215,0,0.1)'}`,
+                          background: isActive ? 'rgba(212,175,55,0.08)' : 'transparent',
+                          border: `1px solid ${isActive ? 'rgba(212,175,55,0.4)' : 'rgba(212,175,55,0.1)'}`,
                           padding: '0.4rem 0.85rem',
                           cursor: 'pointer',
                           transition: 'all 0.25s',

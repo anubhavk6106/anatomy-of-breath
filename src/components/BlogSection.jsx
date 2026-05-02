@@ -28,7 +28,7 @@ export default function BlogSection() {
               href={post.externalUrl || 'https://medicinadelavoz.wordpress.com'}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: '#FFD700', textDecoration: 'none' }}
+              style={{ color: '#D4AF37', textDecoration: 'none' }}
             >
               {post.title}
             </a>

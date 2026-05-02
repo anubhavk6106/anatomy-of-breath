@@ -10,7 +10,7 @@ const EASE = [0.25, 0.46, 0.45, 0.94]
 // Simplified sacred geometry — single circle with rotating inner pattern
 const GEOMETRY_SVG = `
   <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <g fill="none" stroke="#FFD700" stroke-width="0.5">
+    <g fill="none" stroke="#D4AF37" stroke-width="0.5">
       <circle cx="50" cy="50" r="30" opacity="0.3"/>
       <circle cx="50" cy="50" r="20" opacity="0.5"/>
       <circle cx="50" cy="50" r="10" opacity="0.7"/>
@@ -27,7 +27,7 @@ const GEOMETRY_SVG = `
  * 
  * Minimal loading indicator matching Design_Language:
  * - Obsidian (#0b0b0b) background
- * - Gold (#FFD700) pulsing geometry
+ * - Gold (#D4AF37) pulsing geometry
  * - Smooth fade-in animation
  * 
  * Used as Suspense fallback in router for lazy-loaded pages.

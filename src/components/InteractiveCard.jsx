@@ -34,7 +34,7 @@ function Particle({ i }) {
         left: '50%', top: '50%',
         width: size, height: size,
         borderRadius: '50%',
-        background: '#FFD700',
+        background: '#D4AF37',
         pointerEvents: 'none',
       }}
       initial={{ x: 0, y: 0, opacity: 0, scale: 0 }}
@@ -219,7 +219,7 @@ export default function InteractiveCard({
             key="shimmer"
             style={{
               position: 'absolute', inset: 0, zIndex: 5,
-              background: 'linear-gradient(110deg, transparent 25%, rgba(255,215,0,0.1) 50%, transparent 75%)',
+              background: 'linear-gradient(110deg, transparent 25%, rgba(212,175,55,0.1) 50%, transparent 75%)',
               pointerEvents: 'none',
             }}
             initial={{ x: '-100%', opacity: 0 }}
@@ -234,8 +234,8 @@ export default function InteractiveCard({
       <motion.div
         style={{
           position: 'absolute', inset: 0, zIndex: 6,
-          border: '1px solid rgba(255,215,0,0.6)',
-          boxShadow: 'inset 0 0 40px rgba(255,215,0,0.06), 0 0 30px rgba(255,215,0,0.15)',
+          border: '1px solid rgba(212,175,55,0.6)',
+          boxShadow: 'inset 0 0 40px rgba(212,175,55,0.06), 0 0 30px rgba(212,175,55,0.15)',
           pointerEvents: 'none',
         }}
         animate={{ opacity: hovered ? 1 : 0 }}
@@ -244,10 +244,10 @@ export default function InteractiveCard({
 
       {/* Corner L-brackets */}
       {[
-        { top: 0,    left: 0,    borderTop: '1px solid #FFD700', borderLeft:  '1px solid #FFD700' },
-        { top: 0,    right: 0,   borderTop: '1px solid #FFD700', borderRight: '1px solid #FFD700' },
-        { bottom: 0, left: 0,    borderBottom: '1px solid #FFD700', borderLeft:  '1px solid #FFD700' },
-        { bottom: 0, right: 0,   borderBottom: '1px solid #FFD700', borderRight: '1px solid #FFD700' },
+        { top: 0,    left: 0,    borderTop: '1px solid #D4AF37', borderLeft:  '1px solid #D4AF37' },
+        { top: 0,    right: 0,   borderTop: '1px solid #D4AF37', borderRight: '1px solid #D4AF37' },
+        { bottom: 0, left: 0,    borderBottom: '1px solid #D4AF37', borderLeft:  '1px solid #D4AF37' },
+        { bottom: 0, right: 0,   borderBottom: '1px solid #D4AF37', borderRight: '1px solid #D4AF37' },
       ].map((style, i) => (
         <motion.div
           key={i}
@@ -268,7 +268,7 @@ export default function InteractiveCard({
         style={{
           position: 'absolute', top: '1rem', left: '1.1rem', zIndex: 8,
           fontFamily: 'Raleway, sans-serif', fontWeight: 200,
-          fontSize: '10px', letterSpacing: '0.25em', color: '#FFD700',
+          fontSize: '10px', letterSpacing: '0.25em', color: '#D4AF37',
         }}
         animate={{ opacity: showInfo ? 0.9 : 0.25 }}
         transition={{ duration: 0.35 }}
@@ -282,7 +282,7 @@ export default function InteractiveCard({
           position: 'absolute', top: '1rem', right: '1.1rem', zIndex: 8,
           fontFamily: 'Raleway, sans-serif', fontWeight: 200,
           fontSize: '8px', letterSpacing: '0.4em',
-          color: 'rgba(255,215,0,0.6)', textTransform: 'uppercase',
+          color: 'rgba(212,175,55,0.6)', textTransform: 'uppercase',
           pointerEvents: 'none',
         }}
         animate={{ opacity: showInfo ? 1 : 0, y: showInfo ? 0 : -6 }}
@@ -306,7 +306,7 @@ export default function InteractiveCard({
         <motion.div
           style={{
             height: '1px', marginBottom: '0.75rem',
-            background: 'linear-gradient(to right, #FFD700, rgba(255,215,0,0.2), transparent)',
+            background: 'linear-gradient(to right, #D4AF37, rgba(212,175,55,0.2), transparent)',
             transformOrigin: 'left',
           }}
           animate={{ scaleX: showInfo ? 1 : 0, opacity: showInfo ? 1 : 0 }}
@@ -328,7 +328,7 @@ export default function InteractiveCard({
           style={{
             fontFamily: 'Raleway, sans-serif', fontWeight: 200,
             fontSize: '8px', letterSpacing: '0.4em',
-            color: '#FFD700', textTransform: 'uppercase',
+            color: '#D4AF37', textTransform: 'uppercase',
           }}
           animate={{ opacity: showInfo ? 1 : 0, y: showInfo ? 0 : 4 }}
           transition={{ duration: 0.4, delay: 0.2, ease: EASE }}
@@ -341,7 +341,7 @@ export default function InteractiveCard({
           style={{
             fontFamily: 'Raleway, sans-serif', fontWeight: 200,
             fontSize: '7px', letterSpacing: '0.35em',
-            color: 'rgba(255,215,0,0.35)', textTransform: 'uppercase',
+            color: 'rgba(212,175,55,0.35)', textTransform: 'uppercase',
             marginTop: '0.6rem',
           }}
           animate={{ opacity: showInfo ? 1 : 0 }}

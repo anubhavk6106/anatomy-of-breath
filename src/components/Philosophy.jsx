@@ -38,7 +38,7 @@ function GoldDivider() {
   return (
     <div style={{
       width: '1px', height: '60px',
-      background: 'linear-gradient(to bottom, transparent, #FFD700, transparent)',
+      background: 'linear-gradient(to bottom, transparent, #D4AF37, transparent)',
       margin: '3rem auto',
     }} />
   )
@@ -60,7 +60,7 @@ export default function Philosophy() {
         <p style={{
           fontFamily: 'Raleway, sans-serif', fontWeight: 200,
           fontSize: '10px', letterSpacing: '0.6em',
-          color: '#FFD700', textTransform: 'uppercase',
+          color: '#D4AF37', textTransform: 'uppercase',
           marginBottom: '3rem', opacity: 0.7,
         }}>
           {t('matrix.philosophy.label', 'Philosophy')}
@@ -123,7 +123,7 @@ export default function Philosophy() {
         <p style={{
           fontFamily: "'Cormorant Garamond', serif",
           fontSize: '1rem', fontWeight: 300, fontStyle: 'italic',
-          color: 'rgba(255,215,0,0.5)', letterSpacing: '0.1em',
+          color: 'rgba(212,175,55,0.5)', letterSpacing: '0.1em',
         }}>
           {t('matrix.philosophy.mantra', '— Breathe. Witness. Remember.')}
         </p>
