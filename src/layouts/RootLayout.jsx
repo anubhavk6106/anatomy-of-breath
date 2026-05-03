@@ -439,7 +439,7 @@ function GlobalFooter() {
           color: 'rgba(245,240,232,0.08)',
           textTransform: 'uppercase',
         }}>
-          {t('footer.allRightsReserved')}
+          All rights reserved
         </span>
       </div>
     </footer>
