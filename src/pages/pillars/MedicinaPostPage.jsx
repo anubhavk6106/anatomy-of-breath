@@ -7,12 +7,14 @@ import { useTranslation } from 'react-i18next'
 import useSanityQuery from '../../hooks/useSanityQuery'
 import { POST_BY_SLUG_QUERY } from '../../lib/queries'
 import PostBody from '../../components/cms/PostBody'
+import { localise } from '../../lib/localise'
 
 const EASE = [0.25, 0.46, 0.45, 0.94]
 
 export default function MedicinaPostPage() {
   const { slug } = useParams()
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const lang = i18n.language
   const { data: post, loading } = useSanityQuery(POST_BY_SLUG_QUERY, { slug })
 
   if (loading) {
@@ -86,14 +88,14 @@ export default function MedicinaPostPage() {
         <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.2, ease: EASE }}
           style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 300, color: '#f5f0e8', lineHeight: 1.2, marginBottom: '2rem' }}
         >
-          {post.title}
+          {localise(post.title, lang)}
         </motion.h1>
 
         {post.excerpt && (
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.3, ease: EASE }}
             style={{ fontFamily: 'Raleway, sans-serif', fontWeight: 200, fontSize: '16px', lineHeight: 1.8, color: 'rgba(245,240,232,0.8)', marginBottom: '3rem', fontStyle: 'italic' }}
           >
-            {post.excerpt}
+            {localise(post.excerpt, lang)}
           </motion.p>
         )}
 

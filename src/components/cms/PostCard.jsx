@@ -17,11 +17,20 @@
 import { memo } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
+import { localise } from '../../lib/localise'
 
 const EASE = [0.25, 0.46, 0.45, 0.94]
 
 function PostCard({ post }) {
-  const { title, coverImage, excerpt, category, publishedAt } = post
+  const { i18n } = useTranslation()
+  const lang = i18n.language
+
+  // Resolve multilingual fields — falls back to EN if current lang not available
+  const title   = localise(post.title,   lang)
+  const excerpt = localise(post.excerpt, lang)
+
+  const { coverImage, category, publishedAt } = post
 
   // Extract slug string — handles all Sanity slug formats:
   // 1. Plain string: "my-slug"
@@ -44,7 +53,7 @@ function PostCard({ post }) {
   }
 
   if (import.meta.env.DEV) {
-    console.log('[PostCard]', post.title, '| slug:', JSON.stringify(post.slug), '→', slugStr)
+    console.log('[PostCard]', title, '| slug:', JSON.stringify(post.slug), '→', slugStr)
   }
 
   // Format date if present

@@ -603,7 +603,7 @@ export default function Gallery() {
               {...card}
               title={t(`matrix.cards.${card.key}.title`, card.key)}
               subtitle={t(`matrix.cards.${card.key}.subtitle`, '')}
-              onClick={() => setActiveCard({ ...card, title: t(`matrix.cards.${card.key}.title`, card.key), subtitle: t(`matrix.cards.${card.key}.subtitle`, '') })}
+              onClick={() => setActiveCard(card)}
             />
           ))}
         </div>

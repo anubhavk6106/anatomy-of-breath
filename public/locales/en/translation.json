@@ -45,18 +45,18 @@
       "tapToExplore": "Tap to explore"
     },
     "cards": {
-      "lungField":      { "title": "The Lung Field",    "subtitle": "Pulmonary Expansion" },
-      "bronchialTree":  { "title": "Bronchial Tree",    "subtitle": "Sacred Branching" },
-      "diaphragm":      { "title": "Diaphragm",         "subtitle": "The First Mover" },
-      "alveolarBloom":  { "title": "Alveolar Bloom",    "subtitle": "The Flower Within" },
-      "neuralBreath":   { "title": "Neural Breath",     "subtitle": "The Nervous Rhythm" },
-      "theSilence":     { "title": "The Silence",       "subtitle": "Between Inhale & Exhale" },
-      "sacredHeart":    { "title": "The Sacred Heart",  "subtitle": "Pulse of Existence" },
-      "spinalColumn":   { "title": "Spinal Column",     "subtitle": "The Axis of Being" },
-      "ribCage":        { "title": "Rib Cage",          "subtitle": "The Temple of Breath" },
-      "cranialVault":   { "title": "Cranial Vault",     "subtitle": "The Seat of Consciousness" },
-      "vascularRivers": { "title": "Vascular Rivers",   "subtitle": "The Flow of Life" },
-      "innerEye":       { "title": "The Inner Eye",     "subtitle": "Window of the Soul" }
+      "lungField":      { "title": "The Lung Field",    "subtitle": "Pulmonary Expansion",      "geometry": "Vesica Piscis",    "description": "The lungs are not merely organs of respiration — they are the body's most direct interface with the invisible world. Each breath draws the cosmos inward, and the Vesica Piscis mirrors this duality: two realms overlapping in the sacred space between." },
+      "bronchialTree":  { "title": "Bronchial Tree",    "subtitle": "Sacred Branching",         "geometry": "Star of David",    "description": "The bronchial tree branches with the same mathematical precision as lightning, river deltas, and the Star of David. Nature does not repeat itself — it rhymes. Every bifurcation is a choice, a sacred division of the whole into its parts." },
+      "diaphragm":      { "title": "Diaphragm",         "subtitle": "The First Mover",          "geometry": "Metatron's Cube",  "description": "The diaphragm is the body's first mover — the prime muscle of life. Its dome-shaped arc echoes Metatron's Cube, the geometric blueprint said to contain all forms of creation. To breathe consciously is to activate this sacred architecture." },
+      "alveolarBloom":  { "title": "Alveolar Bloom",    "subtitle": "The Flower Within",        "geometry": "Sri Yantra",       "description": "Three hundred million alveoli bloom inside each lung — a surface area the size of a tennis court, folded into the space of your fist. The Sri Yantra's interlocking triangles mirror this impossible compression of infinity into form." },
+      "neuralBreath":   { "title": "Neural Breath",     "subtitle": "The Nervous Rhythm",       "geometry": "Pentagram",        "description": "The phrenic nerve descends from the cervical spine, threading through the thorax to animate the diaphragm. This neural pathway is the body's telegraph line between mind and breath — consciousness made physical through the pentagram's five-pointed symmetry." },
+      "theSilence":     { "title": "The Silence",       "subtitle": "Between Inhale & Exhale",  "geometry": "Torus Field",      "description": "Between the exhale and the next inhale exists a pause — the kumbhaka. In this stillness, the torus field of the body completes its cycle. The silence is not empty; it is the fullest moment, the still point around which all breath revolves." },
+      "sacredHeart":    { "title": "The Sacred Heart",  "subtitle": "Pulse of Existence",       "geometry": "Flower of Life",   "description": "The heart beats approximately 100,000 times each day, never resting, never pausing. The Flower of Life — seven interlocking circles — is said to encode the pattern of creation itself. The heart does not pump blood; it sings it into motion." },
+      "spinalColumn":   { "title": "Spinal Column",     "subtitle": "The Axis of Being",        "geometry": "Tree of Life",     "description": "The spinal column is the body's axis mundi — the world tree, the ladder between earth and sky. The Kabbalistic Tree of Life maps ten sephiroth along a similar vertical axis, each node a center of consciousness, each vertebra a gateway." },
+      "ribCage":        { "title": "Rib Cage",          "subtitle": "The Temple of Breath",     "geometry": "Golden Spiral",    "description": "The rib cage is a living temple — twelve pairs of arches protecting the sacred organs within. The golden spiral encoded in its structure follows the same ratio found in nautilus shells, galaxies, and the unfolding of a fern." },
+      "cranialVault":   { "title": "Cranial Vault",     "subtitle": "The Seat of Consciousness","geometry": "Metatron's Cube",  "description": "The cranial vault houses the most complex structure in the known universe. Metatron's Cube, with its thirteen circles and seventy-eight lines, is said to contain the geometric blueprint of all matter — a fitting overlay for the seat of consciousness." },
+      "vascularRivers": { "title": "Vascular Rivers",   "subtitle": "The Flow of Life",         "geometry": "Sri Yantra",       "description": "Sixty thousand miles of blood vessels thread through the human body — enough to circle the Earth twice. The Sri Yantra's nine interlocking triangles create forty-three smaller triangles, mirroring the fractal branching of every capillary bed." },
+      "innerEye":       { "title": "The Inner Eye",     "subtitle": "Window of the Soul",       "geometry": "Golden Spiral",    "description": "The eye contains 130 million photoreceptors, each one a transducer converting light into meaning. The golden spiral — nature's most elegant ratio — governs the iris's expansion and contraction, the same mathematics that governs galaxies in their turning." }
     },
 
     "timeline": {
@@ -174,5 +174,15 @@
     "backToList": "Back to list",
     "back": "Back",
     "all": "All"
+  },
+  "footer": {
+    "navigate": "Navigate",
+    "language": "Language",
+    "allRightsReserved": "All rights reserved"
+  },
+  "site": {
+    "name": "Anatomy of Breath",
+    "tagline": "Where science dissolves into sacred",
+    "description": "Where science dissolves into sacred. A visual philosophy blending anatomy and sacred geometry."
   }
 }

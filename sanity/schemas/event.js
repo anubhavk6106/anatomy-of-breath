@@ -1,48 +1,78 @@
 // event.js — Workshop / Event schema for Experiences section
-// Client can add/edit events from Sanity Studio without touching code.
+// Multilingual fields use an object with one key per locale.
+// The frontend reads: item.title?.[lang] ?? item.title?.en ?? ''
+
+const LOCALES = ['en', 'es', 'hi', 'fr', 'pt']
+
+function localisedString(name, title, description, required = false) {
+  return {
+    name,
+    title,
+    type: 'object',
+    description,
+    fields: LOCALES.map(lang => ({
+      name: lang,
+      title: lang.toUpperCase(),
+      type: 'string',
+      validation: required && lang === 'en'
+        ? Rule => Rule.required().error(`${title} (EN) is required`)
+        : undefined,
+    })),
+  }
+}
+
+function localisedText(name, title, description, rows = 4) {
+  return {
+    name,
+    title,
+    type: 'object',
+    description,
+    fields: LOCALES.map(lang => ({
+      name: lang,
+      title: lang.toUpperCase(),
+      type: 'text',
+      rows,
+    })),
+  }
+}
 
 export default {
   name: 'event',
   title: 'Event / Workshop',
   type: 'document',
 
-  // Preview in Studio list view
   preview: {
     select: {
-      title:    'title',
+      titleObj: 'title',
       date:     'date',
       isOnline: 'isOnline',
       location: 'location',
       media:    'coverImage',
     },
-    prepare({ title, date, isOnline, location, media }) {
+    prepare({ titleObj, date, isOnline, location, media }) {
+      const title   = titleObj?.en || titleObj?.es || 'Untitled Event'
       const dateStr = date
         ? new Date(date).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' })
         : 'No date set'
       const place = isOnline ? '🌐 Online' : (location ? `📍 ${location}` : 'No location')
-      return {
-        title:    title || 'Untitled Event',
-        subtitle: `${dateStr} — ${place}`,
-        media,
-      }
+      return { title, subtitle: `${dateStr} — ${place}`, media }
     },
   },
 
   fields: [
     // ── Required ──────────────────────────────────────────────
-    {
-      name:        'title',
-      type:        'string',
-      title:       'Event Title',
-      description: 'The name of the workshop, ceremony, or gathering.',
-      validation:  Rule => Rule.required().min(5).max(120).error('Title is required'),
-    },
+    localisedString(
+      'title',
+      'Event Title',
+      'The name of the workshop, ceremony, or gathering. Fill EN first.',
+      true,
+    ),
     {
       name:        'slug',
       type:        'slug',
       title:       'URL Slug',
-      description: 'Auto-generated from the title. Used in the URL: /pillars/experiences/[slug]',
-      options:     { source: 'title', maxLength: 96 },
+      description: 'Auto-generated from the English title. Used in the URL: /pillars/experiences/[slug]',
+      options:     { source: doc => doc.title?.en || '', maxLength: 96 },
       validation:  Rule => Rule.required().error('Slug is required — click "Generate"'),
     },
     {
@@ -56,10 +86,10 @@ export default {
 
     // ── Location ───────────────────────────────────────────────
     {
-      name:        'isOnline',
-      type:        'boolean',
-      title:       'Online Event?',
-      description: 'Toggle ON if this event takes place online (Zoom, etc.).',
+      name:         'isOnline',
+      type:         'boolean',
+      title:        'Online Event?',
+      description:  'Toggle ON if this event takes place online (Zoom, etc.).',
       initialValue: false,
     },
     {
@@ -89,36 +119,19 @@ export default {
     },
 
     // ── Description ────────────────────────────────────────────
-    {
-      name:        'description',
-      type:        'array',
-      title:       'Description',
-      description: 'Full description of the event. Shown on the event detail page.',
-      of: [
-        {
-          type: 'block',
-          styles: [
-            { title: 'Normal',    value: 'normal' },
-            { title: 'Heading 2', value: 'h2' },
-            { title: 'Heading 3', value: 'h3' },
-            { title: 'Quote',     value: 'blockquote' },
-          ],
-          marks: {
-            decorators: [
-              { title: 'Bold',   value: 'strong' },
-              { title: 'Italic', value: 'em' },
-            ],
-          },
-        },
-      ],
-    },
+    localisedText(
+      'description',
+      'Description',
+      'Full description of the event. Fill EN first — other languages are optional.',
+      6,
+    ),
 
     // ── Booking ────────────────────────────────────────────────
     {
       name:        'bookingUrl',
       type:        'url',
       title:       'Booking / Registration URL',
-      description: 'Link to the booking page (Eventbrite, Calendly, etc.). Leave blank if not applicable.',
+      description: 'Link to the booking page (Eventbrite, Calendly, etc.).',
       validation:  Rule => Rule.uri({ scheme: ['http', 'https', 'mailto'] }).warning('Enter a valid URL'),
     },
   ],

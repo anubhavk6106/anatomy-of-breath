@@ -51,18 +51,18 @@
     },
 
     "cards": {
-      "lungField":      { "title": "O Campo Pulmonar",      "subtitle": "Expansão Pulmonar" },
-      "bronchialTree":  { "title": "Árvore Brônquica",      "subtitle": "Ramificação Sagrada" },
-      "diaphragm":      { "title": "Diafragma",             "subtitle": "O Primeiro Motor" },
-      "alveolarBloom":  { "title": "Florescimento Alveolar","subtitle": "A Flor Interior" },
-      "neuralBreath":   { "title": "Respiração Neural",     "subtitle": "O Ritmo Nervoso" },
-      "theSilence":     { "title": "O Silêncio",            "subtitle": "Entre Inspiração e Expiração" },
-      "sacredHeart":    { "title": "O Coração Sagrado",     "subtitle": "Pulso da Existência" },
-      "spinalColumn":   { "title": "Coluna Vertebral",      "subtitle": "O Eixo do Ser" },
-      "ribCage":        { "title": "Caixa Torácica",        "subtitle": "O Templo da Respiração" },
-      "cranialVault":   { "title": "Abóbada Craniana",      "subtitle": "A Sede da Consciência" },
-      "vascularRivers": { "title": "Rios Vasculares",       "subtitle": "O Fluxo da Vida" },
-      "innerEye":       { "title": "O Olho Interior",       "subtitle": "Janela da Alma" }
+      "lungField":      { "title": "O Campo Pulmonar",      "subtitle": "Expansão Pulmonar",          "geometry": "Vesica Piscis",    "description": "Os pulmões não são meros órgãos de respiração — são a interface mais direta do corpo com o mundo invisível. Cada respiração atrai o cosmos para dentro, e a Vesica Piscis espelha essa dualidade: dois reinos se sobrepondo no espaço sagrado entre eles." },
+      "bronchialTree":  { "title": "Árvore Brônquica",      "subtitle": "Ramificação Sagrada",        "geometry": "Star of David",    "description": "A árvore brônquica se ramifica com a mesma precisão matemática dos relâmpagos, deltas de rios e a Estrela de Davi. A natureza não se repete — ela rima. Cada bifurcação é uma escolha, uma divisão sagrada do todo em suas partes." },
+      "diaphragm":      { "title": "Diafragma",             "subtitle": "O Primeiro Motor",           "geometry": "Metatron's Cube",  "description": "O diafragma é o primeiro motor do corpo — o músculo primordial da vida. Seu arco em forma de cúpula ecoa o Cubo de Metatron, o plano geométrico que se diz conter todas as formas da criação. Respirar conscientemente é ativar essa arquitetura sagrada." },
+      "alveolarBloom":  { "title": "Florescimento Alveolar","subtitle": "A Flor Interior",            "geometry": "Sri Yantra",       "description": "Trezentos milhões de alvéolos florescem dentro de cada pulmão — uma área de superfície do tamanho de uma quadra de tênis, dobrada no espaço do seu punho. Os triângulos entrelaçados do Sri Yantra espelham essa compressão impossível do infinito em forma." },
+      "neuralBreath":   { "title": "Respiração Neural",     "subtitle": "O Ritmo Nervoso",            "geometry": "Pentagram",        "description": "O nervo frênico desce da coluna cervical, atravessando o tórax para animar o diafragma. Essa via neural é o telégrafo do corpo entre a mente e a respiração — consciência tornada física através da simetria de cinco pontas do pentágono." },
+      "theSilence":     { "title": "O Silêncio",            "subtitle": "Entre Inspiração e Expiração","geometry": "Torus Field",      "description": "Entre a expiração e a próxima inspiração existe uma pausa — o kumbhaka. Nessa quietude, o campo toroidal do corpo completa seu ciclo. O silêncio não está vazio; é o momento mais pleno, o ponto imóvel em torno do qual toda a respiração gira." },
+      "sacredHeart":    { "title": "O Coração Sagrado",     "subtitle": "Pulso da Existência",        "geometry": "Flower of Life",   "description": "O coração bate aproximadamente 100.000 vezes por dia, nunca descansando, nunca pausando. A Flor da Vida — sete círculos entrelaçados — é dita codificar o padrão da própria criação. O coração não bombeia sangue; ele o canta em movimento." },
+      "spinalColumn":   { "title": "Coluna Vertebral",      "subtitle": "O Eixo do Ser",              "geometry": "Tree of Life",     "description": "A coluna vertebral é o axis mundi do corpo — a árvore do mundo, a escada entre a terra e o céu. A Árvore da Vida cabalística mapeia dez sefirot ao longo de um eixo vertical similar, cada nó um centro de consciência, cada vértebra um portal." },
+      "ribCage":        { "title": "Caixa Torácica",        "subtitle": "O Templo da Respiração",     "geometry": "Golden Spiral",    "description": "A caixa torácica é um templo vivo — doze pares de arcos protegendo os órgãos sagrados em seu interior. A espiral dourada codificada em sua estrutura segue a mesma proporção encontrada em conchas de nautilo, galáxias e o desdobramento de uma samambaia." },
+      "cranialVault":   { "title": "Abóbada Craniana",      "subtitle": "A Sede da Consciência",      "geometry": "Metatron's Cube",  "description": "A abóbada craniana abriga a estrutura mais complexa do universo conhecido. O Cubo de Metatron, com seus treze círculos e setenta e oito linhas, é dito conter o plano geométrico de toda a matéria — uma sobreposição perfeita para a sede da consciência." },
+      "vascularRivers": { "title": "Rios Vasculares",       "subtitle": "O Fluxo da Vida",            "geometry": "Sri Yantra",       "description": "Sessenta mil milhas de vasos sanguíneos percorrem o corpo humano — suficiente para circundar a Terra duas vezes. Os nove triângulos entrelaçados do Sri Yantra criam quarenta e três triângulos menores, espelhando a ramificação fractal de cada leito capilar." },
+      "innerEye":       { "title": "O Olho Interior",       "subtitle": "Janela da Alma",             "geometry": "Golden Spiral",    "description": "O olho contém 130 milhões de fotorreceptores, cada um um transdutor convertendo luz em significado. A espiral dourada — a proporção mais elegante da natureza — governa a expansão e contração da íris, a mesma matemática que governa as galáxias em seu giro." }
     },
 
     "timeline": {
@@ -180,5 +180,15 @@
     "backToList": "Voltar à lista",
     "back": "Voltar",
     "all": "Todos"
+  },
+  "footer": {
+    "navigate": "Navegar",
+    "language": "Idioma",
+    "allRightsReserved": "Todos os direitos reservados"
+  },
+  "site": {
+    "name": "Anatomia da Respiração",
+    "tagline": "Onde a ciência se dissolve no sagrado",
+    "description": "Onde a ciência se dissolve no sagrado. Uma filosofia visual que une anatomia e geometria sagrada."
   }
 }

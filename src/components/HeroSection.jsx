@@ -202,10 +202,12 @@ export default function HeroSection() {
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
-                // Fill the viewport while preserving aspect ratio
+                // Mobile: cover fills the screen edge-to-edge, 100dvh handles
+                //         the dynamic viewport (avoids the iOS address-bar gap).
+                // Desktop: contain shows the full figure without cropping.
                 width: '100%',
-                height: '100%',
-                objectFit: 'contain',
+                height: isMobile ? '100dvh' : '100%',
+                objectFit: isMobile ? 'cover' : 'contain',
                 objectPosition: 'center center',
                 zIndex: 1,
                 // Sharper and brighter than the BG — this is the hero content

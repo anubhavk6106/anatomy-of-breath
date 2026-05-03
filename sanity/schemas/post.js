@@ -1,21 +1,59 @@
 // post.js — Blog post schema for Medicina de la Voz
-// Client can add/edit blog posts from Sanity Studio without touching code.
+// Multilingual fields use an object with one key per locale.
+// The frontend reads: item.title?.[lang] ?? item.title?.en ?? ''
+
+const LOCALES = ['en', 'es', 'hi', 'fr', 'pt']
+
+// Helper: build a localised string field group
+function localisedString(name, title, description, required = false) {
+  return {
+    name,
+    title,
+    type: 'object',
+    description,
+    fields: LOCALES.map(lang => ({
+      name: lang,
+      title: lang.toUpperCase(),
+      type: 'string',
+      validation: required && lang === 'en'
+        ? Rule => Rule.required().error(`${title} (EN) is required`)
+        : undefined,
+    })),
+    // Preview shows the EN value in Studio
+    preview: {
+      select: { title: 'en' },
+      prepare: ({ title }) => ({ title: title || '—' }),
+    },
+  }
+}
+
+// Helper: build a localised text (multiline) field group
+function localisedText(name, title, description, rows = 3) {
+  return {
+    name,
+    title,
+    type: 'object',
+    description,
+    fields: LOCALES.map(lang => ({
+      name: lang,
+      title: lang.toUpperCase(),
+      type: 'text',
+      rows,
+    })),
+  }
+}
 
 export default {
   name: 'post',
   title: 'Blog Post',
   type: 'document',
 
-  // Preview in Studio list view
   preview: {
-    select: {
-      title:    'title',
-      subtitle: 'category',
-      media:    'coverImage',
-    },
-    prepare({ title, subtitle, media }) {
+    select: { titleObj: 'title', subtitle: 'category', media: 'coverImage' },
+    prepare({ titleObj, subtitle, media }) {
+      const title = titleObj?.en || titleObj?.es || 'Untitled Post'
       return {
-        title:    title || 'Untitled Post',
+        title,
         subtitle: subtitle ? `Category: ${subtitle}` : 'No category',
         media,
       }
@@ -24,20 +62,19 @@ export default {
 
   fields: [
     // ── Required ──────────────────────────────────────────────
-    {
-      name:       'title',
-      type:       'string',
-      title:      'Title',
-      description: 'The main title of the blog post. Keep it clear and engaging.',
-      validation:  Rule => Rule.required().min(5).max(120).error('Title is required (5–120 characters)'),
-    },
+    localisedString(
+      'title',
+      'Title',
+      'The main title of the blog post. Fill EN first — other languages are optional.',
+      true,
+    ),
     {
       name:        'slug',
       type:        'slug',
       title:       'URL Slug',
-      description: 'Auto-generated from the title. Used in the page URL: /pillars/medicina-de-la-voz/[slug]',
-      options:     { source: 'title', maxLength: 96 },
-      validation:  Rule => Rule.required().error('Slug is required — click "Generate" to create it from the title'),
+      description: 'Auto-generated from the English title. Used in the URL: /pillars/medicina-de-la-voz/[slug]',
+      options:     { source: doc => doc.title?.en || '', maxLength: 96 },
+      validation:  Rule => Rule.required().error('Slug is required — click "Generate"'),
     },
 
     // ── Metadata ───────────────────────────────────────────────
@@ -55,11 +92,11 @@ export default {
       description: 'Used for filtering on the blog page.',
       options: {
         list: [
-          { title: 'Fundamentos',  value: 'Fundamentos' },
-          { title: 'Práctica',     value: 'Práctica' },
-          { title: 'Terapia',      value: 'Terapia' },
+          { title: 'Fundamentos',   value: 'Fundamentos' },
+          { title: 'Práctica',      value: 'Práctica' },
+          { title: 'Terapia',       value: 'Terapia' },
           { title: 'Investigación', value: 'Investigación' },
-          { title: 'Entrevistas',  value: 'Entrevistas' },
+          { title: 'Entrevistas',   value: 'Entrevistas' },
         ],
         layout: 'radio',
       },
@@ -84,21 +121,19 @@ export default {
     },
 
     // ── Excerpt ────────────────────────────────────────────────
-    {
-      name:        'excerpt',
-      type:        'text',
-      title:       'Excerpt / Summary',
-      description: 'Short summary shown on the blog card. Max 200 characters.',
-      rows:        3,
-      validation:  Rule => Rule.max(200).warning('Keep the excerpt under 200 characters'),
-    },
+    localisedText(
+      'excerpt',
+      'Excerpt / Summary',
+      'Short summary shown on the blog card (max ~200 chars per language).',
+      3,
+    ),
 
     // ── Body ───────────────────────────────────────────────────
     {
       name:  'body',
       type:  'array',
-      title: 'Body Content',
-      description: 'The full content of the blog post. You can add text, headings, images, and more.',
+      title: 'Body Content (EN)',
+      description: 'Full content of the blog post in English. Add translated body fields below if needed.',
       of: [
         {
           type: 'block',
@@ -144,11 +179,6 @@ export default {
       title: 'Published Date (Newest First)',
       name:  'publishedAtDesc',
       by:    [{ field: 'publishedAt', direction: 'desc' }],
-    },
-    {
-      title: 'Title A–Z',
-      name:  'titleAsc',
-      by:    [{ field: 'title', direction: 'asc' }],
     },
   ],
 }

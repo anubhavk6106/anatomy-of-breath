@@ -1,4 +1,12 @@
-// Project slug.current as a plain string so it works directly in URLs
+// queries.js
+// GROQ queries for Sanity CMS.
+//
+// Multilingual fields (title, excerpt, description) are objects:
+//   { en: "...", es: "...", hi: "...", fr: "...", pt: "..." }
+//
+// The frontend resolves the active language with localise():
+//   localise(item.title, lang)  →  item.title[lang] ?? item.title.en ?? ''
+
 export const POSTS_QUERY = `*[_type == "post"] | order(publishedAt desc) {
   title,
   "slug": slug.current,
@@ -41,5 +49,6 @@ export const EVENT_BY_SLUG_QUERY = `*[_type == "event" && slug.current == $slug]
 }`
 
 export const ACTIVE_SOMA_FEATURE_QUERY = `*[_type == "somaFeature" && isActive == true][0] {
-  title, description
+  title,
+  description
 }`

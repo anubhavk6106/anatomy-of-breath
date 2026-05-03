@@ -5,11 +5,18 @@
 import { memo } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
+import { localise } from '../../lib/localise'
 
 const EASE = [0.25, 0.46, 0.45, 0.94]
 
 function EventCard({ event }) {
-  const { title, slug, date, location, isOnline, coverImage, bookingUrl } = event
+  const { i18n } = useTranslation()
+  const lang = i18n.language
+
+  const title = localise(event.title, lang)
+
+  const { slug, date, location, isOnline, coverImage } = event
 
   // Check if event is in the past
   const eventDate = new Date(date)

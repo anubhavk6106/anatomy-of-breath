@@ -51,18 +51,18 @@
     },
 
     "cards": {
-      "lungField":      { "title": "Le Champ Pulmonaire",   "subtitle": "Expansion Pulmonaire" },
-      "bronchialTree":  { "title": "Arbre Bronchique",      "subtitle": "Ramification Sacrée" },
-      "diaphragm":      { "title": "Diaphragme",            "subtitle": "Le Premier Moteur" },
-      "alveolarBloom":  { "title": "Floraison Alvéolaire",  "subtitle": "La Fleur Intérieure" },
-      "neuralBreath":   { "title": "Souffle Neural",        "subtitle": "Le Rythme Nerveux" },
-      "theSilence":     { "title": "Le Silence",            "subtitle": "Entre Inspiration et Expiration" },
-      "sacredHeart":    { "title": "Le Cœur Sacré",         "subtitle": "Pouls de l'Existence" },
-      "spinalColumn":   { "title": "Colonne Vertébrale",    "subtitle": "L'Axe de l'Être" },
-      "ribCage":        { "title": "Cage Thoracique",       "subtitle": "Le Temple du Souffle" },
-      "cranialVault":   { "title": "Voûte Crânienne",       "subtitle": "Le Siège de la Conscience" },
-      "vascularRivers": { "title": "Rivières Vasculaires",  "subtitle": "Le Flux de la Vie" },
-      "innerEye":       { "title": "L'Œil Intérieur",       "subtitle": "Fenêtre de l'Âme" }
+      "lungField":      { "title": "Le Champ Pulmonaire",   "subtitle": "Expansion Pulmonaire",          "geometry": "Vesica Piscis",    "description": "Les poumons ne sont pas de simples organes respiratoires — ils sont l'interface la plus directe du corps avec le monde invisible. Chaque souffle attire le cosmos vers l'intérieur, et la Vesica Piscis reflète cette dualité : deux royaumes se superposant dans l'espace sacré entre eux." },
+      "bronchialTree":  { "title": "Arbre Bronchique",      "subtitle": "Ramification Sacrée",           "geometry": "Star of David",    "description": "L'arbre bronchique se ramifie avec la même précision mathématique que la foudre, les deltas des fleuves et l'Étoile de David. La nature ne se répète pas — elle rime. Chaque bifurcation est un choix, une division sacrée du tout en ses parties." },
+      "diaphragm":      { "title": "Diaphragme",            "subtitle": "Le Premier Moteur",             "geometry": "Metatron's Cube",  "description": "Le diaphragme est le premier moteur du corps — le muscle primordial de la vie. Son arc en forme de dôme évoque le Cube de Métatron, le plan géométrique censé contenir toutes les formes de la création. Respirer consciemment, c'est activer cette architecture sacrée." },
+      "alveolarBloom":  { "title": "Floraison Alvéolaire",  "subtitle": "La Fleur Intérieure",           "geometry": "Sri Yantra",       "description": "Trois cents millions d'alvéoles s'épanouissent à l'intérieur de chaque poumon — une surface de la taille d'un court de tennis, pliée dans l'espace de votre poing. Les triangles entrelacés du Sri Yantra reflètent cette compression impossible de l'infini en forme." },
+      "neuralBreath":   { "title": "Souffle Neural",        "subtitle": "Le Rythme Nerveux",             "geometry": "Pentagram",        "description": "Le nerf phrénique descend de la colonne cervicale, traversant le thorax pour animer le diaphragme. Cette voie neurale est le télégraphe du corps entre l'esprit et le souffle — la conscience rendue physique à travers la symétrie à cinq pointes du pentagramme." },
+      "theSilence":     { "title": "Le Silence",            "subtitle": "Entre Inspiration et Expiration","geometry": "Torus Field",      "description": "Entre l'expiration et l'inspiration suivante existe une pause — le kumbhaka. Dans cette immobilité, le champ toroïdal du corps complète son cycle. Le silence n'est pas vide ; c'est le moment le plus plein, le point fixe autour duquel tourne tout le souffle." },
+      "sacredHeart":    { "title": "Le Cœur Sacré",         "subtitle": "Pouls de l'Existence",          "geometry": "Flower of Life",   "description": "Le cœur bat environ 100 000 fois par jour, sans jamais se reposer, sans jamais s'arrêter. La Fleur de Vie — sept cercles entrelacés — est censée encoder le schéma de la création elle-même. Le cœur ne pompe pas le sang ; il le chante en mouvement." },
+      "spinalColumn":   { "title": "Colonne Vertébrale",    "subtitle": "L'Axe de l'Être",               "geometry": "Tree of Life",     "description": "La colonne vertébrale est l'axis mundi du corps — l'arbre du monde, l'échelle entre la terre et le ciel. L'Arbre de Vie kabbalistique cartographie dix séphiroth le long d'un axe vertical similaire, chaque nœud un centre de conscience, chaque vertèbre une porte." },
+      "ribCage":        { "title": "Cage Thoracique",       "subtitle": "Le Temple du Souffle",          "geometry": "Golden Spiral",    "description": "La cage thoracique est un temple vivant — douze paires d'arches protégeant les organes sacrés en son sein. La spirale dorée encodée dans sa structure suit le même rapport que celui trouvé dans les coquilles de nautile, les galaxies et le déploiement d'une fougère." },
+      "cranialVault":   { "title": "Voûte Crânienne",       "subtitle": "Le Siège de la Conscience",     "geometry": "Metatron's Cube",  "description": "La voûte crânienne abrite la structure la plus complexe de l'univers connu. Le Cube de Métatron, avec ses treize cercles et soixante-dix-huit lignes, est censé contenir le plan géométrique de toute la matière — une superposition parfaite pour le siège de la conscience." },
+      "vascularRivers": { "title": "Rivières Vasculaires",  "subtitle": "Le Flux de la Vie",             "geometry": "Sri Yantra",       "description": "Soixante mille miles de vaisseaux sanguins parcourent le corps humain — assez pour faire le tour de la Terre deux fois. Les neuf triangles entrelacés du Sri Yantra créent quarante-trois triangles plus petits, reflétant la ramification fractale de chaque lit capillaire." },
+      "innerEye":       { "title": "L'Œil Intérieur",       "subtitle": "Fenêtre de l'Âme",              "geometry": "Golden Spiral",    "description": "L'œil contient 130 millions de photorécepteurs, chacun un transducteur convertissant la lumière en signification. La spirale dorée — le rapport le plus élégant de la nature — gouverne l'expansion et la contraction de l'iris, les mêmes mathématiques qui gouvernent les galaxies dans leur rotation." }
     },
 
     "timeline": {
@@ -158,5 +158,15 @@
     "readMore": "Lire la suite",
     "loading": "Chargement...",
     "back": "Retour"
+  },
+  "footer": {
+    "navigate": "Navigation",
+    "language": "Langue",
+    "allRightsReserved": "Tous droits réservés"
+  },
+  "site": {
+    "name": "Anatomie de la Respiration",
+    "tagline": "Là où la science se dissout dans le sacré",
+    "description": "Là où la science se dissout dans le sacré. Une philosophie visuelle mêlant anatomie et géométrie sacrée."
   }
 }

@@ -3,27 +3,19 @@
 // Renders nothing (graceful omission) when feature is null/undefined
 
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
+import { localise } from '../../lib/localise'
 
 const EASE = [0.25, 0.46, 0.45, 0.94]
 
-/**
- * SomaFeatureBlock component
- * 
- * Displays a dynamic CMS-driven feature block with Framer Motion fade-in animation.
- * Returns null when feature is not available (graceful omission on fetch error).
- * 
- * @param {Object} props
- * @param {Object|null} props.feature - Feature object { title, description } or null
- * 
- * Validates: Requirements 7.3
- */
 export default function SomaFeatureBlock({ feature }) {
-  // Graceful omission when feature is null/undefined
-  if (!feature || !feature.title) {
-    return null
-  }
+  const { i18n } = useTranslation()
+  const lang = i18n.language
 
-  const { title, description } = feature
+  if (!feature || !feature.title) return null
+
+  const title       = localise(feature.title,       lang)
+  const description = localise(feature.description, lang)
 
   return (
     <motion.section

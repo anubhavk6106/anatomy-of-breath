@@ -5,32 +5,9 @@
 
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
 const EASE = [0.25, 0.46, 0.45, 0.94]
-
-const DESCRIPTIONS = {
-  '01': 'The lungs are not merely organs of respiration — they are the body\'s most direct interface with the invisible world. Each breath draws the cosmos inward, and the Vesica Piscis mirrors this duality: two realms overlapping in the sacred space between.',
-  '02': 'The bronchial tree branches with the same mathematical precision as lightning, river deltas, and the Star of David. Nature does not repeat itself — it rhymes. Every bifurcation is a choice, a sacred division of the whole into its parts.',
-  '03': 'The diaphragm is the body\'s first mover — the prime muscle of life. Its dome-shaped arc echoes Metatron\'s Cube, the geometric blueprint said to contain all forms of creation. To breathe consciously is to activate this sacred architecture.',
-  '04': 'Three hundred million alveoli bloom inside each lung — a surface area the size of a tennis court, folded into the space of your fist. The Sri Yantra\'s interlocking triangles mirror this impossible compression of infinity into form.',
-  '05': 'The phrenic nerve descends from the cervical spine, threading through the thorax to animate the diaphragm. This neural pathway is the body\'s telegraph line between mind and breath — consciousness made physical through the pentagram\'s five-pointed symmetry.',
-  '06': 'Between the exhale and the next inhale exists a pause — the kumbhaka. In this stillness, the torus field of the body completes its cycle. The silence is not empty; it is the fullest moment, the still point around which all breath revolves.',
-  '07': 'The heart beats approximately 100,000 times each day, never resting, never pausing. The Flower of Life — seven interlocking circles — is said to encode the pattern of creation itself. The heart does not pump blood; it sings it into motion.',
-  '08': 'The spinal column is the body\'s axis mundi — the world tree, the ladder between earth and sky. The Kabbalistic Tree of Life maps ten sephiroth along a similar vertical axis, each node a center of consciousness, each vertebra a gateway.',
-  '09': 'The rib cage is a living temple — twelve pairs of arches protecting the sacred organs within. The golden spiral encoded in its structure follows the same ratio found in nautilus shells, galaxies, and the unfolding of a fern.',
-  '10': 'The cranial vault houses the most complex structure in the known universe. Metatron\'s Cube, with its thirteen circles and seventy-eight lines, is said to contain the geometric blueprint of all matter — a fitting overlay for the seat of consciousness.',
-  '11': 'Sixty thousand miles of blood vessels thread through the human body — enough to circle the Earth twice. The Sri Yantra\'s nine interlocking triangles create forty-three smaller triangles, mirroring the fractal branching of every capillary bed.',
-  '12': 'The eye contains 130 million photoreceptors, each one a transducer converting light into meaning. The golden spiral — nature\'s most elegant ratio — governs the iris\'s expansion and contraction, the same mathematics that governs galaxies in their turning.',
-}
-
-const GEOMETRY_NAMES = {
-  '01': 'Vesica Piscis',   '02': 'Star of David',
-  '03': "Metatron's Cube", '04': 'Sri Yantra',
-  '05': 'Pentagram',       '06': 'Torus Field',
-  '07': 'Flower of Life',  '08': 'Tree of Life',
-  '09': 'Golden Spiral',   '10': "Metatron's Cube",
-  '11': 'Sri Yantra',      '12': 'Golden Spiral',
-}
 
 // ── Responsive hook ───────────────────────────────────────────
 function useBreakpoint() {
@@ -147,8 +124,11 @@ function VisualPanel({ card, height }) {
 
 // ── Content panel ─────────────────────────────────────────────
 function ContentPanel({ card, isMobile }) {
-  const description  = DESCRIPTIONS[card.number]  || ''
-  const geometryName = GEOMETRY_NAMES[card.number] || 'Sacred Geometry'
+  const { t } = useTranslation()
+  const title       = t(`matrix.cards.${card.key}.title`,       card.key)
+  const subtitle    = t(`matrix.cards.${card.key}.subtitle`,    '')
+  const description = t(`matrix.cards.${card.key}.description`, '')
+  const geometry    = t(`matrix.cards.${card.key}.geometry`,    'Sacred Geometry')
 
   return (
     <div style={{
@@ -167,7 +147,7 @@ function ContentPanel({ card, isMobile }) {
         initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2, ease: EASE }}
       >
-        {geometryName}
+        {geometry}
       </motion.p>
 
       <motion.h2 style={{
@@ -179,7 +159,7 @@ function ContentPanel({ card, isMobile }) {
         initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.28, ease: EASE }}
       >
-        {card.title}
+        {title}
       </motion.h2>
 
       <motion.p style={{
@@ -191,7 +171,7 @@ function ContentPanel({ card, isMobile }) {
         initial={{ opacity: 0 }} animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.36, ease: EASE }}
       >
-        {card.subtitle}
+        {subtitle}
       </motion.p>
 
       <motion.div style={{

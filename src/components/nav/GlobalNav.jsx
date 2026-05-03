@@ -115,7 +115,7 @@ export default function GlobalNav() {
             letterSpacing: '0.02em',
             whiteSpace: 'nowrap',
           }}>
-            {SITE.name}
+            {t('site.name')}
           </span>
         </Link>
 
@@ -389,7 +389,7 @@ export default function GlobalNav() {
                   <circle cx="12" cy="12" r="2"  fill="rgba(212,175,55,0.7)"/>
                 </svg>
                 <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1rem', color: gold, fontStyle: 'italic' }}>
-                  {SITE.name}
+                  {t('site.name')}
                 </span>
               </Link>
               <button

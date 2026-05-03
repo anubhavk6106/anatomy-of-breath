@@ -137,15 +137,15 @@ function CustomCursor() {
 
 // ── Footer ───────────────────────────────────────────────────
 function GlobalFooter() {
-  const { i18n } = useTranslation()
+  const { i18n, t } = useTranslation()
 
   const footerLinks = [
-    { href: '/',                           label: 'Home' },
-    { href: '/matrix',                     label: 'Matrix' },
-    { href: '/pillars/medicina-de-la-voz', label: 'Medicina' },
-    { href: '/pillars/soma',               label: 'Soma' },
-    { href: '/pillars/experiences',        label: 'Experiences' },
-    { href: '/vault',                      label: 'Vault' },
+    { href: '/',                           label: t('nav.portal') },
+    { href: '/matrix',                     label: t('nav.matrix') },
+    { href: '/pillars/medicina-de-la-voz', label: t('nav.medicinaVoz') },
+    { href: '/pillars/soma',               label: t('nav.soma') },
+    { href: '/pillars/experiences',        label: t('nav.experiences') },
+    { href: '/vault',                      label: t('nav.vault') },
   ]
 
   return (
@@ -183,7 +183,7 @@ function GlobalFooter() {
               fontStyle: 'italic',
               letterSpacing: '0.02em',
             }}>
-              {SITE.name}
+              {t('site.name')}
             </span>
           </Link>
 
@@ -197,7 +197,7 @@ function GlobalFooter() {
             maxWidth: '230px',
             marginBottom: '1.5rem',
           }}>
-            {SITE.description}
+            {t('site.description')}
           </p>
 
           {/* Contact links */}
@@ -287,7 +287,7 @@ function GlobalFooter() {
             textTransform: 'uppercase',
             marginBottom: '1.5rem',
           }}>
-            Navigate
+            {t('footer.navigate')}
           </p>
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
             {footerLinks.map(({ href, label }) => (
@@ -341,7 +341,7 @@ function GlobalFooter() {
             textTransform: 'uppercase',
             marginBottom: '1.5rem',
           }}>
-            Language
+            {t('footer.language')}
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
             {LANGUAGES.map(lang => {
@@ -397,7 +397,7 @@ function GlobalFooter() {
             letterSpacing: '0.02em',
             lineHeight: 1.5,
           }}>
-            "{SITE.tagline}"
+            "{t('site.tagline')}"
           </p>
         </div>
       </div>
@@ -439,7 +439,7 @@ function GlobalFooter() {
           color: 'rgba(245,240,232,0.08)',
           textTransform: 'uppercase',
         }}>
-          All rights reserved
+          {t('footer.allRightsReserved')}
         </span>
       </div>
     </footer>

@@ -7,12 +7,14 @@ import { useTranslation } from 'react-i18next'
 import useSanityQuery from '../../hooks/useSanityQuery'
 import { EVENT_BY_SLUG_QUERY } from '../../lib/queries'
 import PostBody from '../../components/cms/PostBody'
+import { localise } from '../../lib/localise'
 
 const EASE = [0.25, 0.46, 0.45, 0.94]
 
 export default function ExperienceDetailPage() {
   const { slug } = useParams()
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const lang = i18n.language
   const { data: event, loading } = useSanityQuery(EVENT_BY_SLUG_QUERY, { slug })
 
   if (loading) {
@@ -96,7 +98,7 @@ export default function ExperienceDetailPage() {
         <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.2, ease: EASE }}
           style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 300, color: '#f5f0e8', lineHeight: 1.2, marginBottom: '2rem' }}
         >
-          {event.title}
+          {localise(event.title, lang)}
         </motion.h1>
 
         {event.description && (
