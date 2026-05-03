@@ -9,7 +9,7 @@
     "soma": "Soma",
     "experiences": "Experiencias",
     "experiencesDesc": "Talleres, ceremonias y encuentros próximos",
-    "vault": "Vault",
+    "vault": "Bóveda",
     "inquire": "Contacto"
   },
   "portal": {
@@ -130,7 +130,7 @@
   },
   "vault": {
     "comingSoon": "Próximamente",
-    "description": "El Vault abrirá sus puertas pronto.",
+    "description": "La Bóveda abrirá sus puertas pronto.",
     "emailPlaceholder": "tu@correo.com",
     "notify": "Notifícame"
   },
