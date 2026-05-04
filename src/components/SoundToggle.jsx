@@ -31,32 +31,42 @@ export default function SoundToggle({ playing, onToggle }) {
         viewBox="0 0 28 20"
         style={{ width: '22px', height: '16px', overflow: 'visible' }}
       >
-        {BAR_HEIGHTS.map((h, i) => (
-          <motion.rect
-            key={i}
-            x={i * 6}
-            y={(20 - (playing ? h : 4)) / 2}
-            width="3"
-            rx="1.5"
-            fill="currentColor"
-            animate={playing
-              ? {
-                  height: [h * 0.5, h, h * 0.7, h * 0.9, h * 0.5],
-                  y: [(20 - h * 0.5) / 2, (20 - h) / 2, (20 - h * 0.7) / 2, (20 - h * 0.9) / 2, (20 - h * 0.5) / 2],
-                }
-              : { height: 3, y: 8.5 }
-            }
-            transition={playing
-              ? {
-                  duration: 1.4 + i * 0.15,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                  delay: i * 0.12,
-                }
-              : { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }
-            }
-          />
-        ))}
+        {BAR_HEIGHTS.map((h, i) => {
+          // Compute the initial height and y so the SVG attribute is always
+          // a valid number — never undefined. The browser requires a concrete
+          // value on the element; Framer Motion's animate-only values arrive
+          // too late and cause: "Expected length, 'undefined'"
+          const initH = playing ? h * 0.5 : 3
+          const initY = (20 - initH) / 2
+
+          return (
+            <motion.rect
+              key={i}
+              x={i * 6}
+              y={initY}
+              width="3"
+              height={initH}
+              rx="1.5"
+              fill="currentColor"
+              animate={playing
+                ? {
+                    height: [h * 0.5, h, h * 0.7, h * 0.9, h * 0.5],
+                    y: [(20 - h * 0.5) / 2, (20 - h) / 2, (20 - h * 0.7) / 2, (20 - h * 0.9) / 2, (20 - h * 0.5) / 2],
+                  }
+                : { height: 3, y: 8.5 }
+              }
+              transition={playing
+                ? {
+                    duration: 1.4 + i * 0.15,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                    delay: i * 0.12,
+                  }
+                : { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }
+              }
+            />
+          )
+        })}
       </svg>
 
       {/* Label */}

@@ -341,10 +341,11 @@ const GEOMETRY = {
 }
 
 // ── Card definitions ─────────────────────────────────────────
-// Keys map to matrix.cards.{key}.title / .subtitle in translation files
+// cardKey maps to matrix.cards.{cardKey}.title / .subtitle in translation files
+// Named 'cardKey' (not 'key') to avoid collision with React's reserved 'key' prop.
 const CARDS = [
   {
-    number: '01', key: 'lungField',
+    number: '01', cardKey: 'lungField',
     tags: ['lungs', 'pulmonary', 'breath', 'respiratory'],
     baseColor: '#1a1208',
     overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.35), rgba(255,140,0,0.15) 50%, transparent 70%)',
@@ -352,7 +353,7 @@ const CARDS = [
     geometrySVG: GEOMETRY.vesicaPiscis,
   },
   {
-    number: '02', key: 'bronchialTree',
+    number: '02', cardKey: 'bronchialTree',
     tags: ['bronchial', 'tree', 'airways', 'fractal'],
     baseColor: '#0d1318',
     overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.3), rgba(100,180,255,0.12) 50%, transparent 70%)',
@@ -360,7 +361,7 @@ const CARDS = [
     geometrySVG: GEOMETRY.starOfDavid,
   },
   {
-    number: '03', key: 'diaphragm',
+    number: '03', cardKey: 'diaphragm',
     tags: ['diaphragm', 'muscle', 'breath', 'movement'],
     baseColor: '#120d18',
     overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.32), rgba(180,100,255,0.15) 50%, transparent 70%)',
@@ -368,7 +369,7 @@ const CARDS = [
     geometrySVG: GEOMETRY.metatron,
   },
   {
-    number: '04', key: 'alveolarBloom',
+    number: '04', cardKey: 'alveolarBloom',
     tags: ['alveoli', 'bloom', 'oxygen', 'exchange'],
     baseColor: '#0f1a0f',
     overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.28), rgba(80,220,120,0.15) 50%, transparent 70%)',
@@ -376,7 +377,7 @@ const CARDS = [
     geometrySVG: GEOMETRY.sriYantra,
   },
   {
-    number: '05', key: 'neuralBreath',
+    number: '05', cardKey: 'neuralBreath',
     tags: ['neural', 'nervous', 'rhythm', 'signal'],
     baseColor: '#1a0f0f',
     overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.35), rgba(255,80,80,0.12) 50%, transparent 70%)',
@@ -384,7 +385,7 @@ const CARDS = [
     geometrySVG: GEOMETRY.pentagram,
   },
   {
-    number: '06', key: 'theSilence',
+    number: '06', cardKey: 'theSilence',
     tags: ['silence', 'pause', 'stillness', 'void'],
     baseColor: '#0a0a0a',
     overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.4), rgba(255,255,255,0.08) 50%, transparent 70%)',
@@ -392,7 +393,7 @@ const CARDS = [
     geometrySVG: GEOMETRY.torus,
   },
   {
-    number: '07', key: 'sacredHeart',
+    number: '07', cardKey: 'sacredHeart',
     tags: ['heart', 'pulse', 'cardiac', 'circulation'],
     baseColor: '#1a0808',
     overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.38), rgba(255,60,60,0.18) 50%, transparent 70%)',
@@ -400,7 +401,7 @@ const CARDS = [
     geometrySVG: GEOMETRY.flowerOfLife,
   },
   {
-    number: '08', key: 'spinalColumn',
+    number: '08', cardKey: 'spinalColumn',
     tags: ['spine', 'vertebrae', 'axis', 'column', 'skeletal'],
     baseColor: '#0d0d18',
     overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.3), rgba(120,120,255,0.15) 50%, transparent 70%)',
@@ -408,7 +409,7 @@ const CARDS = [
     geometrySVG: GEOMETRY.kabbalah,
   },
   {
-    number: '09', key: 'ribCage',
+    number: '09', cardKey: 'ribCage',
     tags: ['ribs', 'ribcage', 'thorax', 'skeletal', 'chest'],
     baseColor: '#101510',
     overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.32), rgba(80,200,100,0.12) 50%, transparent 70%)',
@@ -416,7 +417,7 @@ const CARDS = [
     geometrySVG: GEOMETRY.goldenSpiral,
   },
   {
-    number: '10', key: 'cranialVault',
+    number: '10', cardKey: 'cranialVault',
     tags: ['skull', 'cranium', 'head', 'brain', 'consciousness'],
     baseColor: '#181210',
     overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.35), rgba(200,150,80,0.15) 50%, transparent 70%)',
@@ -424,7 +425,7 @@ const CARDS = [
     geometrySVG: GEOMETRY.metatron,
   },
   {
-    number: '11', key: 'vascularRivers',
+    number: '11', cardKey: 'vascularRivers',
     tags: ['blood', 'vessel', 'artery', 'vein', 'circulation', 'flow'],
     baseColor: '#180a0a',
     overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.36), rgba(255,40,40,0.14) 50%, transparent 70%)',
@@ -432,7 +433,7 @@ const CARDS = [
     geometrySVG: GEOMETRY.sriYantra,
   },
   {
-    number: '12', key: 'innerEye',
+    number: '12', cardKey: 'innerEye',
     tags: ['eye', 'iris', 'vision', 'sight', 'optic'],
     baseColor: '#080d18',
     overlayGradient: 'radial-gradient(ellipse at center, rgba(212,175,55,0.4), rgba(60,120,255,0.18) 50%, transparent 70%)',
@@ -518,8 +519,8 @@ export default function Gallery() {
     ? CARDS
     : CARDS.filter(card => {
         const q = query.toLowerCase()
-        const title    = t(`matrix.cards.${card.key}.title`,    '')
-        const subtitle = t(`matrix.cards.${card.key}.subtitle`, '')
+        const title    = t(`matrix.cards.${card.cardKey}.title`,    '')
+        const subtitle = t(`matrix.cards.${card.cardKey}.subtitle`, '')
         return (
           title.toLowerCase().includes(q) ||
           subtitle.toLowerCase().includes(q) ||
@@ -601,8 +602,8 @@ export default function Gallery() {
             <InteractiveCard
               key={card.number}
               {...card}
-              title={t(`matrix.cards.${card.key}.title`, card.key)}
-              subtitle={t(`matrix.cards.${card.key}.subtitle`, '')}
+              title={t(`matrix.cards.${card.cardKey}.title`, card.cardKey)}
+              subtitle={t(`matrix.cards.${card.cardKey}.subtitle`, '')}
               onClick={() => setActiveCard(card)}
             />
           ))}

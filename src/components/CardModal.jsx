@@ -125,10 +125,10 @@ function VisualPanel({ card, height }) {
 // ── Content panel ─────────────────────────────────────────────
 function ContentPanel({ card, isMobile }) {
   const { t } = useTranslation()
-  const title       = t(`matrix.cards.${card.key}.title`,       card.key)
-  const subtitle    = t(`matrix.cards.${card.key}.subtitle`,    '')
-  const description = t(`matrix.cards.${card.key}.description`, '')
-  const geometry    = t(`matrix.cards.${card.key}.geometry`,    'Sacred Geometry')
+  const title       = t(`matrix.cards.${card.cardKey}.title`,       card.cardKey)
+  const subtitle    = t(`matrix.cards.${card.cardKey}.subtitle`,    '')
+  const description = t(`matrix.cards.${card.cardKey}.description`, '')
+  const geometry    = t(`matrix.cards.${card.cardKey}.geometry`,    'Sacred Geometry')
 
   return (
     <div style={{

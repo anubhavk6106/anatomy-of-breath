@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block Sanity Studio (not public-facing)
+Disallow: /studio/
+
+Sitemap: https://anatomiadelaliento.com/sitemap.xml
