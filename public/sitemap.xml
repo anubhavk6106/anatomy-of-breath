@@ -1,46 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Home / Portal -->
   <url>
     <loc>https://anatomiadelaliento.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://anatomiadelaliento.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://anatomiadelaliento.com/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://anatomiadelaliento.com/"/>
   </url>
 
-  <!-- Matrix (main experience) -->
   <url>
     <loc>https://anatomiadelaliento.com/matrix</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Medicina de la Voz (blog) -->
   <url>
     <loc>https://anatomiadelaliento.com/pillars/medicina-de-la-voz</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Soma -->
   <url>
     <loc>https://anatomiadelaliento.com/pillars/soma</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Experiences / Workshops -->
   <url>
     <loc>https://anatomiadelaliento.com/pillars/experiences</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Vault -->
   <url>
     <loc>https://anatomiadelaliento.com/vault</loc>
     <changefreq>monthly</changefreq>
