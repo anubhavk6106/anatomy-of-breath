@@ -149,31 +149,6 @@ function DissectionVideoSection() {
         `,
         pointerEvents: 'none',
       }} />
-
-      {/* Section label */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-80px' }}
-        transition={{ duration: 1, ease: EASE }}
-        style={{
-          position: 'absolute',
-          bottom: 'clamp(1.5rem, 4vh, 3rem)',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          zIndex: 3,
-          textAlign: 'center',
-          pointerEvents: 'none',
-        }}
-      >
-        <p style={{
-          fontFamily: 'Raleway, sans-serif', fontWeight: 200,
-          fontSize: '9px', letterSpacing: '0.5em',
-          color: 'rgba(212,175,55,0.45)', textTransform: 'uppercase',
-        }}>
-          {t('matrix.gallery.subtitle', 'The anatomy of breath')}
-        </p>
-      </motion.div>
     </section>
   )
 }

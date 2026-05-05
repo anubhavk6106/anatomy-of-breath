@@ -577,7 +577,7 @@ export default function Gallery() {
           color: 'rgba(245,240,232,0.4)', textTransform: 'uppercase',
           marginTop: '1.5rem',
         }}>
-          {t('matrix.gallery.subtitle', 'Hover to reveal sacred geometry within')}
+          {t('matrix.gallery.subtitle', 'Tap to reveal sacred geometry within')}
         </p>
 
         {/* Search */}
