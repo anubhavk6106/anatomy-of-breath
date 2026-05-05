@@ -92,18 +92,32 @@ function AnatomyLayer({ svg, baseColor, hovered }) {
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         background: baseColor,
       }}
-      animate={{
-        scale:  hovered ? 1.07 : 1,
-      }}
+      animate={{ scale: hovered ? 1.07 : 1 }}
       transition={{ duration: 0.9, ease: EASE }}
     >
       <motion.div
         style={{ width: '80%', height: '80%' }}
-        animate={{
-          opacity: hovered ? 0.18 : 0.5,
-          filter:  hovered ? 'blur(3px)' : 'blur(0px)',
-        }}
-        transition={{ duration: 0.8, ease: EASE }}
+        animate={hovered
+          ? {
+              opacity: 0.18,
+              filter: 'blur(3px)',
+              scale: 1,
+            }
+          : {
+              // Idle breathing — slow scale pulse so cards feel alive
+              opacity: 0.5,
+              filter: 'blur(0px)',
+              scale: [1, 1.03, 1],
+            }
+        }
+        transition={hovered
+          ? { duration: 0.8, ease: EASE }
+          : {
+              opacity: { duration: 0.8, ease: EASE },
+              filter:  { duration: 0.8, ease: EASE },
+              scale:   { duration: 5, repeat: Infinity, ease: 'easeInOut' },
+            }
+        }
         dangerouslySetInnerHTML={{ __html: svg }}
       />
     </motion.div>
@@ -198,9 +212,9 @@ export default function InteractiveCard({
       {/* ── [3] Aura glow ────────────────────────────── */}
       <AuraGlow hovered={hovered} overlayGradient={overlayGradient} />
 
-      {/* ── [4] Particle field ───────────────────────── */}
+      {/* ── [4] Particle field — desktop only (GPU cost on mobile) ── */}
       <AnimatePresence>
-        {hovered && (
+        {hovered && !isTouch && (
           <motion.div
             style={{ position: 'absolute', inset: 0, zIndex: 4, pointerEvents: 'none' }}
             initial={{ opacity: 0 }}

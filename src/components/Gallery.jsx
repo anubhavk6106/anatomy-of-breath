@@ -4,6 +4,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
 import InteractiveCard from './InteractiveCard'
 import CardModal from './CardModal'
 
@@ -595,17 +596,30 @@ export default function Gallery() {
         )}
       </div>
 
-      {/* Card grid */}
+      {/* Card grid — staggered scroll-reveal: each card fades + rises in sequence */}
       {filtered.length > 0 ? (
         <div className="gallery-grid">
-          {filtered.map(card => (
-            <InteractiveCard
+          {filtered.map((card, index) => (
+            <motion.div
               key={card.number}
-              {...card}
-              title={t(`matrix.cards.${card.cardKey}.title`, card.cardKey)}
-              subtitle={t(`matrix.cards.${card.cardKey}.subtitle`, '')}
-              onClick={() => setActiveCard(card)}
-            />
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{
+                duration: 0.65,
+                // Stagger: each card delays by 60ms relative to its position
+                // Cap at 8 so the last rows don't wait too long
+                delay: Math.min(index % 3, 2) * 0.08,
+                ease: [0.25, 0.46, 0.45, 0.94],
+              }}
+            >
+              <InteractiveCard
+                {...card}
+                title={t(`matrix.cards.${card.cardKey}.title`, card.cardKey)}
+                subtitle={t(`matrix.cards.${card.cardKey}.subtitle`, '')}
+                onClick={() => setActiveCard(card)}
+              />
+            </motion.div>
           ))}
         </div>
       ) : (
