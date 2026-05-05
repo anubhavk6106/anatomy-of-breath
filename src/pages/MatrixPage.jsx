@@ -193,26 +193,6 @@ export default function MatrixPage() {
           background: '#0b0b0b',
         }}
       >
-        {/* Cinematic section intro — gives context before the grid */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 1, ease: EASE }}
-          style={{
-            textAlign: 'center',
-            padding: '0 1.5rem clamp(1rem, 3vw, 2rem)',
-          }}
-        >
-          <p style={{
-            fontFamily: 'Raleway, sans-serif', fontWeight: 200,
-            fontSize: '9px', letterSpacing: '0.55em',
-            color: 'rgba(212,175,55,0.4)', textTransform: 'uppercase',
-          }}>
-            {t('matrix.gallery.label', 'Collection')}
-          </p>
-        </motion.div>
-
         <Gallery />
       </section>
 
